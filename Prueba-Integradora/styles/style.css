@@ -161,3 +161,13 @@ h1 {
 .navbar li a:hover {
     background-color: #7d7c7c90;
 }
+
+#search{
+    border-radius: 20px;
+    text-align: center;
+}
+
+h1 a{
+    text-decoration: none;
+    color: black;
+}
