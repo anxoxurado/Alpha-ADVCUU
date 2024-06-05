@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: url(1108655395-preview.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-group input[type="file"] {
+  border: none;
+  padding: 8px 0;
+  background: none;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  color: #666;
+}
+
+.register-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #2563eb;
+}
+
+.login-link {
+  margin-top: 24px;
+  text-align: center;
+  color: #555;
+}
+
+.login-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 24px;
+  }
+}
