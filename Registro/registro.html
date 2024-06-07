@@ -1,24 +1,40 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrate</title>
+    <title>Two Column Layout</title>
     <link rel="stylesheet" href="styles_registro.css" />
   </head>
   <body>
-    <header>
-      <div class="header-top" class="lowerH2">
-        <h2 class="lowerH2">Vamos al centro CUU</h2>
-      </div>
-    </header>
+    <header class="header">Vamos al centro CUU</header>
     <div class="container">
-      <div class="registrationForm"></div>
-      <div class="registrationCompanion">
-        <img
-          src="../Imagenes/Chihuahua Centro Capital.jpg"
-          alt="Centro Capital"
-        />
+      <div class="form-section">
+        <div>
+          <h1 class="h1-registrate">Regístrate</h1>
+        </div>
+        <div class="signinForm">
+          <form>
+            <label for="username"></label>
+            <input
+              type="username"
+              name="username"
+              class="input"
+              placeholder="Username"
+            />
+
+            <label for="email"></label>
+            <input
+              type="username"
+              name="username"
+              class="input"
+              placeholder="Correo electrónico"
+            />
+            <button class="submit" type="submit">Sign in</button>
+          </form>
+        </div>
       </div>
+      <div class="gradient-section"></div>
     </div>
   </body>
 </html>

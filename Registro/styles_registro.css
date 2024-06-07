@@ -1,35 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-html{
-    font-family: Inter, sans-serif, 'Arial Narrow Bold';
-}
-
-.header-top{
-
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px black solid;
-    padding: 0;
+body, html {
     margin: 0;
-}
-
-.lowerH2{
-    font-weight: 00;
-}
-
-.registrationForm{
-    background-color: blue;
-    width: 42%;
+    padding: 0;
     height: 100%;
+    font-family: Inter, sans-serif;
 }
 
-.registrationCompanion{
-margin-left: 57%;
-
-}
-
-.container{
+.container {
     display: flex;
-    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.form-section {
+    position: relative;
+    width: 35%; /* Fixed width for the form section */
+    padding: 20px;
+    background-color: #fbfbfb;
+    box-shadow: 4px 0 10px #00000029;
+    box-shadow: 1px 0 30px #00000054;
+    z-index: 1;
+}
+
+.gradient-section {
+    flex-grow: 1; /* Take up the remaining space */
+    background: linear-gradient(90deg, #F99B66, #77DBE9); /* Gradient colors */
+    background-size: 200% 100%;
+    animation: gradientAnimation 15s ease infinite; /* Gradient animation */
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px gradient;
+    z-index: 3;
+    background-color: white;
+
+}
+
+.h1-registrate{
+    font-weight: 600;
+    font-size: 32pt;
+margin-top: 100px;
+margin-left: 65px;
+}
+
+.input {
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #c5c5c5,
+    -20px -20px 60px #ffffff;
+    transition: 0.3s;
+    width: 45%;
+}
+
+.input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.submit {
+    display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.signinForm{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: ;
+
+}
+
+.signinForm input{
+    margin-bottom: 20px;
+    margin-left: 55px;
+
 }
