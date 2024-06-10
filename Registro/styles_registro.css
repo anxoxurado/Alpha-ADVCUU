@@ -61,8 +61,8 @@ margin-left: 65px;
 .input {
     font-size: 16pt;
     font-family: inter, 'sans-serif';
-    margin: 8%;
-    height: 60px;
+    margin: 3%;
+    height: 55px;
     width: 70%;
     border: none;
     padding: 1rem;
@@ -93,28 +93,40 @@ margin-left: 65px;
     font-size: 2rem;
     line-height: 1.25rem;
     font-weight: 500;
-    width: 65%;
-    height: 60px;;
+    width: 70%;
+    height: 60px;
     border-radius: 0.5rem;
-
     border-color: transparent;
+    margin-top: 5%;
+    margin-left: 17%;
+    text-align: center;
+}
+
+.submit:hover {
+    outline-color: #e8e8e8;
+    background: #ffd6a8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
 }
 
 .signinForm{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 
 
 }
 
 .signinForm input{
     margin-bottom: 20px;
-    margin-left: 55px;
+    margin-left: 10%;
 
 }
 
 .logoHeader{
-    height: 1.4rem;
+    height: 1.6rem;
     margin-left: 4%;
+    margin-top: .5rem;
 }
