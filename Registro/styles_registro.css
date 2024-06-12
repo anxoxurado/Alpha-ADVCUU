@@ -5,6 +5,11 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Inter, sans-serif;
+    flex-grow: 1; 
+    background: linear-gradient(20deg, #F99B66, #77DBE9); 
+    background-size: 200% 100%;
+    animation: gradientAnimation 15s ease infinite; 
+
 }
 
 .container {
@@ -14,19 +19,19 @@ body, html {
 
 .form-section {
     position: relative;
+    margin-top: 8%;
+    margin-left: 5%;
+    height: 80%;
     width: 35%; /* Fixed width for the form section */
     padding: 20px;
     background-color: #fbfbfb;
     box-shadow: 4px 0 10px #00000029;
     box-shadow: 1px 0 30px #00000054;
     z-index: 1;
+    border-radius: 20px;
 }
 
 .gradient-section {
-    flex-grow: 1; /* Take up the remaining space */
-    background: linear-gradient(20deg, #F99B66, #77DBE9); /* Gradient colors */
-    background-size: 200% 100%;
-    animation: gradientAnimation 15s ease infinite; /* Gradient animation */
 
 }
 @keyframes gradientAnimation {
@@ -42,19 +47,22 @@ body, html {
 }
 
 .header{
-    position: fixed;
-    width: 100%;
+    background-color: #c5c5c5;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
     padding: 20px;
     border-bottom: 1px gradient;
     z-index: 3;
-    background-color: white;
-
+    border-radius: 24px;
 }
 
 .h1-registrate{
     font-weight: 600;
     font-size: 32pt;
-margin-top: 120px;
+margin-top: 10%;
 margin-left: 65px;
 }
 
@@ -115,6 +123,7 @@ margin-left: 65px;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    
 
 
 }
