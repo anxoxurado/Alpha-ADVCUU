@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    flex-grow: 1; 
+    background: linear-gradient(20deg, #F99B66, #77DBE9); 
+    background-size: 200% 100%;
+    animation: gradientAnimation 15s ease infinite; 
+
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.form-section {
+    position: relative;
+    margin-top: 8%;
+    margin-left: 5%;
+    height: 80%;
+    width: 35%; /* Fixed width for the form section */
+    padding: 20px;
+    background-color: #fbfbfb;
+    box-shadow: 4px 0 10px #00000029;
+    box-shadow: 1px 0 30px #00000054;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.gradient-section {
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header{
+    background-color: #c5c5c5;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    padding: 20px;
+    border-bottom: 1px gradient;
+    z-index: 3;
+    border-radius: 24px;
+}
+
+.h1-registrate{
+    font-weight: 600;
+    font-size: 32pt;
+margin-top: 10%;
+margin-left: 65px;
+}
+
+.input {
+    font-size: 16pt;
+    font-family: inter, 'sans-serif';
+    margin: 3%;
+    height: 55px;
+    width: 70%;
+    border: none;
+    padding: 1rem;
+    padding-left: 50px;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #c5c5c5,
+    -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.submit {
+
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #F98866;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 70%;
+    height: 60px;
+    border-radius: 0.5rem;
+    border-color: transparent;
+    margin-top: 5%;
+    margin-left: 17%;
+    text-align: center;
+}
+
+.submit:hover {
+    outline-color: #e8e8e8;
+    background: #ffd6a8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.signinForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+
+
+}
+
+.signinForm input{
+    margin-bottom: 20px;
+    margin-left: 10%;
+
+}
+
+.logoHeader{
+    height: 1.6rem;
+    margin-left: 4%;
+    margin-top: .5rem;
+}
