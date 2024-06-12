@@ -5,11 +5,10 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Inter, sans-serif;
-    flex-grow: 1; 
-    background: linear-gradient(20deg, #F99B66, #77DBE9); 
-    background-size: 200% 100%;
-    animation: gradientAnimation 15s ease infinite; 
-
+    flex-grow: 1;
+    background: linear-gradient(20deg, #F99B66, #77DBE9);
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
 .container {
@@ -19,79 +18,68 @@ body, html {
 
 .form-section {
     position: relative;
-    margin-top: 8%;
+    margin-top: 4%;
     margin-left: 5%;
     height: 80%;
     width: 35%; /* Fixed width for the form section */
     padding: 20px;
-    background-color: #fbfbfb;
-    box-shadow: 4px 0 10px #00000029;
-    box-shadow: 1px 0 30px #00000054;
+    background:linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(224, 252, 255, 0.9));
+    box-shadow: 4px 0 10px #00000029, 1px 0 100px #00000054;
     z-index: 1;
     border-radius: 20px;
-}
-
-.gradient-section {
+    
 
 }
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
-.header{
-    background-color: #c5c5c5;
+.header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 70%;
     padding: 20px;
-    border-bottom: 1px gradient;
     z-index: 3;
-    border-radius: 24px;
+    color: black;
+    margin-top: 1%;
+    box-shadow: 4px 0 50px #00000029, 1px 0 30px #00000054;
 }
 
-.h1-registrate{
+.h1-registrate {
     font-weight: 600;
     font-size: 32pt;
-margin-top: 10%;
-margin-left: 65px;
+    margin-top: 10%;
+    margin-left: 65px;
+    color: black;
 }
 
 .input {
     font-size: 16pt;
-    font-family: inter, 'sans-serif';
+    font-family: Inter, sans-serif;
     margin: 3%;
-    height: 55px;
+    height: px;
     width: 70%;
     border: none;
     padding: 1rem;
     padding-left: 50px;
     border-radius: 1rem;
     background: #ffffff;
-    box-shadow: 20px 20px 60px #c5c5c5,
-    -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
     transition: 0.3s;
 }
 
 .input:focus {
     outline-color: #e8e8e8;
     background: #e8e8e8;
-    box-shadow: inset 20px 20px 60px #c5c5c5,
-    inset -20px -20px 60px #ffffff;
+    box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
     transition: 0.3s;
 }
 
 .submit {
-
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1.25rem;
@@ -111,31 +99,42 @@ margin-left: 65px;
 }
 
 .submit:hover {
-    outline-color: #e8e8e8;
+
     background: #ffd6a8;
-    box-shadow: inset 20px 20px 60px #c5c5c5,
-    inset -20px -20px 60px #ffffff;
+    box-shadow: inset 20px 20px 60px #54b2ca, inset -20px -20px 60px #5dd0da;
     transition: 0.3s;
 }
 
-.signinForm{
+.signinForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    
-
-
 }
 
-.signinForm input{
+.signinForm input {
     margin-bottom: 20px;
     margin-left: 10%;
-
 }
 
-.logoHeader{
+.logoHeader {
     height: 1.6rem;
     margin-left: 4%;
     margin-top: .5rem;
 }
+
+/* Keyframes */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Empty class for future styling */
+.gradient-section {}
