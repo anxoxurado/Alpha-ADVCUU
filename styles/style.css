@@ -42,8 +42,13 @@ body {
     margin-bottom: 40%;
 }
 
-h1 {
+.textoSlider {
     transition: .5s;
+    color: white;
+}
+.textoSlider a{
+    text-decoration: none;
+    color: white;
 }
 
 .container {
@@ -58,15 +63,17 @@ h1 {
 
 }
 
+
 .container div {
     white-space: nowrap;
     animation: scroll 20s ease infinite;
 }
 
-
-/*.container {
-    margin-left: 1.5%;
-    text-align:left;
+.containerGradient{
+    border: 0px solid white;
+    border-radius: 20px;
+    height: 90px;
+    background-color: rgb(255, 255, 255, 0.3);
     position: relative;
     backdrop-filter: blur(2px);
 }
@@ -81,16 +88,8 @@ h1 {
 #layer2 {
     position: relative;
     z-index: 1;
+    color: white;
 }
-
-
-/*@keyframes scroll {
-  0%   {top:0px;}
-  25%  {top:-125px;}
-  50%  {top:-250px;}
-  75%  {top:-375px;}
-  100% {top:-500px;}
-}*/
 
 
 @keyframes scroll {
@@ -120,17 +119,14 @@ h1 {
 
 .navbar{
     position:fixed;
-
-   top:0;
-
-   width:100%;
+    top:0;
+    width:100%;
 }
 
 
 .navbar ul {
     display: flex;
     list-style-type: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
     background: linear-gradient(354deg, rgba(255,179,0,1) 0%, rgba(255,244,217,0) 40%, rgba(255,255,255,0) 60%, rgba(0,224,255,1) 100%);
@@ -163,6 +159,8 @@ h1 {
 
 .navbar li a:hover {
     background-color: #7d7c7c90;
+    border-radius: 20px;
+    
 }
 
 .post-title {
