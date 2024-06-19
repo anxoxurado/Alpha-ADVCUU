@@ -192,11 +192,12 @@ body {
     justify-content: center;
 }
 
-.pre-landing input {
+.pre-landing .btn {
+    margin: 4% 32% 4% 32%;
     background-color: #FFA07A;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: black;
+    padding: 2vh 5vh 2vh 8vh ;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -204,4 +205,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 15% 50%, 0% 0%);
 }
+
