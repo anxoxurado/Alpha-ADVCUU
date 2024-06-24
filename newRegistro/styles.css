@@ -5,12 +5,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 400%;
     
     
 }
 .header img{
-    height: 30px;
+    height: 45px;
+    position: relative;
+    bottom: 40%;
 
+}
+
+.header h1{
+    margin: 15px;
+    opacity: 90%;
 }
 .content {
     display: flex;
@@ -18,7 +26,8 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 5%;
+    padding: 0% 5% 0% 5%;
+
 }
 .background {
     position: absolute;
@@ -33,7 +42,9 @@
 
 .background img {
     display: flex;
-    width: 100vw;
+    width: 1611px;
+    height: auto;
+
     max-height: 100vh;
     object-position: top;
     object-fit: cover;
@@ -48,41 +59,147 @@ h1{
 }
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: -8px;
     width: 40vw;
-    height: 80vh;
-    margin: 5%;
+    height: 100vh;
+    margin: 0;
     background-color: transparent;
     z-index: 2;
-    border: 10px solid rgba(227, 227, 227, 0.524);
-    border-radius: 10px;
-    background-clip: padding-box;
+    /*border: 10px solid rgba(227, 227, 227, 0.524);
+    border-radius: 0px;
+    background-clip: padding-box;*/
 
-    background: linear-gradient(180deg,rgba(255, 255, 255, 0.511), rgba(255, 255, 255, 0.226));
+    background: rgba(255, 255, 255, 0.911);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: rgba(122, 61, 143, 0.15) 0px 1px 1px,
-                rgba(77, 71, 80, 0.15) 1px 2px 2px,
-                rgba(39, 30, 43, 0.15) 2px 4px 4px,
-                rgba(35, 48, 65, 0.15) 4px 8px 8px,
-                rgba(49, 38, 53, 0.15) 8px 16px 16px;
 
+
+
+}
+.formContainer{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
 
 }
 .form{
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center ;
+    align-items: left ;
+    align-content: center;
 }
 
-input, select{
-width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+label{
+    font-family: Inter, sans-serif ;
+    
 }
+input{
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: rgba(122, 61, 143, 0.05) 0px 1px 1px,
+    rgba(77, 71, 80, 0.05) 1px 2px 2px,
+    rgba(39, 30, 43, 0.05) 2px 4px 4px,
+    rgba(35, 48, 65, 0.05) 4px 8px 8px,
+    rgba(49, 38, 53, 0.05) 8px 16px 16px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+input:focus{
+    outline-color: #ffe2cf;
+    background: #e8e8e8;
+    box-shadow:  20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+input:hover{
+    background: #ffeedb;
+    box-shadow:  20px 20px 60px #54b2ca4b;
+    transition: 0.3s;
+
+}
+
+.checkbox2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+#tyc{
+    height: 30px;
+    width: 30px;
+}
+
+button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+button:active {
+    color: #000
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
