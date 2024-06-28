@@ -12,7 +12,7 @@
             left: 50%;
             color: white;
             font-weight:500;
-            font-size: 80px;
+            font-size: 4.5vw;
             -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -22,15 +22,52 @@
         }
         .cropImage{
             width: 100vw;
-            height: 50vh;
+            height: 65vh;
             object-fit: cover;
-            object-position: 20% 0%;
+            object-position: 50% 0%;
         }
         .header-container {
             display: flex;
             align-items: center;
             justify-content: center;
 }
+        .headerText{
+            width: 70vw;
+        }
+
+        .degradado{
+            position: absolute;
+            top:0%;
+            left:0%;
+            width: 100vw;
+            height: 65vh;
+        }
+
+        .header-buttons{
+            position:absolute;
+            top: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header_custom_buttons{
+            width: 22vw;
+            margin: 2vw;
+            height: 5vh;
+            background-color: whitesmoke;
+            border-radius: 50px;
+            align-content: center;
+            font-size: 1.3rem;
+        }
+
+        .header_custom_buttons img{
+            height: 2.4vh;
+            margin-right: 1vw;
+        }
+
+
+
     </style>
 
 </head>
@@ -38,8 +75,38 @@
     <div>
         <div class="headerContainer">
             <img src="/Imagenes/Chihuahua Centro Capital.jpg" class="img-fluid d-inline cropImage" alt="">
-            <div class="">
-                <h1 class="text-center text-wrap text-white headerText">Bienvenido al centro <span class="fw-bold">histórico</span></h1>
+            <img src="/elementos/GradientOrange.png" class="degradado">
+
+            <div class="containerText">
+                <h1 class="text-center text-white headerText">Bienvenido al centro <span class="fw-bold">histórico</span></h1> 
+            </div>
+
+            <div class="container-fluid text-center header-buttons justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="header_custom_buttons">
+                            <img src="/elementos/Component 4cafe.svg" alt="">
+                            Cafeterias
+                        </div>
+                    </div>
+
+                    <dir class="col">
+                        <div class="header_custom_buttons">
+                            <img src="/elementos/restaurantes.svg" alt="">
+
+                            Restaurantes
+                        </div>
+                    </dir>
+
+                    <dir class="col">
+                        <div class="header_custom_buttons">
+                            <img src="/elementos/Component 3bar.svg" alt="">
+
+                            Bares
+                        </div>
+                    </dir>
+
+                </div>
             </div>
         </div>
     </div>
