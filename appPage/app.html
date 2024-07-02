@@ -6,70 +6,8 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .headerText{
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            color: white;
-            font-weight:500;
-            font-size: 4.5vw;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-family: Inter, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
-            
-        }
-        .cropImage{
-            width: 100vw;
-            height: 65vh;
-            object-fit: cover;
-            object-position: 50% 0%;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-}
-        .headerText{
-            width: 70vw;
-        }
-
-        .degradado{
-            position: absolute;
-            top:0%;
-            left:0%;
-            width: 100vw;
-            height: 65vh;
-        }
-
-        .header-buttons{
-            position:absolute;
-            top: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header_custom_buttons{
-            width: 22vw;
-            margin: 2vw;
-            height: 5vh;
-            background-color: whitesmoke;
-            border-radius: 50px;
-            align-content: center;
-            font-size: 1.2vw;
-        }
-
-        .header_custom_buttons img{
-            height: 2.4vh;
-            margin-right: 1vw;
-        }
-
-
-
+        
     </style>
-
 </head>
 <body>
     <div>
@@ -83,34 +21,49 @@
 
             <div class="container-fluid text-center header-buttons justify-content-center">
                 <div class="row justify-content-center">
-                    <div class="col">
-                        <div class="header_custom_buttons">
-                            <img src="/elementos/Component 4cafe.svg" alt="">
-                            Cafeterias
-                        </div>
+                    <div class="col"> 
+                        <a href="#" class="header_custom_button_link">
+                            <div class="header_custom_buttons shadow-lg">
+                                <img src="/elementos/Component 4cafe.svg" alt="">
+                                Cafeterias
+                            </div>
+                        </a>
                     </div>
 
-                    <dir class="col">
-                        <div class="header_custom_buttons">
-                            <img src="/elementos/restaurantes.svg" alt="">
+                    <div class="col">
+                        <a href="#" class="header_custom_button_link">
+                            <div class="header_custom_buttons shadow-lg">
+                                <img src="/elementos/restaurantes.svg" alt="">
+                                Restaurantes
+                            </div>
+                        </a>
+                    </div>
 
-                            Restaurantes
-                        </div>
-                    </dir>
-
-                    <dir class="col">
-                        <div class="header_custom_buttons">
-                            <img src="/elementos/Component 3bar.svg" alt="">
-
-                            Bares
-                        </div>
-                    </dir>
-
+                    <div class="col">
+                        <a href="#" class="header_custom_button_link">
+                            <div class="header_custom_buttons shadow-lg">
+                                <img src="/elementos/Component 3bar.svg" alt="">
+                                Bares
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <h1>Hola!</h1>
-    
+
+    <div class="container-md" id="feedContent">
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="/Branding/Logo BlacklogoblackCurs.png" class="logoAtFeed" alt="">
+            </div>
+            <div class="col-lg-4 align-content-center" style="font-size: 2vw;">
+                <a href="#" class="customLink"><span class="fw-bold" style="margin-right:1vw;">Elige un plan</span><img src="/elementos/Bootstrap Triangle Fill.svg" class="rotTriangle" alt=""></a>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </div>
 </body>
 </html>
