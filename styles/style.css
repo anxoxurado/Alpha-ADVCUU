@@ -155,7 +155,7 @@ body {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(354deg, rgba(255,179,0,1) 0%, rgba(0,224,255,1) 100%);
+    background-color: #FFA07A;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
@@ -186,6 +186,12 @@ body {
     background-color: #7d7c7c90;
     border-radius: 20px;
     
+}
+
+.navbar img {
+    padding: 5%;
+    width: 15vw;
+    height: 8.5vh;
 }
 
 .post-title {
