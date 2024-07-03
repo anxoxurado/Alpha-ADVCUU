@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: Inter,sans-serif !important;
+    
+}
+
+
+#logo{
+    width: 15vw;
+    margin: 3vh;
+}
+
+
+.breadcrumbs{
+    padding: 10px;
+    font-family: Inter, sans-serif;
+}
+
+.breadcrumbs__item{
+    display: inline-block;
+    
+}
+
+.breadcrumbs__item:not(:last-of-type)::after{
+    content: '/';
+    margin: 0 5px;
+    color: lightgrey;
+}
+
+.breadcrumbs__link{
+    text-decoration: none;
+    color:rgb(241, 241, 241)
+}
+
+.breadcrumbs__link:hover{
+    text-decoration: underline;
+
+}
+
+.breadcrumbs__link--active{
+    color: orange;
+    font-weight: 500;
+}
+
+.keyWords{
+    list-style: none;
+    color: white;
+    padding: 0;
+
+}
+
+.keyWords h1{
+    font-size: 4vw;
+    font-weight: 800;
+
+
+}
+
+.keyWord__item:not(:first-child){
+    margin-top: 17%;
+}
+
+.col.p-0 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.image_container{
+    height: 90vh;
+    overflow: hidden;
+    padding: 5vw;
+}
+
+.cover_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+
+.imageWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #3e2f2f;
+
+}

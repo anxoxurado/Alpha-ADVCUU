@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: Inter,sans-serif !important;
+}
+
+.headerText{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: white;
+    font-weight:500;
+    font-size: 4.5vw;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Inter, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
+}
+.cropImage{
+    width: 100vw;
+    height: 65vh;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerText{
+    width: 70vw;
+}
+.degradado{
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100vw;
+    height: 65vh;
+}
+.header-buttons{
+    position:absolute;
+    top: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_custom_button_link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.header_custom_buttons {
+    width: 22vw;
+    margin: 2vw;
+    height: 5vh;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    align-items: center;
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+.header_custom_buttons:hover {
+    background-color: #e0e0e0;
+}
+.header_custom_buttons:active {
+    transform: scale(0.98);
+}
+.header_custom_buttons img {
+    height: 2.4vh;
+    margin-right: 1vw;
+}
+
+
+.logoAtFeed{
+    height: 4vw;
+    width: auto;
+    margin: 3vh;
+}
+
+
+
+.customLink{
+    text-decoration: none;
+    color: black
+}
+
+.customLink:hover{
+    text-decoration:underline;
+    
+}
+
+.rotTriangle{
+    transform: rotate(90deg);
+}

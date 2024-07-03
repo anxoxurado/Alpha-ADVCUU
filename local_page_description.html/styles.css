@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    font-family: Inter, Sans-serif;
+}
+
+.title{
+    position: relative;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 40%;
+    background-color: black;
+}
+
+.title img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    z-index: 0;
+    opacity: 60%;
+    filter: blur(5px)
+}
+
+.localTitle{
+color:white;
+position: absolute;
+font-size: 40pt;
+top:13%;
+left: 31%;
+
+}
+
+.subtitle{
+    position: relative;
+    color: white;
+    z-index: 5;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+
+    
+    }
