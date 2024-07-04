@@ -96,3 +96,82 @@
 .rotTriangle{
     transform: rotate(90deg);
 }
+
+
+
+.imageWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #3e2f2f;
+
+}
+
+
+.feed-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.card-list .card-item{
+    width: 28vw;
+    aspect-ratio: 3 / 4;
+    max-height: 100vh;
+}
+
+.card-list .card-item .local-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    border-radius: 25px;
+}
+
+.card-item{
+    position: relative;
+}
+
+.card-item .card-info{
+    position: absolute;
+    bottom: 0;
+    left: 0;   
+    padding: 10%;
+    
+}
+
+
+.gradient-card{
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    top: 55%;
+    border-radius: 25px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.31);
+
+}
+
+.g-orange{
+    background: linear-gradient(0deg,#FFB967, #ffb86700 );
+
+}
+
+.g-blue{
+    background: linear-gradient(0deg,#67fff0, #67fff000 );
+
+}
+.local-description span{
+
+    color: rgb(255, 249, 235);
+}
+
+.card-info .local-name{
+    font-size: 1.8vw;
+    padding: .5vw 2vw 0.5vw 2vw;
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+}
