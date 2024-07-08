@@ -157,7 +157,7 @@ body {
 .pre-landing {
     display: flex;
     flex-direction: row;
-    padding: 5% 10% 10% 10%;
+    padding: 10%;
 }
 
 .pre-landing img {
