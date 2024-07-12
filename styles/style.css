@@ -200,7 +200,7 @@ body {
 }
 
 /* Para pantallas medianas */
-@media (min-width: 1000px) and (max-width: 1199px) {
+@media (min-width: 1000px) and (max-width: 1200px) {
     .pre-landing .btn {
         padding: 2vh 8vh;
         width: 55%;
@@ -216,7 +216,7 @@ body {
     }
 }
 
-@media (min-width: 820px) and (max-width: 999px) {
+@media (min-width: 820px) and (max-width: 1000px) {
     .navbar img {
         max-width: 40%;
     }
