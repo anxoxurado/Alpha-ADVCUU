@@ -137,7 +137,7 @@ body {
 
 .post-title {
     text-align: center;
-    margin-top: -10%;
+    margin-top: -7vh;
 }
 
 .post-title p {
@@ -191,7 +191,7 @@ body {
 @media (min-width: 1200px) {
     .pre-landing .btn {
         padding: 2vh 10vh;
-        width: 40%;
+        width: 55%;
     }
 }
 
@@ -200,6 +200,11 @@ body {
     .pre-landing .btn {
         padding: 2vh 8vh;
         width: 55%;
+    }
+
+    .post-title {
+        text-align: center;
+        margin-top: -10%;
     }
 }
 
@@ -225,6 +230,11 @@ body {
         top: 25%;
         display: flex;
         width: 65%;
+    }
+
+    .post-title {
+        text-align: center;
+        margin-top: -15%;
     }
 
 }
