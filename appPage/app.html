@@ -2,12 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vamos al centro CUU</title>
+    <title>Vamos al centro | CUU</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        
+       
     </style>
+    <script src="script.js" type="text/JavaScript" language="JavaScript"></script>
 </head>
 <body>
     <div>
@@ -63,10 +64,10 @@
         </div>
         <h1 class="m-4">Top Cafeterías</h1>
         <div class="feed-section">
-            
+            <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>
             <div class="container-slider">
-                <div class="card-list d-flex gap-5">
-
+                <div class="card-list">
+                   
                     <!-- Template de tarjeta -->
                     <div class="card-item">
                         <div class="gradient-card g-orange"></div>
@@ -75,8 +76,6 @@
                         <h2 class="local-name">Kaldi Café</h2>
                         <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
                         </div>
-                        
-
                     </div>
                     <!-- Template de tarjeta-->
 
@@ -86,10 +85,7 @@
                         <div class="card-info">
                         <h2 class="local-name">Esperanza Café</h2>
                         <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
-
                         </div>
-                        
-
                     </div>
     
                     <div class="card-item">
@@ -100,14 +96,45 @@
                         <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
 
                         </div>
-                        
-
                     </div>
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Kaldi Café</h2>
+                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="card-item">
+                        <div class="gradient-card g-blue"></div>
+                        <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Esperanza Café</h2>
+                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Dibub copamala</h2>
+                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
+            <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg></button>
         </div>
-        
+        <div class="slider-srollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
