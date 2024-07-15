@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const scrollbarTrack = feedSection.nextElementSibling.querySelector('.scrollbar-track');
         const scrollAmount = slider.querySelector('.card-item').offsetWidth * 1.4;
 
-        function updateButtonVisibility() {
+        /*function updateButtonVisibility() {
             const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
             prevButton.style.display = slider.scrollLeft > 0 ? 'block' : 'none';
             nextButton.style.display = slider.scrollLeft < maxScrollLeft ? 'block' : 'none';
-        }
+        }*/
 
         function updateScrollbarThumb() {
             const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
