@@ -195,7 +195,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Inter';
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -247,9 +247,15 @@ h2, .h2 {
   }
 }
 
+@media (min-width: 580px) and (max-width: 853px) {
+  h2, .h2 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 580px) {
   h2, .h2 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
   }
 }
 
