@@ -35,7 +35,7 @@
     position: absolute;
     top:0%;
     left:0%;
-    width: 100vw;
+    width: 98.9vw;
     height: 65vh;
 }
 .header-buttons{
@@ -119,6 +119,7 @@
 
 .container-slider {
     display: flex;
+    position: relative;
     overflow-x: auto;
     scrollbar-width: none;
     margin-bottom: 0.3vh;
@@ -128,7 +129,6 @@
 .container-slider::-webkit-scrollbar {
     position: relative;
     display: none;
-    
 }
 
 .slide-button {
@@ -159,11 +159,12 @@
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .slider-srollbar .scrollbar-track {
     position: relative;
-    height: 0.2vh;
+    height: 0.4vh;
     width: 100%;
     border-radius: 0.4vw;
     background: white;
@@ -186,6 +187,11 @@
     border-radius: inherit;
     background-color: #e67200;
     cursor: grab;
+    transition: width 0.2s, height 0.2s;
+}
+
+.slider-srollbar .scrollbar-thumb:active{
+    cursor: grabbing;
 }
 
 .slider-srollbar .scrollbar-thumb::after {
@@ -195,6 +201,11 @@
     right: 0;
     top: -0.1vh;
     bottom: -0.1vh;
+}
+
+.slider-srollbar .scrollbar-track:hover .scrollbar-thumb {
+    height: 0.6vh;
+    width: 12%;
 }
 
 .card-list {
