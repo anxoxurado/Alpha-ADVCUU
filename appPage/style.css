@@ -223,7 +223,7 @@ body{
 .card-list .card-item{
     width: 28vw;
     aspect-ratio: 3 / 4;
-    max-height: 100vh;
+    max-height: 50vh;
     margin: 1%;
 }
 
@@ -291,5 +291,8 @@ body{
     padding: .5vw 2vw 0.5vw 2vw;
     background-color: whitesmoke;
     border-radius: 10px;
+}
 
+.card-info .local-description {
+    font-size: 1.8vw;
 }
