@@ -420,3 +420,50 @@ body {
         max-height: 10vw;
     }
 }
+
+body {
+    overflow-y: auto;
+}
+
+.popup-container {
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    border-radius: 15px;
+    padding: 1px;
+    width: 95%;
+    height: 85%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    overflow: hidden;
+}
+.popup-content::-webkit-scrollbar {
+    display: none;
+  }
+
+#popupFrame {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+#popupFrame::-webkit-scrollbar {
+    display: none;
+}

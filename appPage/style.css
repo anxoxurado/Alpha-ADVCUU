@@ -3,7 +3,12 @@
 *{
     font-family: Inter,sans-serif !important;
 }
-
+body{
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
 .headerText{
     position: absolute;
     top: 40%;
@@ -35,7 +40,7 @@
     position: absolute;
     top:0%;
     left:0%;
-    width: 100vw;
+    width: 98.3vw;
     height: 65vh;
 }
 .header-buttons{
