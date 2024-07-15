@@ -138,22 +138,23 @@ body{
 }
 
 .slide-button {
-    position: absolute;
-    height: 5vh;
+    position: relative;
+    z-index: 2;
+    height: 6vh;
+    width: auto;
     color: white;
     outline: none;
     background-color: #e67200;
-    font-size: 2.2rem;
     border: none;
     border-radius: 50%;
 }
 
 .slide-button#prev-slide {
-    left: 3vw;
+    right: 1.5vw;
 }
 
 .slide-button#next-slide {
-    right: 3vw;
+    left: 1.5vw;
 }
 
 .slide-button:hover {
