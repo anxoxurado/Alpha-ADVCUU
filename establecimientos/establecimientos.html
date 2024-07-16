@@ -5,53 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style_places.css">
+    <link rel="stylesheet" href="/appPage/style.css">
+    <script src="scriptslide.js" type="text/JavaScript" language="JavaScript"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div class="deg1"></div>
-    <div class="contenedor">
-        <div class="imagen">
-            <img src="/Imagenes/kaldi.jpg" alt="0">
-        </div>
-        <div class="contenedor_info">
-            <div class="caracteristicas">
-                <h1 class="caract"><!-- Caracteristica 1 --></h1>
-                <h1 class="caract"><!-- Caracteristica 2 --></h1>
-                <h1 class="caract"><!-- Caracteristica 3 --></h1>
+    <div class="gradiente">
+        <div class="imagen"><img src="/Imagenes/kaldi.jpg" alt="top_image"></div>
+        <img src="/elementos/Gradiente azul.png" class="degradado" style="width: 100%; height: 54vw">
+    </div>
+    <div class="feed-section1">
+        <!--<button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>-->
+        <div class="container-slider">
+            <div class="card-list">
+                <!-- Template de tarjeta -->
+                <div class="card-item">
+                    <div class="gradient-card g-orange"></div>
+                    <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                    <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
+                    </div>
+                </div>
+                <!-- Template de tarjeta-->
+
+                <div class="card-item">
+                    <div class="gradient-card g-blue"></div>
+                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Esperanza Café</h2>
+                    <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="gradient-card g-orange"></div>
+                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Dibub copamala</h2>
+                    <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="gradient-card g-orange"></div>
+                    <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                    <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="gradient-card g-blue"></div>
+                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Esperanza Café</h2>
+                    <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="gradient-card g-orange"></div>
+                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
+                    <div class="card-info">
+                    <h2 class="local-name">Dibub copamala</h2>
+                    <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+
+                    </div>
+                </div>
+                
             </div>
-            <ul class="breadcrumbs">
-                <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link">Principal</a>
-                </li>
-                <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link">Gastronomía</a>
-                </li>
-                <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link" id="categoria_lugar"> <!--Categoria del lugar--> </a>
-                </li>
-                <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link breadcrumbs__link--active"><!--Nombre del lugar--> </a>
-                </li>
-            </ul>
-            <h2 class="titulo"> <!--Nombre del lugar--> </h2>
-            <h3 class="direccion"><img
-                    src="https://cdn.icon-icons.com/icons2/2444/PNG/512/location_map_pin_direction_icon_148665.png"
-                    alt="">Chihuahua Chihuahua, Av imperio #13518</h3>
-
-            <button class="buton_ir">IR AL LUGAR</button>
+            
         </div>
-
+        <!--<button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg></button>-->
+        <div class="button-container">
+            <button class="button" id="chill">
+                <img src="pin-icon.png" alt="Pin">
+                Chill
+            </button>
+            <button class="button" id="maps">
+                <img src="maps-icon.png" alt="Google Maps">
+                Abrir en Google Maps
+            </button>
+            <button class="button" id="menu">
+                <img src="menu-icon.png" alt="Menu">
+                Menú del local
+            </button>
+        </div>
     </div>
-    <div class="deg2"></div>
-    <br> <br> <br> <br>
-
-
-    <div class="lugares_similares">
-
-        <div class="lugares_similares"></div>
-    </div>
-
-</body>
-
+    </body>
 </html>

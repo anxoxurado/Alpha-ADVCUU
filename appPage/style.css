@@ -119,8 +119,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .container-slider {
@@ -130,6 +128,8 @@ body{
     scrollbar-width: none;
     margin-bottom: 0.3vh;
     grid-template-columns: repeat(10, 1fr);
+    width: 50%;
+    margin: 1vw;
 }
 
 .container-slider::-webkit-scrollbar {
@@ -282,8 +282,8 @@ body{
 
 }
 .local-description span{
-
     color: rgb(255, 249, 235);
+    
 }
 
 .card-info .local-name{
