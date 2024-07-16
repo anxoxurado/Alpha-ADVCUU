@@ -8,7 +8,8 @@
     <style>
        
     </style>
-    <script src="script.js" type="text/JavaScript" language="JavaScript"></script>
+    <script src="sliders.js" type="text/JavaScript" language="JavaScript"></script>
+    <script src="filtros.js" type="text/JavaScript" language="JavaScript"></script>
 </head>
 <body>
     <div>
@@ -54,15 +55,51 @@
     </div> 
 
     <div class="container-md" id="feedContent">
-        <div class="row">
+        <div class="menu-container">
+        <div class="pestania-filtros">
             <div class="col-lg-8">
                 <img src="/Branding/Logo BlacklogoblackCurs.png" class="logoAtFeed" alt="">
             </div>
             <div class="col-lg-4 align-content-center" style="font-size: 2vw;">
-                <a href="#" class="customLink"><span class="fw-bold" style="margin-right:1vw;">Elige un plan</span><img src="/elementos/Bootstrap Triangle Fill.svg" class="rotTriangle" alt=""></a>
+                <a href="#" class="customLink"><span class="fw-bold" style="margin-right:1vw;" id="filtro-trigger">Elige un plan</span><img src="/elementos/Bootstrap Triangle Fill.svg" class="rotTriangle" alt=""></a>
+            </div>
+            </div>
+            <div class="menu-desplegable" id="menu-filtros">
+                <div class="despleagable-categorias">
+                    <h5>Categorías</h5>
+                    <form>
+                        <label><input type="radio" name="categoria" value="Cafeterias">Cafeterías</label>
+                        <label><input type="radio" name="categoria" value="Restaurantes">Restaurantes</label>
+                        <label><input type="radio" name="categoria" value="Bares">Bares</label>
+                        <label><input type="radio" name="categoria" value="Culturales">Culturales</label>
+                    </form>
+                </div>
+    
+                <div class="desplegable-ambiente">
+                    <h5>Ambiente</h5>
+                    <form>
+                        <label><input type="radio" name="ambiente" value="Chill">Chill</label>
+                        <label><input type="radio" name="ambiente" value="Familiar">Familiar</label>
+                        <label><input type="radio" name="ambiente" value="Amigos">Amigos</label>
+                        <label><input type="radio" name="ambiente" value="Pareja">Pareja</label>
+                    </form>
+                </div>
+    
+                <div class="desplegable-precio">
+                    <h5>Precio</h5>
+                    <form>
+                        <label><input type="radio" name="precio" value="lowest-price">$</label>
+                        <label><input type="radio" name="precio" value="low-price">$$</label>
+                        <label><input type="radio" name="precio" value="mid-price">$$$</label>
+                        <label><input type="radio" name="precio" value="high-price">$$$$+</label>
+                    </form>
+                </div> 
+    
+    
             </div>
         </div>
-        <h1 class="m-4">Top Cafeterías</h1>
+    </div>
+        <h1 class="m-5">Top Cafeterías</h1>
         <div class="feed-section">
             <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>
             <div class="container-slider">
@@ -167,7 +204,7 @@
                         <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
                         <div class="card-info">
                         <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+                        <p class="local-description"><span id="cat1">Céntrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
 
                         </div>
                     </div>
@@ -194,7 +231,7 @@
                         <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
                         <div class="card-info">
                         <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+                        <p class="local-description"><span id="cat1">Céntrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
 
                         </div>
                     </div>

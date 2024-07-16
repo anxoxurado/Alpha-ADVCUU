@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const slider = feedSection.querySelector('.container-slider');
         const scrollbarThumb = feedSection.nextElementSibling.querySelector('.scrollbar-thumb');
         const scrollbarTrack = feedSection.nextElementSibling.querySelector('.scrollbar-track');
-        const scrollAmount = slider.querySelector('.card-item').offsetWidth * 1.4;
+        const scrollAmount = slider.querySelector('.card-item').offsetWidth * 1.2;
 
         function updateButtonVisibility() {
             const maxScrollLeft = slider.scrollWidth - slider.clientWidth;

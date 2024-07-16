@@ -290,9 +290,111 @@ body{
     font-size: 1.8vw;
     padding: .5vw 2vw 0.5vw 2vw;
     background-color: whitesmoke;
-    border-radius: 10px;
+    border-radius: 2vh;
 }
 
 .card-info .local-description {
     font-size: 1.8vw;
 }
+
+.menu-container {
+    max-width: 1200px;
+    margin: 1vh auto;
+    background: linear-gradient(to bottom, #e6f2ff 0%, #ffe6e6 100%);
+    border-radius: 2vh;
+    overflow: hidden;
+    box-shadow: 0 0.4vh 0.6vw rgba(0,0,0,0.1);
+}
+
+.pestania-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 2vh;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-desplegable {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-out;
+    padding: 0 2vh;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-desplegable.active {
+    max-height: 1200px;
+    padding: 2vh;
+
+}
+
+.pestania-filtros,
+.menu-desplegable {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.menu-desplegable h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+.menu-desplegable > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin: 1%;
+}
+
+.menu-desplegable > div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.menu-desplegable form {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-desplegable label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-desplegable input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #999;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+.menu-desplegable input[type="radio"]:checked {
+    background-color: #FFA500;
+    border-color: #FFA500;
+}
+
+.menu-desplegable input[type="radio"]:checked::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
