@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
++document.addEventListener('DOMContentLoaded', function() {
   var openBtn = document.getElementById('openPopup');
   var popupContainer = document.getElementById('popupContainer');
   var popupFrame = document.getElementById('popupFrame');
