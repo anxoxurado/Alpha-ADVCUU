@@ -119,8 +119,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-
-
+    margin: 0 5%;
 }
 
 .container-slider {
@@ -140,7 +139,7 @@ body{
 .slide-button {
     position: relative;
     z-index: 2;
-    height: 6vh;
+    height: 2.5rem;
     width: auto;
     color: white;
     outline: none;
@@ -167,6 +166,7 @@ body{
     display: flex;
     align-items: center;
     position: relative;
+    
 }
 
 .slider-srollbar .scrollbar-track {
@@ -175,6 +175,7 @@ body{
     width: 100%;
     border-radius: 0.4vw;
     background: white;
+    margin: 0 5%;
 }
 
 .slider-srollbar:hover .scrollbar-track {
@@ -223,7 +224,8 @@ body{
 .card-list .card-item{
     width: 28vw;
     aspect-ratio: 3 / 4;
-    max-height: 100vh;
+    max-height: 150vh;
+    max-width: auto;
     margin: 1%;
 }
 
