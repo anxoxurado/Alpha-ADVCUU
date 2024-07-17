@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/styles/style_places.css">
     <link rel="stylesheet" href="/appPage/style.css">
     <script src="scriptslide.js" type="text/JavaScript" language="JavaScript"></script>
@@ -12,88 +13,170 @@
 
 <body>
     <div class="gradiente">
-        <div class="imagen"><img src="/Imagenes/kaldi.jpg" alt="top_image"></div>
-        <img src="/elementos/Gradiente azul.png" class="degradado" style="width: 100%; height: 54vw">
+        <div class="imagen-container">
+            <img src="/Imagenes/kaldi.jpg" alt="top_image" class="imagen-principal">
+            <div class="degradado-container">
+                <img src="/elementos/Gradiente azul.png" class="degradado">
+                <h1 class="titulo">Kaldi Cafe</h1>
+            </div>
+            <p class="texto-superior-derecha">Especializado <br>Acogedor <br> Popular </p>
+        </div>
     </div>
     <div class="feed-section1">
-        <!--<button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>-->
-        <div class="container-slider">
+        <!-- to do <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>-->
+        <div class="container-slider" style="width: 50%; height: 31vw;">
             <div class="card-list">
-                <!-- Template de tarjeta -->
+                <!-- Son las mismas tarjetas que jurado adaptadas solo con el gradiente y la imagen -->
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                    <h2 class="local-name">Kaldi Café</h2>
-                    <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
-                    </div>
                 </div>
                 <!-- Template de tarjeta-->
 
                 <div class="card-item">
                     <div class="gradient-card g-blue"></div>
                     <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                    <h2 class="local-name">Esperanza Café</h2>
-                    <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
-                    </div>
                 </div>
 
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
                     <div class="card-info">
-                    <h2 class="local-name">Dibub copamala</h2>
-                    <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
-
+                        <!-- No tengo idea de porque si quitas este div todo se va al krajo -->
                     </div>
                 </div>
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                    <h2 class="local-name">Kaldi Café</h2>
-                    <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
-                    </div>
                 </div>
 
                 <div class="card-item">
                     <div class="gradient-card g-blue"></div>
                     <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                    <h2 class="local-name">Esperanza Café</h2>
-                    <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
-                    </div>
                 </div>
 
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                    <h2 class="local-name">Dibub copamala</h2>
-                    <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
-
                     </div>
                 </div>
                 
             </div>
-            
-        </div>
-        <!--<button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg></button>-->
+        <!-- to do <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg></button>-->
         <div class="button-container">
             <button class="button" id="chill">
-                <img src="pin-icon.png" alt="Pin">
+                <img src="/elementos/6650146.png" alt="chill" style="width: 5vw; height: auto;">
                 Chill
             </button>
             <button class="button" id="maps">
-                <img src="maps-icon.png" alt="Google Maps">
+                <img src="/elementos/Google_Maps_Logo_2020.svg.png" alt="Google Maps" style="width: 5vw; height: auto;">
                 Abrir en Google Maps
             </button>
             <button class="button" id="menu">
-                <img src="menu-icon.png" alt="Menu">
+                <img src="/elementos/1046849.png" alt="Menu" style="width: 5vw; height: auto;">
                 Menú del local
             </button>
         </div>
     </div>
+    <h1 class="m-4">Relacionado...</h1>
+        <div class="feed-section">
+            <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>
+            <div class="container-slider">
+                <div class="card-list">
+                   
+                    <!-- Template de tarjeta -->
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Kaldi Café</h2>
+                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
+                        </div>
+                    </div>
+                    <!-- Template de tarjeta-->
+
+                    <div class="card-item">
+                        <div class="gradient-card g-blue"></div>
+                        <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Esperanza Café</h2>
+                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
+                        </div>
+                    </div>
+    
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Dibub copamala</h2>
+                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Kaldi Café</h2>
+                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> - <span id="cat3">Popular</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="card-item">
+                        <div class="gradient-card g-blue"></div>
+                        <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Esperanza Café</h2>
+                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> - <span id="cat3">Ameno</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="card-item">
+                        <div class="gradient-card g-orange"></div>
+                        <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
+                        <div class="card-info">
+                        <h2 class="local-name">Dibub copamala</h2>
+                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> - <span id="cat3">Nocturno</span> </p>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"/></svg></button>
+        </div>
+        <div class="slider-srollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+              <div class="footer-logo">
+                <img src="/Branding/Group 40.png" alt="Logo CUU">
+              </div>
+              <div class="footer-sections">
+                <div class="footer-section">
+                  <h4>¿Quienes somos?</h4>
+                  <ul>
+                    <li><a href="#">Misión</a></li>
+                    <li><a href="#">Visión</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                  </ul>
+                </div>
+                <div class="footer-section">
+                  <h4>Contáctanos</h4>
+                  <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">Enviar correo</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
     </body>
 </html>

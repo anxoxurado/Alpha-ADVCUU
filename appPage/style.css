@@ -128,7 +128,7 @@ body{
     scrollbar-width: none;
     margin-bottom: 0.3vh;
     grid-template-columns: repeat(10, 1fr);
-    width: 50%;
+
     margin: 1vw;
 }
 
