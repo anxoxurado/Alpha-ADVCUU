@@ -26,10 +26,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let startX;
         let scrollLeft;
 
+        // Añadir estilos CSS para transiciones suaves
+        prevButton.style.transition = 'opacity 0.3s ease-in-out';
+        nextButton.style.transition = 'opacity 0.3s ease-in-out';
+
         function updateButtonVisibility() {
             const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-            prevButton.style.display = slider.scrollLeft <= 0 ? 'none' : 'block';
-            nextButton.style.display = slider.scrollLeft >= maxScrollLeft ? 'none' : 'block';
+            const scrollPercentage = slider.scrollLeft / maxScrollLeft;
+
+            // Fade del botón previo
+            const prevOpacity = Math.max(0, Math.min(1, slider.scrollLeft / (slider.clientWidth * 0.2)));
+            prevButton.style.opacity = prevOpacity;
+            prevButton.style.visibility = prevOpacity > 0 ? 'visible' : 'hidden';
+
+            // Fade del botón siguiente
+            const nextOpacity = Math.max(0, Math.min(1, (maxScrollLeft - slider.scrollLeft) / (slider.clientWidth * 0.2)));
+            nextButton.style.opacity = nextOpacity;
+            nextButton.style.visibility = nextOpacity > 0 ? 'visible' : 'hidden';
         }
 
         function updateScrollbarThumb() {
