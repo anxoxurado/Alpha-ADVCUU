@@ -119,8 +119,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-
-
+    margin: 0 5%;
 }
 
 .container-slider {
@@ -140,13 +139,19 @@ body{
 .slide-button {
     position: relative;
     z-index: 2;
-    height: 6vh;
-    width: auto;
+    height: 2.5rem;
+    width: 2.5rem;
     color: white;
     outline: none;
     background-color: #e67200;
     border: none;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Tamaño base para el contenido del botón */
 }
 
 .slide-button#prev-slide {
@@ -159,6 +164,77 @@ body{
 
 .slide-button:hover {
     background-color: #a66829;
+    transform: scale(1.1);
+}
+
+/* Media queries para responsividad */
+
+/* Pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    .slide-button {
+        height: 2rem;
+        width: 2rem;
+        font-size: 0.8rem;
+    }
+
+    .slide-button#prev-slide {
+        right: 0.5vw;
+    }
+
+    .slide-button#next-slide {
+        left: 0.5vw;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .slide-button {
+        height: 2.25rem;
+        width: 2.25rem;
+        font-size: 0.9rem;
+    }
+
+    .slide-button#prev-slide {
+        right: 1vw;
+    }
+
+    .slide-button#next-slide {
+        left: 1vw;
+    }
+}
+
+/* Pantallas grandes (desktops) */
+@media screen and (min-width: 1200px) {
+    .slide-button {
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.2rem;
+    }
+
+    .slide-button#prev-slide {
+        right: 2vw;
+    }
+
+    .slide-button#next-slide {
+        left: 2vw;
+    }
+}
+
+/* Pantallas extra grandes */
+@media screen and (min-width: 1600px) {
+    .slide-button {
+        height: 3.5rem;
+        width: 3.5em;
+        font-size: 1.4rem;
+    }
+
+    .slide-button#prev-slide {
+        right: 2.5vw;
+    }
+
+    .slide-button#next-slide {
+        left: 2.5vw;
+    }
 }
 
 .slider-srollbar {
@@ -167,6 +243,7 @@ body{
     display: flex;
     align-items: center;
     position: relative;
+    
 }
 
 .slider-srollbar .scrollbar-track {
@@ -175,6 +252,7 @@ body{
     width: 100%;
     border-radius: 0.4vw;
     background: white;
+    margin: 0 5%;
 }
 
 .slider-srollbar:hover .scrollbar-track {
@@ -223,7 +301,8 @@ body{
 .card-list .card-item{
     width: 28vw;
     aspect-ratio: 3 / 4;
-    max-height: 100vh;
+    max-height: 150vh;
+    max-width: auto;
     margin: 1%;
 }
 
@@ -290,9 +369,165 @@ body{
     font-size: 1.8vw;
     padding: .5vw 2vw 0.5vw 2vw;
     background-color: whitesmoke;
-    border-radius: 10px;
+    border-radius: 2vh;
 }
 
 .card-info .local-description {
     font-size: 1.8vw;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 1vh auto;
+    background: linear-gradient(to bottom, #e6f2ff 0%, #ffe6e6 100%);
+    border-radius: 2vh;
+    overflow: hidden;
+    box-shadow: 0 0.4vh 0.6vw rgba(0,0,0,0.1);
+}
+
+.pestania-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 2vh;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-desplegable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-out;
+    padding: 0 2vh;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-desplegable.active {
+    max-height: 1200px;
+    padding: 2vh;
+}
+
+.pestania-filtros,
+.menu-desplegable {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.menu-desplegable h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.menu-desplegable > div {
+    width: 18%;
+    margin: 1%;
+    min-width: 150px; /* Añadimos un ancho mínimo */
+}
+
+.menu-desplegable > div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.menu-desplegable form {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-desplegable label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permitimos que el contenido se envuelva si es necesario */
+}
+
+.menu-desplegable input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px; /* Aseguramos un ancho mínimo */
+    border: 2px solid #999;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    flex-shrink: 0; /* Evitamos que el radio se encoja */
+}
+
+.menu-desplegable input[type="radio"]:checked {
+    background-color: #FFA500;
+    border-color: #FFA500;
+}
+
+.menu-desplegable input[type="radio"]:checked::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.menu-desplegable label span {
+    flex: 1;
+    min-width: 0; /* Permite que el texto se ajuste */
+    word-break: break-word; /* Permite romper palabras largas */
+}
+
+/* Media queries para responsividad */
+
+@media screen and (max-width: 1024px) {
+    .menu-desplegable > div {
+        width: 31%;
+        margin: 1%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-desplegable > div {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-desplegable > div {
+        width: 100%;
+        margin: 2% 0;
+    }
+    
+    .pestania-filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .menu-container {
+        border-radius: 1vh;
+    }
+    
+    .pestania-filtros {
+        padding: 1vh;
+    }
+    
+    .menu-desplegable.active {
+        padding: 1vh;
+    }
+    
+    .menu-desplegable input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+    }
 }
