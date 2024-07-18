@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   
+    <div class="black_gradient">
     <div class="container mt-5">
         <div class="row justify-content-center align-items-center">
             <div class="col-12 d-block d-sm-none small_logo text-center">
@@ -33,22 +33,46 @@
     </div>
     
 
-    <div class="container ">
+    <div class="container-fluid text-center text-white mt-5 p-5 mainCallout d-sm-block d-none">
         <div class="row">
             <div class="col-12">
-                <h1>El sitio con los mejores</h1>
+                <h1>El único sitio con los mejores</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-sm-5">
+            <div class="col-12 align-items-sm-end mb-5">
                 <div class="palabras">
-                    <h1 class="auto-type"></h1>
+                    <span class="text-decoration-underline link-underline-info"> <h1 class="auto-type"></h1> </span>
             </div>
             </div>
-            <div class="col-12 col-sm-7">
+            <div class="col-12 tryCol mt-5">
                 <h1>de Chihuahua.</h1>
             </div>
         </div>
+    </div>
+    
+    <div class="container-fluid text-center text-white mt-5 p-5 mainCallout d-sm-none d-block">
+        <div class="row">
+            <div class="col-12">
+                <h1>El único sitio con los mejores</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 align-items-sm-end mb-1">
+                <div class="palabras">
+                    <span class="text-decoration-underline link-underline-info"> <h1 class="auto-type_small"></h1> </span>
+            </div>
+            </div>
+            <div class="col-12 tryCol mt-3 d-none d-sm-block">
+                <h1>de Chihuahua.</h1>
+            </div>
+            <div class="col-12 tryCol mt-3 d-sm-none d-block">
+                <h1 style="font-size: 9vw;">de Chihuahua.</h1>
+            </div>
+        </div>
+    </div>
+    
+        
     </div>
     <div class="carrousel d-none d-sm-block">
         <div class="slide slide-1">
@@ -56,7 +80,7 @@
         </div>
 
         <div class="slide slide-2">
-            <img src="/Imagenes/bg-borders/BackgroundBorderscoffee.png">
+            <img src="/Imagenes/bg-borders/BackgroundBorderscatedral.png">
         </div>
 
         <div class="slide slide-3">
@@ -71,6 +95,48 @@
             <img src="/Imagenes/bg-borders/BackgroundBordersiglesia.png">
         </div>
     </div>
+    <div class="small_carrousel d-block d-sm-none">
+        <div class="slide slide-1">
+            <img src="/Imagenes/bg-borders/VerticalBGcatedral.png">
+        </div>
+
+        <div class="slide slide-2">
+            <img src="/Imagenes/bg-borders/VerticalBGmural.png">
+        </div>
+
+        <div class="slide slide-3">
+            <img src="/Imagenes/bg-borders/VerticalBGquinta.png">
+        </div>
+        <div class="slide slide-4">
+            <img src="/Imagenes/bg-borders/VerticalBGverTree.png">
+        </div>
+    </div>
+
+    <div class="second_callout d-sm-block d-none">
+        <div class="estado_ciudad float-end">
+            <img src="elementos/Estado - Ciudad.svg" alt="">
+
+        </div>
+        <div class="container justify-content-center align-content-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Porque nuestra ciudad necesita</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <h3 style="font-weight: 700;">recomendaciones <span style="color: #FA9939">locales</span>.</h3>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt5 googleTrash">
+            <div class="co-sm-9">
+                <h5>no de google maps.</h5>
+            </div>
+        </div>
+        
+    </div>
 
     
     
@@ -78,13 +144,32 @@
 </body>
 <script>
     var typed = new Typed(".auto-type",{
-        strings : ["cafés","bares", "restaurantes", "puestos", "restaurantes", "culturales"],
+        strings : ["cafés","bares", "restaurantes", "puestos", "restaurantes", "culturales", "lugares"],
         typeSpeed: 150,
         backSpeed: 50,
         looped: true,
         loopCount: Infinity,
         showCursor: false,
         fadeOut: false,
+        smartBackspace: true,
+        backspace: (curString, curStrPos) => {
+    return {
+      hideWhenDone: true,
+      hideWhenDoneDelay: 0
+    };
+  },
+
+    })
+
+    var typed = new Typed(".auto-type_small",{
+        strings : ["cafés","bares", "restaurantes", "puestos", "restaurantes", "culturales", "lugares"],
+        typeSpeed: 150,
+        backSpeed: 50,
+        looped: true,
+        loopCount: Infinity,
+        showCursor: false,
+        fadeOut: false,
+        smartBackspace: true,
         backspace: (curString, curStrPos) => {
     return {
       hideWhenDone: true,
