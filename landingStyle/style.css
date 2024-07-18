@@ -16,6 +16,11 @@ body {
     
 }
 
+.navbar-logo-large {
+    display: block;
+}
+
+
 .carrousel {
     width: 100%;
     height: 100vh;
@@ -103,66 +108,52 @@ body {
 }
 
 .col-12 .fw-semibold {
-    font-size: 55pt;
-}
-
-@keyframes slide {
-    0%, 16% {
-        transform: translateY(-1%);
-    }
-    21%, 37% {
-        transform: translateY(-22%);
-    }
-    41%, 57% {
-        transform: translateY(-44%);
-    }
-    62%, 75% {
-        transform: translateY(-63%);
-    }
-    80% , 96%{
-        transform: translateY(-82%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+    font-size: 5vw;
 }
 
 
+.navbar .full-logo {
+    width: 20vw;
+    padding: .5vw;
+}
+.navbar .small-logo {
+    width: 10vw;
+    padding: .5vw;
+}
+
+
+
+.placeholder {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
 
 .palabras{
-    overflow: hidden;
-    height: 15vh;
-    text-shadow: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.152);
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1em; /* Ensures a minimum height */
 
-.palabrasSlide{
-    display:block;
-    white-space: none;
-    animation: 15s slide infinite linear;
-}
 
-.palabrasSlide h1{
+}
+.palabras > h1{
     color: white;
-    display: block; 
-    font-family: 'Playfair Display', serif;
-    margin: 1vh 0;
+    font-family: 'Playfair Digital', serif;
+    font-size: 5vw;
+    justify-content: center;
 }
 
 
-.palabras:hover .palabrasSlide{
-    animation-play-state: paused;
+#deChihuahua> h1{
+    font-size: 5vw;
+    font-family: inter, sans-serif;
+    
 }
 
 
-
-
-
-.logo-for-movil {
-    position:relative;
-    display: none;
-}
 
 
 
@@ -232,130 +223,49 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
   
-  @media (max-width: 850px) {
-    .navbar-collapse {
-      background: rgba(203, 145, 83, 0.9);
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: 10px;
+
+
+
+
+
+@media (max-width: 991.98) {
+    .col-12 > .fw-semibold{
+        font-size: 7vw;
     }
-
-    .navbar {
-        background: rgba(84, 83, 83, 0.0);
-        backdrop-filter: none;
-        border-radius: 15px;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: none;
-    
-      }
-      .navbar::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit; /* Hereda el border-radius del elemento padre */
-        padding: 0px; /* Espesor del borde */
-        background: none; /* Gradiente para el borde */
-        -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
-            linear-gradient(#fff 0 0); /* Máscara para crear el borde */
-        mask: 
-            linear-gradient(#fff 0 0) content-box, 
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out; /* Para navegadores WebKit */
-        mask-composite: exclude; /* Para otros navegadores */
-        z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
-    }
-  }
-
-
-
-.navbar-logo-large {
-    display: block;
-}
-
-.navbar-logo-small {
-    display: none;
-}
-
-@media (max-width: 850px) {
-    .navbar-logo-large {
-        display: none;
-    }
-
-    .navbar-logo-small {
-        display: block;
-        width: 10vw;
-        padding: .5vw;
+    .palabras > h1{
+        color: white;
+        font-family: 'Playfair Digital', serif;
+        font-size: 5vw;
+        justify-content: center;
+        font-weight: 800;
         
     }
-    .full-logo {
-        width: 20vw;
-        padding: .5vw;
-    }
-
-}
-
-
-
-/* Para pantallas más grandes */
-
-
-/* Para pantallas medianas */
-@media (min-width: 701px) and (max-width: 1200px) {
-
-    .navbar .full-logo {
-        width: 20vw;
-        padding: .5vw;
-    }
-    .navbar .small-logo {
-        width: 10vw;
-        padding: .5vw;
-    }
-}
-
-
-
-
-/* Para pantallas muy pequeñas */
-@media (max-width: 690px) {
-    .carrousel {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .slide {
-        animation: none;
-        opacity: 100;
-    }   
-
-    .slide-1 {
-        position:relative;
-        z-index: 2; 
-    }
-
-
-
-    .title-container {
-        display: none;
-    }
-
-    .logo-for-movil {
-        position: absolute;
-        top: 25%;
-        display: flex;
-        width: 80%;
-    }
     
-
     
+    .col-8 >.palabras > h1{
+        font-size: 5vw;
+        font-family: inter, sans-serif;
+        
+    }
+
+    .full-logo{
+        display: block;
+    }
+
+
+
+    .navbar-container .btn-info {
+        margin-left: auto;
+    }
+
+    .navbar-container .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-container .container {
+        justify-content: space-between;
+        align-items: center;
+    }
 
 }
-
 

@@ -18,22 +18,19 @@
 <body>
     <div class="navbar-container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <div class="d-flex flex-grow-1">
-                    <img src="Branding/Component 10.png" alt="" class="navbar-logo-large full-logo">
-                    <img src="Branding/Component 9applogo.png" alt="" class="navbar-logo-small small-logo">
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse flex-grow-1" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Sobre el proyecto</a></li>
-                            <a href="appPage/app.html"><button type="button" class="btn btn-info"><span class="text-white">Comenzar a buscar</span></button></a>
-                        </ul>
-                    </div>
+            <div class="container">
+                <img src="Branding/Component 10.png" alt="" class="navbar-logo-large full-logo">
+                <div class="collapse navbar-collapse" id="navbarNav">
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre el proyecto</a></li>
+                    </ul>
                 </div>
+                <a href="appPage/app.html" class="ms-auto">
+                    <button type="button" class="btn btn-info text-white">Comenzar a buscar</button>
+                </a>
             </div>
         </nav>
     </div>
@@ -58,54 +55,68 @@
             <img src="Imagenes/bg-borders/BackgroundBordersiglesia.png">
         </div>
     </div>
-    <img src="Branding\Group 32.svg" alt="" class="logo-for-movil">
 
 
     <div class="title">
-        <div class="container-fluid">
+        <div class="container-fluid marginState">
     
             <div class="row">
-                <div class="col-12 ">
+                <div class="col-12">
                     <h1 class="fw-semibold">El sitio con los mejores</h1>
                 </div>
             </div>
-            
             <div class="row">
-                <div class="col-6">
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-3 ">
                     <div class="palabras">
-                        <div class="palabrasSlide">
-
-                            <h1>Cafés</h1>
-                            <h1>Bares</h1>
-                            <h1>Street Food&nbsp;</h1>
-                            <h1>Restaurantes&nbsp;</h1>
-                            <h1>Culturales&nbsp;</h1>
-                        </div>
-                        <div class="palabrasSlide">
-
-                            <h1>Cafés</h1>
-                            <h1>Bares</h1>
-                            <h1>Street Food&nbsp;</h1>
-                            <h1>Restaurantes&nbsp;</h1>
-                            <h1>Culturales&nbsp;</h1>
-                        </div>
+                            <h1 class="auto-type"></h1>
+                            <h1 class="placeholder" aria-hidden="true">restaurantes</h1>
                     </div>
                 </div>
-                <div class="col-6">
-                    <h1>de Chihuahua</h1>
+                <div class="col-lg-8 col-sm-6 col-6">
+                    <div class="palabras" id="deChihuahua">
+                        <h1>de <span class="text-decoration-underline">Chihuahua</span>.</h1>
+
+                    </div>
 
                 </div>
             </div>
             
         </div>
+
+       
         
     </div>
 
+
+
+    </div>
+
+
     
 
-
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
+<script>
+    var typed = new Typed(".auto-type",{
+        strings : ["cafés","bares", "restaurantes", "puestos", "restaurantes", "culturales"],
+        typeSpeed: 150,
+        backSpeed: 50,
+        looped: true,
+        loopCount: Infinity,
+        showCursor: false,
+        fadeOut: false,
+        backspace: (curString, curStrPos) => {
+    return {
+      hideWhenDone: true,
+      hideWhenDoneDelay: 0
+    };
+  },
 
+    })
+</script>
 
 
 </html>
