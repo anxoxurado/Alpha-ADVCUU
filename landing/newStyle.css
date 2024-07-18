@@ -151,6 +151,7 @@ body{
     background-color: #075151;
 }
 
+
 .estado_ciudad {
     position: relative;
 }
@@ -163,6 +164,8 @@ body{
     font-size: 3.5vw;
 }
 
+
+
 .second_callout .container{
     position: absolute;
     height: 90%;
@@ -173,4 +176,34 @@ body{
     position: relative;
     top: 70%;
     padding-left: 4vw;
+
+}
+
+
+
+/* SMALL */
+.second_callout_small{
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    background-color: #075151;
+}
+.second_callout_small .container{
+    position: absolute;
+    height: 90%;
+    padding: 4vw;
+}
+.second_callout_small h3{
+    font-size: 3.5vw;
+}
+
+
+.googleTrash_small{
+    position: relative;
+    top: 70%;
+    padding-left: 4vw;
+}
+
+.googleTrash_small h5{
+    font-size: 3vw;
 }
