@@ -113,8 +113,10 @@ body {
 
 
 .navbar .full-logo {
-    width: 20vw;
+    width: 25vw;
     padding: .5vw;
+    min-width: 100px;
+    min-height: 20px;
 }
 .navbar .small-logo {
     width: 10vw;
@@ -250,6 +252,7 @@ body {
 
     .full-logo{
         display: block;
+
     }
 
 
