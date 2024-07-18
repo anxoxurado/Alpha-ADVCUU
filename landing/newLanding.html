@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos al centro CUU</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="newStyle.css">
+
+</head>
+
+<body>
+   
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 d-block d-sm-none small_logo text-center">
+                <img src="../Branding/Component 9applogo.png" alt="app logo">
+            </div>
+        </div>
+    </div>
+    <div class="container-sm d-none d-sm-block rounded-4 navbar_custom">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a href="/appPage/app.html" class="navbar-brand big_logo">
+                    <img src="../Branding/Component 10.png" alt="app logo">
+                </a>
+                <button class="btn btn-info text-white shadow-lg" type="button">Comenzar a buscar</button>
+
+                
+            </div>
+        </nav>
+            
+        
+    </div>
+    
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <h1>El sitio con los mejores</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-5">
+                <div class="palabras">
+                    <h1 class="auto-type"></h1>
+            </div>
+            </div>
+            <div class="col-12 col-sm-7">
+                <h1>de Chihuahua.</h1>
+            </div>
+        </div>
+    </div>
+    <div class="carrousel d-none d-sm-block">
+        <div class="slide slide-1">
+            <img src="/Imagenes/bg-borders/BackgroundBordersmural.png">
+        </div>
+
+        <div class="slide slide-2">
+            <img src="/Imagenes/bg-borders/BackgroundBorderscoffee.png">
+        </div>
+
+        <div class="slide slide-3">
+            <img src="/Imagenes/bg-borders/BackgroundBordersrestaurante.png">
+        </div>
+
+        <div class="slide slide-4">
+            <img src="/Imagenes/bg-borders/BackgroundBorderstuTio.png">
+        </div>
+
+        <div class="slide slide-5">
+            <img src="/Imagenes/bg-borders/BackgroundBordersiglesia.png">
+        </div>
+    </div>
+
+    
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</body>
+<script>
+    var typed = new Typed(".auto-type",{
+        strings : ["cafés","bares", "restaurantes", "puestos", "restaurantes", "culturales"],
+        typeSpeed: 150,
+        backSpeed: 50,
+        looped: true,
+        loopCount: Infinity,
+        showCursor: false,
+        fadeOut: false,
+        backspace: (curString, curStrPos) => {
+    return {
+      hideWhenDone: true,
+      hideWhenDoneDelay: 0
+    };
+  },
+
+    })
+</script>
+
+</html>
