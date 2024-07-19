@@ -22,16 +22,21 @@ body {
   align-items: center;
   box-shadow: 0 4px 30px #000000ab;
 }
+.navbar > .container_fluid > a {
+  width: 10vw;
+  height: 100%;
+}
 
 .small_logo > img {
   width: 70px;
 }
 
 .big_logo > img {
-  width: 80%;
+  padding: 0.25vw 1vw;
+  width: 100%;
 }
 .big_logo {
-  width: 40%;
+  width: 25%;
 }
 .palabras {
   height: 40.5px;
@@ -216,6 +221,30 @@ body {
   font-size: 3vw;
 }
 
+/* BIG */
+.mainCallout_big h1 {
+  text-shadow: 0px 5px 20px #00000052;
+  font-weight: 600;
+  font-size: 5vw;
+}
+
+.mainCallout_big .palabras {
+  min-height: 80%;
+  justify-content: center;
+}
+
+/* BIG */
+.mainCallout_big h1 {
+  text-shadow: 0px 5px 20px #00000052;
+  font-weight: 600;
+  font-size: 5vw;
+}
+
+.mainCallout_big .palabras {
+  min-height: 80%;
+  justify-content: center;
+}
+
 .title {
   color: #ff6600;
   font-weight: 700;
@@ -244,15 +273,16 @@ body {
   margin: 1%;
 }
 
-.cards{
+.cards {
   overflow: hidden;
-  padding:0;
+  padding: 0;
   background: white;
   white-space: nowrap;
   position: relative;
 }
 
-.cards::before, .cards::after {
+.cards::before,
+.cards::after {
   position: absolute;
   top: 0;
   width: 10vw;
@@ -271,7 +301,6 @@ body {
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
 }
 
-
 .card-slide {
   display: inline-block;
   animation: 18s slide infinite linear;
@@ -282,7 +311,7 @@ body {
   margin: 0 4vw;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .card-slide img {
     width: 38vw;
   }
@@ -304,7 +333,156 @@ body {
 }
 
 .footer {
-  background-color: #FFA500;
+  background-color: #ffa500;
+  color: white;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 6vw;
+}
+
+.footer-logo img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-section {
+  margin-left: 5%;
+  font-size: 1.2vw;
+}
+
+.footer-section h4 {
+  margin-bottom: 10%;
+  font-size: 1.4vw;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 4px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.title {
+  color: #ff6600;
+  font-weight: 700;
+  font-size: 3vw;
+}
+
+.title2 {
+  color: #2e2e2e;
+  font-weight: 700;
+  font-size: 3vw;
+}
+
+.subtitle {
+  color: #686868;
+  font-weight: 500;
+  font-size: 2vw;
+}
+
+.menu-img {
+  display: flex;
+  justify-content: center;
+}
+
+#menu-img {
+  width: 80vw;
+  margin: 1%;
+}
+
+.cards {
+  overflow: hidden;
+  padding: 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.cards::before,
+.cards::after {
+  position: absolute;
+  top: 0;
+  width: 10vw;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.cards:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.cards::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.card-slide {
+  display: inline-block;
+  animation: 18s slide infinite linear;
+}
+
+.card-slide img {
+  width: 20vw;
+  margin: 0 4vw;
+}
+
+@media screen and (max-width: 768px) {
+  .card-slide img {
+    width: 38vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-slide img {
+    width: 22vw;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.footer {
+  background-color: #ffa500;
   color: white;
   padding: 20px;
 }
