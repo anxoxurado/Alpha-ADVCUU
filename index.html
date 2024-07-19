@@ -30,10 +30,10 @@
       </div>
 
       <div
-        class="container-fluid text-center text-white mt-5 p-5 mainCallout d-sm-block d-none"
+        class="container-fluid text-center text-white mt-5 p-5 mainCallout_big d-md-block d-sm-none d-none"
       >
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 mb-0">
             <h1>El único sitio con los mejores</h1>
           </div>
         </div>
@@ -52,7 +52,29 @@
       </div>
 
       <div
-        class="container-fluid text-center text-white mt-5 p-5 mainCallout d-sm-none d-block"
+        class="container-fluid text-center text-white mt-5 p-5 mainCallout d-md-none d-sm-block d-none"
+      >
+        <div class="row">
+          <div class="col-12 mb-0">
+            <h1>El único sitio con los mejores</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 align-items-sm-end mb-5">
+            <div class="palabras">
+              <span class="text-decoration-underline link-underline-info">
+                <h1 class="auto-type_mid"></h1>
+              </span>
+            </div>
+          </div>
+          <div class="col-12 tryCol mt-5">
+            <h1>de Chihuahua.</h1>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container-fluid text-center text-white mt-5 p-5 mainCallout mainCallout_Small d-sm-none d-block"
       >
         <div class="row">
           <div class="col-12">
@@ -72,6 +94,13 @@
           </div>
           <div class="col-12 tryCol mt-3 d-sm-none d-block">
             <h1 style="font-size: 9vw">de Chihuahua.</h1>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="d-block d-sm-none">
+            <button class="btn btn-info text-white shadow-lg" type="button">
+              Comenzar a buscar
+            </button>
           </div>
         </div>
       </div>
@@ -111,6 +140,9 @@
       </div>
       <div class="slide slide-4">
         <img src="/Imagenes/bg-borders/VerticalBGverTree.png" />
+      </div>
+      <div class="slide slide-5">
+        <img src="/Imagenes/bg-borders/VerticalBGcatedral.png" />
       </div>
     </div>
 
@@ -175,11 +207,12 @@
     var typed = new Typed(".auto-type", {
       strings: [
         "cafés",
+        "negocios locales",
         "bares",
         "restaurantes",
         "puestos",
         "restaurantes",
-        "culturales",
+        "centros culturales",
         "lugares",
       ],
       typeSpeed: 150,
@@ -204,10 +237,35 @@
         "restaurantes",
         "puestos",
         "restaurantes",
-        "culturales",
+        "centros culturales",
         "lugares",
       ],
-      typeSpeed: 150,
+      typeSpeed: 100,
+      backSpeed: 50,
+      looped: true,
+      loopCount: Infinity,
+      showCursor: false,
+      fadeOut: false,
+      smartBackspace: true,
+      backspace: (curString, curStrPos) => {
+        return {
+          hideWhenDone: true,
+          hideWhenDoneDelay: 0,
+        };
+      },
+    });
+
+    var typed = new Typed(".auto-type_mid", {
+      strings: [
+        "cafés",
+        "bares",
+        "restaurantes",
+        "puestos",
+        "restaurantes",
+        "centros culturales",
+        "lugares",
+      ],
+      typeSpeed: 100,
       backSpeed: 50,
       looped: true,
       loopCount: Infinity,
