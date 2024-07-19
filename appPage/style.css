@@ -175,6 +175,7 @@ body{
 /* Pantallas pequeñas (móviles) */
 @media screen and (max-width: 480px) {
     .slide-button {
+        display: none;
         height: 2rem;
         width: 2rem;
         font-size: 0.8rem;
@@ -209,8 +210,7 @@ body{
 /* Pantallas grandes (desktops) */
 @media screen and (min-width: 1200px) {
     .slide-button {
-        height: 3rem;
-        width: 3rem;
+        width: 3vw;
         font-size: 1.2rem;
     }
 
@@ -226,9 +226,9 @@ body{
 /* Pantallas extra grandes */
 @media screen and (min-width: 1600px) {
     .slide-button {
-        height: 3.5rem;
-        width: 3.5em;
-        font-size: 1.4rem;
+        width: 5vw;
+        height: 3vw;
+        font-size: 2rem;
     }
 
     .slide-button#prev-slide {
@@ -379,13 +379,19 @@ body{
     font-size: 1.8vw;
 }
 
+.contenedor{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .menu-container {
-    max-width: 1200px;
-    margin: 1vh auto;
+    max-width: 2500px;
     background: linear-gradient(to bottom, #e6f2ff 0%, #ffe6e6 100%);
     border-radius: 2vh;
     overflow: hidden;
     box-shadow: 0 0.4vh 0.6vw rgba(0,0,0,0.1);
+    font-size: 1rem;
 }
 
 .pestania-filtros {
@@ -399,58 +405,48 @@ body{
 }
 
 .menu-desplegable {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in, padding 0.5s ease-out;
-    padding: 0 2vh;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     background: transparent;
     position: relative;
     z-index: 1;
 }
 
 .menu-desplegable.active {
-    max-height: 1200px;
-    padding: 2vh;
-}
-
-.pestania-filtros,
-.menu-desplegable {
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.menu-desplegable h5 {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: black;
-}
-
-.menu-desplegable > div {
-    width: 18%;
-    margin: 1%;
-    min-width: 150px; /* Añadimos un ancho mínimo */
-}
-
-.menu-desplegable > div:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    max-height: 500px;
+    
 }
 
 .menu-desplegable form {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2vh;
 }
 
-.menu-desplegable label {
-    margin-bottom: 10px;
+.seccion {
+    flex: 1;
+    padding: 0 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* Permitimos que el contenido se envuelva si es necesario */
+    justify-content: center;
+}
+
+.seccion h5 {
+    display: flex;
+    margin-bottom: 1.5vh;
+    font-weight: bold;
+    font-size: 2.2vh;
+    color: black;
+    align-self: baseline;
+}
+
+.seccion label {
+    display: flex;
+    margin-bottom: 10px;
+    align-self:baseline;
+    margin-left: 35%;
 }
 
 .menu-desplegable input[type="radio"] {
@@ -458,7 +454,7 @@ body{
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    min-width: 20px; /* Aseguramos un ancho mínimo */
+    min-width: 20px;
     border: 2px solid #999;
     border-radius: 4px;
     margin-right: 10px;
@@ -481,56 +477,77 @@ body{
     font-size: 12px;
 }
 
-.menu-desplegable label span {
-    flex: 1;
-    min-width: 0; /* Permite que el texto se ajuste */
-    word-break: break-word; /* Permite romper palabras largas */
+/* Estilos para el botón de "Elige un plan" */
+.customLink {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Media queries para responsividad */
-
-@media screen and (max-width: 1024px) {
-    .menu-desplegable > div {
-        width: 31%;
-        margin: 1%;
-    }
+.rotTriangle {
+    transition: transform 0.3s ease;
 }
 
+.rotTriangle.active {
+    transform: rotate(180deg);
+}
+
+/* Media queries */
 @media screen and (max-width: 768px) {
-    .menu-desplegable > div {
-        width: 48%;
-        margin: 1%;
+    .menu-desplegable form {
+        flex-direction: column;
+    }
+
+    .seccion {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .seccion label {
+        margin-left:0;
+    }
+
+    .seccion{
+        flex-direction: column;
+        align-items: baseline;
+        justify-content:baseline;
+    }
+
+    .menu-desplegable form {
+        font-size: 1.2vh;
+    }
+
+    .seccion h5 {
+        font-size: 1.8vh;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .menu-desplegable > div {
-        width: 100%;
-        margin: 2% 0;
-    }
-    
     .pestania-filtros {
         flex-direction: column;
         align-items: flex-start;
+        margin:0;
+    }
+
+    .seccion label {
+        margin-left:0;
+    }
+
+    .seccion{
+        flex-direction: column;
+        align-items: baseline;
+        justify-content:baseline;
+    }
+
+    .menu-desplegable form {
+        font-size: 1.2vh;
+    }
+
+    .seccion h5 {
+        font-size: 1.6vh;
     }
 }
 
-@media screen and (max-width: 360px) {
-    .menu-container {
-        border-radius: 1vh;
-    }
-    
-    .pestania-filtros {
-        padding: 1vh;
-    }
-    
-    .menu-desplegable.active {
-        padding: 1vh;
-    }
-    
-    .menu-desplegable input[type="radio"] {
-        width: 18px;
-        height: 18px;
-        min-width: 18px;
-    }
+.menu-desplegable button {
+    margin: 1%;
 }
