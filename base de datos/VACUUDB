@@ -1,0 +1,230 @@
+/* ------------------------------------------------------------------------
+                        SE PUEDE CORRER TODO DE UNA
+--------------------------------------------------------------------------*/
+
+
+
+-- drop database VACUUDB;
+create database VACUUDB;
+use VACUUDB;
+
+create table categorias(
+id_categoria int auto_increment primary key,
+nombre_categoria varchar(50)
+);
+
+create table ambientes(
+id_ambiente int primary key auto_increment,
+ambiente varchar(50) not null
+);
+
+create table lugares(
+id_lugar int auto_increment primary key,
+nombre_lugar varchar(50) not null,
+caracteristica_1 varchar(20) not null,
+caracteristica_2 varchar (20) not null,
+caracteristica_3 varchar(20) not null,
+calle varchar(50) not null,
+numero varchar (50) not null,
+colonia varchar(50) not null,
+ciudad varchar(50) default 'Chihuahua',
+link_mapsGoogle varchar(500) not null,
+clicks int default(0),
+precio int not null, -- Es el numero de signo de pesos que saldra
+fk_categoria int not null,
+fk_ambiente int not null,
+fk_ambiente2 int,
+foreign key (fk_categoria) references categorias(id_categoria),
+foreign key (fk_ambiente) references ambientes(id_ambiente),
+foreign key (fk_ambiente2) references ambientes (id_ambiente)
+);
+
+-- Imagen principal de cada Lugar
+create table imagen_principal(
+id_imgPrincipal int primary key auto_increment,
+nombre_imgPrincipal varchar(100) not null,
+ruta_imgPrincipal varchar(500) not null,
+fk_lugar int not null,
+foreign key(fk_lugar) references lugares(id_lugar)
+);
+
+-- Imagenes extra de cada lugar
+create table imagenes_lugares(
+id_imagen int primary key auto_increment,
+nombre_imagen varchar(100) not null,
+ruta_imagen varchar(500) not null,
+fk_lugar int not null,
+foreign key(fk_lugar) references lugares(id_lugar)
+);
+
+/*--------------------------------PEGAR AQUI LAS INSERCIONES DEL ARCHIVO DE INSERCION DE DATOS AL CORRER LA BASE DE DATOS------------------------*/
+-- Insertar categorias
+insert into categorias(nombre_categoria)
+values
+		('Cafe'),				-- id 1
+        ('Restaurante'),		-- id 2
+        ('Restaurante-bar'),	-- id 3
+        ('Bar'),				-- id 4
+        ('Cultural');			-- id 5
+        
+        
+ insert into ambientes(ambiente)
+ values 	
+		('Familiar'), -- Id 1
+        ('Amigos'), -- Id 2
+        ('Pareja'), -- Id 3
+        ('Chill'); -- Id 4
+        
+
+-- Insertar datos en lugares
+insert into lugares (nombre_lugar, caracteristica_1, caracteristica_2, caracteristica_3, calle, numero, colonia, link_mapsGoogle, precio, fk_categoria, fk_ambiente, fk_ambiente2)
+values 
+	/* 							FK_AMBIENTES:       Familiar(1), 	Amigos(2),		Pareja(3),		Chill(4) 						*/
+		-- CAFES (fk_categoria = 1)
+		('Kaldi Café', 'Especializado', 'Acogedor', 'Popular', 'Calle Guadalupe Victoria', '309', 'Centro', 'https://maps.app.goo.gl/WmkZifVHdSbCDCqu9', 2, 1, 4, 3), 		
+		('Corinto', 'Bonito', 'Tranquilo', 'Popular', 'C. Colegio San Marco', '1828', 'Misión Universidad II', 'https://maps.app.goo.gl/ofYB8znuYCArgBRN8', 2, 1, 4, 3),
+        ('Mándala Café', 'Bonito', 'Popular', 'Accesible', 'C. Priv. de Urquidi', '905', 'San Fernando', 'https://maps.app.goo.gl/nMpLVMKkZr7PSgfcA', 2, 1, 2, 3),
+        ('Café Cortez', 'Elegante', 'Bonito', 'Rico', 'Gómez Farias', '8', ' Zona Centro', 'https://maps.app.goo.gl/Ew7jTc9A8zvAXwRQ6', 1, 1, 2, 1),
+        ('Rosetta Coffee', 'Aromático', 'Acogedor', 'Gourmet', 'Av. Venustiano Carranza', '1201', 'Zona Centro', 'https://maps.app.goo.gl/ADxvptt785hyjPhi6', 2, 1, 4, 3),
+        ('SecÖnjom', 'Alternativo', 'Único', 'Hogar', 'C. Sexta', '2009', 'Bolívar', 'https://maps.app.goo.gl/AQ7QQ9urscKgoGEm8', 2, 1, 4, 3),
+        ('Cafetto', 'Acogedor', 'Íntimo', 'Artesanal', 'Av Pascual Orozco', '317 B', 'San Felipe I Etapa', 'https://maps.app.goo.gl/eQhBUS66ETpQ431L8', 2, 1, 3, 4),
+        ('Café Combate Zarco', 'Enérgico', 'Vibrante', 'Tranquilo', 'Av. Francisco Zarco', '4226', 'Zarco', 'https://maps.app.goo.gl/ftZNLbwK4tvT6PV56', 2, 1, 4, 3),
+        ('Café del Alma Centro', 'Arte', 'Tranquilo', 'Reflexivo', 'C. Juan Aldama', '1002', 'Zona Centro II', 'https://maps.app.goo.gl/7Z8Z9Z9Z9Z9Z9Z9Z9', 2, 1, 3, 1),
+        ('Verona Café & Restaurante', 'Italiano', 'Creativo', 'Gastronómico', 'Ramírez Calderon y, C. Ortiz de Campos', '2101-5', 'San Felipe I Etapa', 'https://maps.app.goo.gl/8HHu2pEoeiMVwfjW6', 2, 1, 3, 4),
+        ('El Hojaldre', 'Gourmet', 'Brunch', 'Repostería', 'Calle Ignacio Allende', '200', 'Zona Centro', 'https://maps.app.goo.gl/Pf8DTRguAhoL88tW9', 2, 1, 3, 1),
+        ('Mozao Café', 'Moderno', 'Juvenil', 'Repostería', 'Av. Antonio de Deza Y Ulloa', '306', 'San Felipe I Etapa', 'https://maps.app.goo.gl/Z5xTzRhA5vQ31d967', 1, 1, 3, 1),
+        ('Café Marro', 'Natural', 'Relajante', 'Artesanal', 'Independencia y Bolívar', '31000', 'Zona Centro', 'https://maps.app.goo.gl/HTeQm85YrLgnN9HSA', 2, 1, 4, 3),
+        ('Fresh, coffee & cakes', 'Fresco', 'Ligero', 'Saludable', 'C. Pipila', '2017', 'Bolívar', 'https://maps.app.goo.gl/pXhzqRuJUs6CKGjCA', 2, 1, 4, 3),
+        
+        -- RESTAURANTE (fk_categoria = 2)
+        ('Konga Burger Centro', 'Elegante', 'Bonito', 'Rico', 'C. 15', '109', ' Zona Centro,', 'https://maps.app.goo.gl/hF3SSx1nwpYS6TGR8', 2, 2, 1, 2),
+        ('Taquería Mixe oaxaca', 'Barato', 'Bonito', 'Rico', 'C. Mariano Jiménez', '1104', 'Obrera', 'https://maps.app.goo.gl/i26ZpgWKNpMZtUCJ7', 1, 2, 1, 2),
+        ('Cafeteria Chelinos', 'Tradicional', 'Familiar', 'Casero', 'Av San Felipe', '5', 'San Felipe II Etapa', 'https://maps.app.goo.gl/TJ6R7mhrNFppgfHb9', 1, 2, 1, 4),
+        
+        -- RESTAURANTES-BAR (fk_categoria = 3)
+        ('Bar San Luis', 'Tailandes', 'Alitas', 'Amigos', 'C. Manuel Doblado', '1321', 'Centro', 'https://maps.app.goo.gl/xdq1n1Yy1cHD1CnVA', 2, 3, 2, 1),
+        ('Cerveceria 19 Centro', 'Economico', 'Snacks', 'Variado', ' C. 13a', '136', 'Zona Centro', 'https://maps.app.goo.gl/2QErFKxUsRkH7ibLA', 1, 3, 2, 1);
+        
+        -- BAR  (fk_categoria = 4)
+        
+        
+        -- CULTURALES (fk_categoria = 5)
+        
+        
+-- Insertar imagenes principal de lugares (poner "." y el formato en el nombre)        
+insert into imagen_principal (nombre_imgPrincipal, ruta_imgPrincipal, fk_lugar)
+values		
+			-- CAFES
+            ('kaldi-Cafe.jpg','/imagenes/imagenes_lugares', 1),
+			('corinto.jpg','/imagenes/imagenes_lugares', 2),
+            ('mandala-cafe.jpg','/imagenes/imagenes_lugares', 3),
+            ('cafe-cortez.jpg','/imagenes/imagenes_lugares', 4),
+            ('rosetta-coffee.jpg','/imagenes/imagenes_lugares', 5),
+            ('secÖnjom.jpg','/imagenes/imagenes_lugares', 6),
+            ('cafetto.jpg','/imagenes/imagenes_lugares', 7),
+            ('cafe-combate-zarco.jpg','/imagenes/imagenes_lugares', 8),
+            ('cafedelalma-centro.jpg','/imagenes/imagenes_lugares', 9),
+            ('verona-cafe.jpg','/imagenes/imagenes_lugares', 10),
+            ('el-hojaldre.jpg','/imagenes/imagenes_lugares', 11),
+            ('mozao-cafe.jpg','/imagenes/imagenes_lugares', 12),
+            ('cafe-marro.jpg','/imagenes/imagenes_lugares', 13),
+			('fresh-coffee-cakes.jpg','/imagenes/imagenes_lugares', 14),
+            
+			-- RESTAURANTES
+            ('konga-burger-centro.jpg','/imagenes/imagenes_lugares', 15),
+            ('taqueria-mixe-oaxaca.jpg','/imagenes/imagenes_lugares', 16),
+            ('cafeteria-chelinos.jpg','/imagenes/imagenes_lugares', 17),
+            
+            -- RESTAURANTES-BAR
+            ('bar-san-luis.jpg','/imagenes/imagenes_lugares', 18),
+            ('cerveceria-19-centro.jpg','/imagenes/imagenes_lugares', 19);
+            
+            -- BAR
+            
+            -- CULTURALES
+
+
+
+select * from lugares;
+ 
+ 
+-- Consulta para ver todos los lugares con nombre de categoria y sus imagenes
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
+from lugares l 
+JOIN categorias c ON l.fk_categoria = c.id_categoria
+JOIN ambientes a ON l.fk_ambiente = id_ambiente
+JOIN imagen_principal i ON i.fk_lugar = l.id_lugar;
+
+-- Consulta para ver todo de un lugar en especifico por nombre
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+from lugares l 
+JOIN categorias c ON l.fk_categoria = c.id_categoria
+JOIN ambientes a ON l.fk_ambiente = id_ambiente
+JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+WHERE l.nombre_lugar = 'Corinto';
+
+-- Consulta para ver todo de un lugar en especifico por ID
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+from lugares l 
+JOIN categorias c ON l.fk_categoria = c.id_categoria
+JOIN ambientes a ON l.fk_ambiente = id_ambiente
+JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+WHERE l.id_lugar = 1;
+
+
+-- Consulta para poder ver lugares de la misma categoria sin arrojar el lugar consultado
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
+FROM lugares l
+JOIN categorias c ON l.fk_categoria = c.id_categoria
+JOIN ambientes a ON l.fk_ambiente = id_ambiente
+JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+WHERE l.fk_categoria = (select fk_categoria from lugares where nombre_lugar = 'corinto') and l.nombre_lugar != 'corinto'
+and (l.fk_ambiente = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = 'corinto')
+OR l.fk_ambiente2 = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = 'corinto'))
+order by clicks DESC LIMIT 10;
+
+
+
+
+/* 	--------------------------------------------------------------------------------------------------	
+							CONSULTAR LOS MEJORES 10 LUGARES POR CATEGORIA 
+	-------------------------------------------------------------------------------------------------- */
+    
+-- CONSULTA PARA MOSTRAR TOP 10 CAFES
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+FROM lugares l 
+    JOIN categorias c ON l.fk_categoria = c.id_categoria
+    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+    WHERE c.nombre_categoria = 'cafe' 
+    order by clicks DESC LIMIT 10 ;
+    
+-- CONSULTA PARA MOSTRAR TOP 10 RESTAURANTES
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+FROM lugares l 
+    JOIN categorias c ON l.fk_categoria = c.id_categoria
+    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+    WHERE c.nombre_categoria = 'restaurante' OR c.nombre_categoria = 'restaurante-bar' 
+    order by clicks DESC LIMIT 10 ;  
+    
+-- CONSULTA PARA MOSTRAR TOP 10 BARES
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+FROM lugares l 
+    JOIN categorias c ON l.fk_categoria = c.id_categoria
+    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+    WHERE c.nombre_categoria = 'bar' OR c.nombre_categoria = 'restaurante-bar' 
+    order by clicks DESC LIMIT 10 ;
+    
+
+-- CONSULTA PARA MOSTRAR TOP 10 LUGARES CULTURALES
+SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+FROM lugares l 
+    JOIN categorias c ON l.fk_categoria = c.id_categoria
+    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+    WHERE c.nombre_categoria = 'culturales' order by clicks 
+    DESC LIMIT 10;
+    
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
