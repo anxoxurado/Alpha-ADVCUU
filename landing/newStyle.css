@@ -241,6 +241,7 @@ body {
 
 #menu-img {
   width: 80vw;
+  margin: 1%;
 }
 
 .cards{
@@ -320,7 +321,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100px; /* Ajusta esta altura según necesites */
+  height: 6vw;
 }
 
 .footer-logo img {
@@ -336,13 +337,13 @@ body {
 }
 
 .footer-section {
-  margin-left: 20px;
-  font-size: 0.8em;
+  margin-left: 5%;
+  font-size: 1.2vw;
 }
 
 .footer-section h4 {
-  margin-bottom: 8px;
-  font-size: 0.9em;
+  margin-bottom: 10%;
+  font-size: 1.4vw;
 }
 
 .footer-section ul {
