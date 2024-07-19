@@ -6,7 +6,7 @@
   color: white;
 }
 body {
-  background-color: #e0ad6f;
+  background-color: #ffffff;
 }
 .navbar_custom {
   background: rgba(103, 103, 103, 0.347);
@@ -228,4 +228,26 @@ body {
 .mainCallout_big .palabras {
   min-height: 80%;
   justify-content: center;
+}
+
+.features {
+  background-color: white;
+}
+
+.ind_features {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+
+.feature_Pitch h4 {
+  color: #ff7527;
+  font-weight: 700;
+  font-size: 3.5vw;
+}
+
+.feature_Pitch p {
+  color: #606060;
+  font-weight: 500;
+  font-size: 2vw;
 }
