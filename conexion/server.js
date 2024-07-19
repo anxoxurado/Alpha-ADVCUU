@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-    });
+});
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -41,10 +41,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
+app.get('/lugares', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '/appPage/app.html'));
+});
+
 
 // SE USA PARA MOSTRAR MEJORES 10 CAFES
-app.get('/lugares/TopCafes',  (req, res) => {
-    
+app.get('/lugares/TopCafes', (req, res) => {
+
     const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -69,8 +73,8 @@ app.get('/lugares/TopCafes',  (req, res) => {
 });
 
 // SE USA PARA MOSTRAR MEJORES 10 RESTAURANTES
-app.get('/lugares/TopRestaurantes',  (req, res) => {
-    
+app.get('/lugares/TopRestaurantes', (req, res) => {
+
     const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -96,8 +100,8 @@ app.get('/lugares/TopRestaurantes',  (req, res) => {
 
 
 // SE USA PARA MOSTRAR MEJORES 10  BARES
-app.get('/lugares/TopBares',  (req, res) => {
-    
+app.get('/lugares/TopBares', (req, res) => {
+
     const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -122,8 +126,8 @@ app.get('/lugares/TopBares',  (req, res) => {
 
 
 // SE USA PARA MOSTRAR MEJORES 10 LUGARES CULTURALES
-app.get('/lugares/TopCulturales',  (req, res) => {
-    
+app.get('/lugares/TopCulturales', (req, res) => {
+
     const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -145,6 +149,73 @@ app.get('/lugares/TopCulturales',  (req, res) => {
         res.json(results);
     });
 });
+
+
+// Ruta para mostrar la pagina en lugar
+app.get('/lugares/cafes', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'establecimientos/establecimientos.html'));
+});
+
+// ruta para mostrar un lugar por id
+app.get('/api/lugares/cafes', (req, res) => {
+    const nombreLugar = req.query.nombre;
+
+    if (!nombreLugar) {
+        return res.status(400).json({ error: 'Se requiere el parámetro "nombre"' });
+    }
+
+    const sql =
+        `SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+        from lugares l 
+        JOIN categorias c ON l.fk_categoria = c.id_categoria
+        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+        WHERE l.nombre_lugar = ?;`
+        ;
+
+    db.query(sql, [nombreLugar], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error en la consulta de la base de datos' });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: 'No se encontró ningún lugar con ese nombre' });
+        }
+        res.json(results);
+    });
+
+});
+
+
+app.get('/lugares/similares', (req, res) => {
+    const nombreLugar = req.query.nombre;
+    const sql =
+        `SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
+        FROM lugares l
+        JOIN categorias c ON l.fk_categoria = c.id_categoria
+        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+        WHERE l.fk_categoria = (select fk_categoria from lugares where nombre_lugar = '${nombreLugar}') and l.nombre_lugar != '${nombreLugar}'
+        and (l.fk_ambiente = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}')
+        OR l.fk_ambiente2 = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}'))
+        order by clicks DESC LIMIT 10;`
+        ;
+
+        db.query(sql, (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: 'Error en la consulta de la base de datos' });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ error: 'No se encontró ningún lugar con ese nombre' });
+            }
+            res.json(results);
+        });
+
+});
+
+
+
+
+
 
 
 
