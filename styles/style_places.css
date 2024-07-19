@@ -143,7 +143,7 @@ body {
     padding: 1.5vw;
     border-radius: 25px;
     font-family: Arial, sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
     border: none;
     cursor: pointer;
@@ -185,10 +185,12 @@ body {
     width: 100%;
     height: 100%;
 }
+.degradado-container h1{
+    max-width: 50%;
+}
 
 .degradado {
-    width: 100%;
-    
+    width: auto;
     object-fit: cover;
     object-position: bottom;
 } 
@@ -215,7 +217,7 @@ body {
     z-index: 2;
     font-size: 4vw;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
 .footer {
@@ -236,7 +238,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100px; /* Ajusta esta altura según necesites */
+    height: 6vw;
   }
   
   .footer-logo img {
