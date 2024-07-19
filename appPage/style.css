@@ -392,6 +392,7 @@ body{
     overflow: hidden;
     box-shadow: 0 0.4vh 0.6vw rgba(0,0,0,0.1);
     font-size: 1rem;
+    margin-top: 2%;
 }
 
 .pestania-filtros {
