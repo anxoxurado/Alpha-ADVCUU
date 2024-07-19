@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 
 * {
-  font-family: Inter, sans-serif;
+  font-family: Inter, sans-serif !important;
   color: white;
 }
 body {
-  background-color: #e0ad6f;
+  background-color: white;
 }
 .navbar_custom {
   background: rgba(103, 103, 103, 0.347);
@@ -211,4 +211,24 @@ body {
 
 .googleTrash_small h5 {
   font-size: 3vw;
+}
+
+.title {
+  color: #ff6600;
+  font-weight: 700;
+  font-size: 4vw;
+}
+.subtitle {
+  color: #6c757d;
+  font-weight: 500;
+  font-size: 2.5vw;
+}
+
+.menu-img {
+  display: flex;
+  justify-content: center;
+}
+
+#menu-img {
+  width: 50vw;
 }
