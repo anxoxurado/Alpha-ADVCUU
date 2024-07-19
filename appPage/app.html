@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vamos al centro | CUU</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/appPage/style.css">
     <style>
 
     </style>
-    <script src="script.js"></script>
-    <script src="sliders.js" type="text/JavaScript" language="JavaScript"></script>
-    <script src="filtros.js" type="text/JavaScript" language="JavaScript"></script>
+    <script src="/appPage/script.js"></script>
+    <script src="/appPage/sliders.js" type="text/JavaScript" language="JavaScript"></script>
+    <script src="/appPage/filtros.js" type="text/JavaScript" language="JavaScript"></script>
 </head>
 
 <body>
@@ -114,7 +114,20 @@
             <!--APARTIR DE AQUI SE AGARRAN LAS TARJETAS PARA MOSTRARSE LOS DATOS DE LA BASE DE DATOS-->
             <div class="card-list" id="container-cafeterias">
 
-                <!-- Template de tarjeta -->
+
+
+                <div class="card-item" id="cardPrimerCafe">
+                    <div class="gradient-card g-orange"></div>
+                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="" id="imagenPrimerCafe">
+                    <div class="card-info">
+                        <h2 class="local-name" id="nombrePrimerCafe"> <!--Aqui va el nombre del lugar--> </h2>
+                        <p class="local-description"><span id="cat1PrimerCafe"> <!--Carct1--> </span> - <span
+                                id="cat2PrimerCafe"> <!--Carct1--> </span> -
+                            <span id="cat3PrimerCafe"> <!--Carct1--></span>
+                        </p>
+                    </div>
+
+                    <!-- Template de tarjeta
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
@@ -124,64 +137,12 @@
                             <span id="cat3">Popular</span>
                         </p>
                     </div>
-                </div>
-                <!-- Template de tarjeta-->
+                </div>-->
+                
 
-                <div class="card-item">
-                    <div class="gradient-card g-blue"></div>
-                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Esperanza Café</h2>
-                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> -
-                            <span id="cat3">Ameno</span>
-                        </p>
-                    </div>
                 </div>
 
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> -
-                            <span id="cat3">Nocturno</span>
-                        </p>
 
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Kaldi Café</h2>
-                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> -
-                            <span id="cat3">Popular</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-item">
-                    <div class="gradient-card g-blue"></div>
-                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Esperanza Café</h2>
-                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> -
-                            <span id="cat3">Ameno</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Centrico</span> - <span id="cat2">Adultos</span> -
-                            <span id="cat3">Nocturno</span>
-                        </p>
-
-                    </div>
-                </div>
 
             </div>
 
@@ -205,76 +166,21 @@
                 <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
             </svg></button>
         <div class="container-slider">
-            <div class="card-list">
+            <div class="card-list" id="container-restaurantes">
 
                 <!-- Template de tarjeta -->
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Kaldi Café</h2>
-                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> -
-                            <span id="cat3">Popular</span>
-                        </p>
-                    </div>
-                </div>
-                <!-- Template de tarjeta-->
-
-                <div class="card-item">
+                <div class="card-item" id="cardPrimerRestaurante">
                     <div class="gradient-card g-blue"></div>
-                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
+                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="" id="imagenPrimerRestaurante">
                     <div class="card-info">
-                        <h2 class="local-name">Esperanza Café</h2>
-                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> -
-                            <span id="cat3">Ameno</span>
+                        <h2 class="local-name" id="nombrePrimerRestaurante"> <!--Aqui va el nombre del lugar--> </h2>
+                        <p class="local-description"><span id="cat1PrimerRestaurante"> <!--Carct1--> </span> - <span
+                                id="cat2PrimerRestaurante"> <!--Carct1--> </span> -
+                            <span id="cat3PrimerRestaurante"> <!--Carct1--></span>
                         </p>
                     </div>
                 </div>
-
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Céntrico</span> - <span id="cat2">Adultos</span> -
-                            <span id="cat3">Nocturno</span>
-                        </p>
-
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev1.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Kaldi Café</h2>
-                        <p class="local-description"><span id="cat1">Cálido</span> - <span id="cat2">Cómodo</span> -
-                            <span id="cat3">Popular</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-item">
-                    <div class="gradient-card g-blue"></div>
-                    <img src="/Imagenes/nev2.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Esperanza Café</h2>
-                        <p class="local-description"><span id="cat1">Familiar</span> - <span id="cat2">Juegos</span> -
-                            <span id="cat3">Ameno</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-item">
-                    <div class="gradient-card g-orange"></div>
-                    <img src="/Imagenes/nev3.jpg" class="local-image" alt="">
-                    <div class="card-info">
-                        <h2 class="local-name">Dibub copamala</h2>
-                        <p class="local-description"><span id="cat1">Céntrico</span> - <span id="cat2">Adultos</span> -
-                            <span id="cat3">Nocturno</span>
-                        </p>
-
-                    </div>
-                </div>
+                <
 
             </div>
 
