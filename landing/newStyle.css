@@ -219,12 +219,19 @@ body {
 .title {
   color: #ff6600;
   font-weight: 700;
-  font-size: 4vw;
+  font-size: 3vw;
 }
+
+.title2 {
+  color: black;
+  font-weight: 700;
+  font-size: 3vw;
+}
+
 .subtitle {
   color: #6c757d;
   font-weight: 500;
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 
 .menu-img {
@@ -282,7 +289,7 @@ body {
 
 @media screen and (min-width: 1200px) {
   .card-slide img {
-    width: 25vw;
+    width: 22vw;
   }
 }
 
@@ -295,3 +302,64 @@ body {
   }
 }
 
+.footer {
+  background-color: #FFA500;
+  color: white;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px; /* Ajusta esta altura según necesites */
+}
+
+.footer-logo img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-section {
+  margin-left: 20px;
+  font-size: 0.8em;
+}
+
+.footer-section h4 {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 4px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
