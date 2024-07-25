@@ -220,6 +220,18 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
+.imagenbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    z-index: 2;
+    font-size: 4vw;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    height: 7vw;
+}
 .footer {
     background-color: #FFA500;
     color: white;
