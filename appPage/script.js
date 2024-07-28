@@ -127,7 +127,7 @@ function fetchTopRestaurantes() {
 
                     divIndividual.addEventListener('click', () => {
                         //es por si el nombre lleva caracteres raros
-                        const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar); 
+                        const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar);
                         window.location.href = `http://localhost:3000/lugares?nombre=${nombreLugarCodificado}`;
                     });
                 }
@@ -138,3 +138,5 @@ function fetchTopRestaurantes() {
             console.error('Error fetching data: ', error);
         })
 }
+
+

@@ -200,22 +200,177 @@ app.get('/lugares/similares', (req, res) => {
         order by clicks DESC LIMIT 10;`
         ;
 
-        db.query(sql, (err, results) => {
-            if (err) {
-                return res.status(500).json({ error: 'Error en la consulta de la base de datos' });
-            }
-            if (results.length === 0) {
-                return res.status(404).json({ error: 'No se encontró ningún lugar con ese nombre' });
-            }
-            res.json(results);
-        });
+    db.query(sql, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error en la consulta de la base de datos' });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: 'No se encontró ningún lugar con ese nombre' });
+        }
+        res.json(results);
+    });
 
 });
 
 
 
+// POST PARA FILTRAR LUGARES
+app.post('/lugares-filtrados', (req, res) => {
+    const { categoria, ambiente, precio } = req.body;
+    const categoriaLugar = categoria;
+    const ambienteLugar = ambiente;
+    const precioLugar = precio;
+    var sql = '';
+    
+    if (!categoriaLugar || !ambienteLugar || !precioLugar) {
+        if (!ambienteLugar && !precioLugar) {
+            if (categoriaLugar == 'restaurante' || categoriaLugar == 'bar') {
+                sql = `
+                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                FROM lugares l 
+                JOIN categorias c ON l.fk_categoria = c.id_categoria
+                JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                WHERE c.nombre_categoria = '${categoriaLugar} or c.nombre_categoria = 'restaurante-bar'
+                order by clicks DESC;
+                `;
+            } else {
+                sql = `
+                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                FROM lugares l 
+                JOIN categorias c ON l.fk_categoria = c.id_categoria
+                JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                WHERE c.nombre_categoria = '${categoriaLugar}'
+                order by clicks DESC;
+                `;
+            }
+        } else {
+            if (!categoriaLugar && !precioLugar) {
+                sql = `
+                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                FROM lugares l 
+                JOIN categorias c ON l.fk_categoria = c.id_categoria
+                JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                WHERE (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}')
+                order by clicks DESC;
+                `;
+            } else {
+                if (!categoriaLugar && !ambienteLugar) {
+                    sql = `
+                    SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                    FROM lugares l 
+                    JOIN categorias c ON l.fk_categoria = c.id_categoria
+                    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                    WHERE l.precio = '${precioLugar}'
+                    order by clicks DESC;
+                    `;
+                } else {
+                    if (!categoriaLugar) {
+                        sql = `
+                        SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                        FROM lugares l 
+                        JOIN categorias c ON l.fk_categoria = c.id_categoria
+                        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                        WHERE (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}') 
+                        AND l.precio = '${precioLugar}'
+                        order by clicks DESC;
+                        `;
+                    } else {
 
+                        if (!ambienteLugar) {
+                            if (categoriaLugar == 'restaurante' || categoriaLugar == 'bar') {
+                                sql = `
+                                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                                FROM lugares l 
+                                JOIN categorias c ON l.fk_categoria = c.id_categoria
+                                JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                                WHERE (c.nombre_categoria = '${categoriaLugar}' or c.nombre_categoria ='restaurante-bar') AND l.precio = '${precioLugar}' 
+                                order by clicks DESC;
+                                `;
+                            } else {
+                                sql = `
+                                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                                FROM lugares l 
+                                JOIN categorias c ON l.fk_categoria = c.id_categoria
+                                JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                                WHERE c.nombre_categoria = '${categoriaLugar}' AND l.precio = '${precioLugar}' 
+                                order by clicks DESC;
+                                `;
+                            }
+                        } else {
+                            if (!precioLugar) {
 
+                                if (categoriaLugar == 'restaurante' || categoriaLugar == 'bar') {
+                                    sql = `
+                                    SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                                    FROM lugares l 
+                                    JOIN categorias c ON l.fk_categoria = c.id_categoria
+                                    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                                    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                                    WHERE (c.nombre_categoria = '${categoriaLugar}' or c.nombre_categoria ='restaurante-bar') AND (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}')
+                                    order by clicks DESC;
+                                    `;
+                                } else {
+                                    sql = `
+                                    SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+                                    FROM lugares l 
+                                    JOIN categorias c ON l.fk_categoria = c.id_categoria
+                                    JOIN ambientes a ON l.fk_ambiente = id_ambiente
+                                    JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+                                    WHERE c.nombre_categoria = '${categoriaLugar}' AND (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}')
+                                    order by clicks DESC;
+                                    `;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        if (categoriaLugar == 'restaurante' || categoriaLugar == 'bar') {
+            sql = `
+            SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+            FROM lugares l 
+            JOIN categorias c ON l.fk_categoria = c.id_categoria
+            JOIN ambientes a ON l.fk_ambiente = id_ambiente
+            JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+            WHERE (c.nombre_categoria = '${categoriaLugar}' or c.nombre_categoria = 'restaurante-bar') AND (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}') 
+            AND l.precio = '${precioLugar}'
+            order by clicks DESC;
+            `;
+        } else {
+            sql = `
+            SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+            FROM lugares l 
+            JOIN categorias c ON l.fk_categoria = c.id_categoria
+            JOIN ambientes a ON l.fk_ambiente = id_ambiente
+            JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+            WHERE c.nombre_categoria = '${categoriaLugar}' AND (a.ambiente = '${ambienteLugar}' or (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) = '${ambienteLugar}') 
+            AND l.precio = '${precioLugar}'
+            order by clicks DESC;
+            `;
+        }
+    }
+    db.query(sql, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error en la consulta de la base de datos' });
+        } else {
+            if (results.length === 0) {
+                return res.status(404).json({ error: 'No se encontró ningún lugar con esos filtros' });
+            } else {
+                res.json(results);
+            }
+        }
+    });
+
+});
 
 
 

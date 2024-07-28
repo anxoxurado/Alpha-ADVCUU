@@ -58,6 +58,7 @@ foreign key(fk_lugar) references lugares(id_lugar)
 );
 
 /*--------------------------------PEGAR AQUI LAS INSERCIONES DEL ARCHIVO DE INSERCION DE DATOS AL CORRER LA BASE DE DATOS------------------------*/
+
 -- Insertar categorias
 insert into categorias(nombre_categoria)
 values
@@ -103,12 +104,43 @@ values
         
         -- RESTAURANTES-BAR (fk_categoria = 3)
         ('Bar San Luis', 'Tailandes', 'Alitas', 'Amigos', 'C. Manuel Doblado', '1321', 'Centro', 'https://maps.app.goo.gl/xdq1n1Yy1cHD1CnVA', 2, 3, 2, 1),
-        ('Cerveceria 19 Centro', 'Economico', 'Snacks', 'Variado', ' C. 13a', '136', 'Zona Centro', 'https://maps.app.goo.gl/2QErFKxUsRkH7ibLA', 1, 3, 2, 1);
+        ('Cerveceria 19 Centro', 'Economico', 'Snacks', 'Variado', ' C. 13a', '136', 'Zona Centro', 'https://maps.app.goo.gl/2QErFKxUsRkH7ibLA', 1, 3, 2, 1),
+        ('Restaurant Bar La Roca', 'Tradicional', 'Auténtico', 'Mexicano', 'C. Progreso', '202', 'Centro', 'https://maps.app.goo.gl/MHVmFyMzH38MXpSy6', 2, 3, 1, 2),
+        ('Hank Bar', 'Moderno', 'Artesanal', 'Relajado', 'C. Juan Aldama', '411-Interior 5', 'Centro', 'https://maps.app.goo.gl/1JGAh8azF6z5Pfkv5', 2, 3, 2, 4),
+        ('La Sotolería', 'Regional', 'Tradicional', 'Artesanal', 'C. Jose Maria Morelos', '801', 'Centro', 'https://maps.app.goo.gl/schNmfeX9j8jmi2e9', 2, 3, 1, 3),
+        ('El Centenario', 'Histórico', 'Elegante', 'Tradicional', 'C. Jose Esteban Coronado', '503', 'Centro', 'https://maps.app.goo.gl/67gwzX4mSveBRR3A9', 3, 3, 1, 3),
+        ('Coliseo Restaurante Bar', 'Familiar', 'Mexicano', 'Versátil', 'C. Jose Maria Morelos', '103', 'Centro', 'https://maps.app.goo.gl/yVGqYctKEFNixAY48', 2, 3, 1, 2),
+        ('La Antigua Paz Cantina Tradicional', 'Tradicional', 'Histórico', 'Auténtico', 'Calle Francisco Xavier Mina', 'S/N', 'Centro', 'https://maps.app.goo.gl/wwjPxoUXgyhMifPj8', 2, 3, 2, null),
+        ('Barrio Centro Restaurant-Bar', 'Acogedor', 'Mexicano', 'Céntrico', 'Calle Ignacio de la Llave', '208', 'Centro', 'https://maps.app.goo.gl/JXi5GbXBhWXSJEuA7', 2, 3, 1, 2),
         
         -- BAR  (fk_categoria = 4)
-        
+        ('Studio Bar', 'Popular', 'Animado', 'Versátil', 'Av. Prol. Teófilo Borunda', '1210', 'Unidad Presidentes', 'https://maps.app.goo.gl/YQmkZXrJU7RvR2SFA', 2, 4, 2, 3),
+        ('Gabba Gabba', 'Juvenil', 'Céntrico', 'Diverso', 'Calle Ojinaga', '110', 'Centro', 'https://maps.app.goo.gl/imTQewSsoajB3qzU6', 2, 4, 2, 3),
+        ('The Hunter Cuu', 'Karaoke', 'Música', 'Animado', 'Av. Colón', '213-205', 'Centro', 'https://maps.app.goo.gl/rHygz44RZLPrRaeG6', 2, 4, 2, 3),
+        ('El Cuervo Rock Bar', 'Rock', 'Música', 'Animado', 'Av. Prol. Teófilo Borunda', '103', 'San Felipe I Etapa', 'https://maps.app.goo.gl/Jq9m7PzMpCBYJeU68', 2, 4, 2, 3),
+		('Casa Cervecera Bolívar', 'Artesanal', 'Gourmet', 'Rústico-moderno', 'Paseo Simon Bolivar', '806', 'Centro', 'https://maps.app.goo.gl/fWuHdTfYjoZBCz5dA', 2, 4, 2, 3),
+        ('Downtown Bistro Bar', 'Sofisticado', 'Internacional', 'Céntrico', 'Paseo Simon Bolivar', '417', 'Centro', 'https://maps.app.goo.gl/1DxpALKt6XsofNmq7', 3, 4, 3, 2),
+        ('Angels Bar', 'Moderno', 'Nocturno', 'Musical', 'C. Juan Aldama', '3301', 'Chihuahua', 'https://maps.app.goo.gl/ipRoJgDtJwqVmZC46', 2, 4, 2, 3),
+        ('Centro Alegre Bar', 'Tradicional', 'Relajado', 'Acogedor', 'Calle Nicolás Bravo', '2909', 'Centro', 'https://maps.app.goo.gl/xAxpYfCg7cazFMhF7', 2, 4, 2, 4),
+        ('Cabaña bar', 'Rústico', 'Casual', 'Acogedor', 'Av. Independencia', '1900A', 'El Palomar', 'https://maps.app.goo.gl/9W21ukoDgbdDsex87', 2, 4, 2, 1),
+        ('Bar La Bomba', 'Tradicional', 'Económico', 'Local', 'C. 11', '2013', 'Zona Centro', 'https://maps.app.goo.gl/3mVvbznjDQFAko966', 1, 4, 2, 1),
+        ('Bar Bandidos', 'Temático', 'Western', 'Animado', 'C. Juan Aldama', '2310', 'Zona Centro', 'https://maps.app.goo.gl/rrXWETfCAjwi7fhU6', 2, 4, 2, 3),
+        ('Bar Morelos', 'Céntrico', 'Tradicional', 'Relajado', 'C. Jose Maria Morelos', '121', 'Centro', 'https://maps.app.goo.gl/MHweB2nHZgZD9StL6', 2, 4, 2, 4),
+        ('El Mágico', 'Creativo', 'Mágico', 'Entretenido', 'Av. Independencia', '1204', 'Centro', 'https://maps.app.goo.gl/x8ZyH1NncVQ8uAqq7', 2, 4, 2, 3),
+        ('Bar Zeppelin', 'Rock', 'Temático', 'Juvenil', 'C. Quinta', '303', 'Zona Centro', 'https://maps.app.goo.gl/QUafkPgwTPDpwJ4e8', 2, 4, 2, 3),
         
         -- CULTURALES (fk_categoria = 5)
+        ('Museo del Mamut', 'Paleontología', 'Mamuts', 'Prehistoria', 'Avenida Juárez', '2506', 'Centro', 'https://maps.app.goo.gl/DrLwxdpGt9doLb9h9', 1, 5, 2, 1),
+        ('Museo Semilla', 'Interactivo', 'Ciencia', 'Educativo', 'Priv. Progreso', '1201', 'Centro', 'https://maps.app.goo.gl/6LmpUmxWqLki5NWy5', 1, 5, 1, 2),
+        ('Casa Redonda', 'Arte', 'Ferrocarril', 'Contemporáneo', 'Av. Tecnológico', '1705', 'Santo Niño', 'https://maps.app.goo.gl/pThzG4gueRjj6F2fA', 1, 5, 1, 3),
+        ('Casa Chihuahua Centro de Patrimonio Cultural', 'Patrimonio', 'Historia', 'Cultural', 'Libertad', '901', 'Centro', 'https://maps.app.goo.gl/iALQaUJFYo2UFLb78', 1, 5, 1, 2),
+        ('Museo de la Lealtad Republicana Casa Juárez', 'histórico', 'republicano', 'Juárez', 'Av. Benito Juarez', '321', 'Centro', 'https://maps.app.goo.gl/EtShxVRbcTyjuzL37', 1, 5, 1, 2),
+        ('Museo Sebastián Casa Siglo XIX', 'arquitectura', 'patrimonio', 'cultural', 'Av. Benito Juárez', '601', 'Parque Rotario', 'https://maps.app.goo.gl/YEe5FS9ruteDRDRV6', 1, 5, 1, 3),
+        ('Catedral de Chihuahua', 'barroco', 'colonial', 'religioso', 'Calle Libertad y Calle Victoria', 'S/N', 'Centro', 'https://maps.app.goo.gl/zio1PPZ1U5ZfnxiSA', 1, 5, 1, 3),
+        ('Plaza del Mariachi', 'música', 'tradición', 'cultura', 'C. Juan Aldama', 'S/N', 'Centro', 'https://maps.app.goo.gl/D1PdDP2qhnmACYxx6', 1, 5, 2, 3),
+        ('Parque Lerdo', 'recreación', 'histórico', 'céntrico', 'Av. Melchor Ocampo', 'S/N', 'Centro', 'https://maps.app.goo.gl/qcXJdkRuDRUCcbRAA', 1, 5, 1, 4),
+        ('Quinta Gameros', 'art nouveau', 'arquitectura', 'cultural', 'Paseo Bolívar', '401', 'Centro', 'https://maps.app.goo.gl/2DWynSh4v92d9Qfv7', 1, 5, 1, 3);
+        
         
         
 -- Insertar imagenes principal de lugares (poner "." y el formato en el nombre)        
@@ -137,12 +169,42 @@ values
             
             -- RESTAURANTES-BAR
             ('bar-san-luis.jpg','/imagenes/imagenes_lugares', 18),
-            ('cerveceria-19-centro.jpg','/imagenes/imagenes_lugares', 19);
+            ('cerveceria-19-centro.jpg','/imagenes/imagenes_lugares', 19),
+            ('restaurant-bar-la-roca.jpg','/imagenes/imagenes_lugares', 20),
+            ('hank-bar.jpg','/imagenes/imagenes_lugares', 21),
+            ('la-sotoleria.jpg','/imagenes/imagenes_lugares', 22),
+            ('el-centenario.jpg','/imagenes/imagenes_lugares', 23),
+            ('coliseo-restaurante-bar.jpg','/imagenes/imagenes_lugares', 24),
+            ('la-antigua-paz-cantina-tradicional.jpg','/imagenes/imagenes_lugares', 25),
+            ('barrio-centro-restaurant-bar.jpg','/imagenes/imagenes_lugares', 26),
             
             -- BAR
+            ('studio-bar.jpg','/imagenes/imagenes_lugares', 27),
+            ('gabba-gabba.jpg','/imagenes/imagenes_lugares', 28),
+            ('the-hunter-cuu.jpg','/imagenes/imagenes_lugares', 29),
+            ('el-cuervo-rock-bar.jpeg','/imagenes/imagenes_lugares', 30),
+            ('casa-cervecera-bolivar.jpg','/imagenes/imagenes_lugares', 31),
+            ('downtown-bistro-bar.jpg','/imagenes/imagenes_lugares', 32),
+            ('angels-bar.jpg','/imagenes/imagenes_lugares', 33),
+            ('centro-alegre-bar.jpg','/imagenes/imagenes_lugares', 34),
+            ('cabaña-bar.jpg','/imagenes/imagenes_lugares', 35),
+            ('bar-la-bomba.jpg','/imagenes/imagenes_lugares', 36),
+            ('bar-bandidos.jpg','/imagenes/imagenes_lugares', 37),
+            ('bar-morelos.jpg','/imagenes/imagenes_lugares', 38),
+            ('el-magico.jpg','/imagenes/imagenes_lugares', 39),
+            ('bar-zeppelin.jpg','/imagenes/imagenes_lugares', 40),
             
             -- CULTURALES
-
+            ('museo-del-mamut.jpg','/imagenes/imagenes_lugares', 41),
+            ('museo-semilla.jpg','/imagenes/imagenes_lugares', 42),
+            ('casa-redonda.jpg','/imagenes/imagenes_lugares', 43),
+            ('casa-chihuahua.jpg','/imagenes/imagenes_lugares', 44),
+            ('casa-juarez.jpg','/imagenes/imagenes_lugares', 45),
+            ('museo-sebastian-casa-siglo-xix.jpg','/imagenes/imagenes_lugares', 46),
+            ('catedral-de-chihuahua.jpg','/imagenes/imagenes_lugares', 47),
+            ('plaza-del-mariachi.jpg','/imagenes/imagenes_lugares', 48),
+            ('parque-lerdo.jpg','/imagenes/imagenes_lugares', 49),
+            ('quinta-gameros.jpeg','/imagenes/imagenes_lugares', 50);
 
 
 select * from lugares;
@@ -153,7 +215,8 @@ SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.am
 from lugares l 
 JOIN categorias c ON l.fk_categoria = c.id_categoria
 JOIN ambientes a ON l.fk_ambiente = id_ambiente
-JOIN imagen_principal i ON i.fk_lugar = l.id_lugar;
+JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+ORDER BY l.id_lugar;
 
 -- Consulta para ver todo de un lugar en especifico por nombre
 SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
@@ -226,5 +289,18 @@ FROM lugares l
     JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
     WHERE c.nombre_categoria = 'culturales' order by clicks 
     DESC LIMIT 10;
+    
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+    
+-- CONSULTA DE LUGARES CON FILTRO DE CATEGORIA Y PRECIO
+
+    SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+	FROM lugares l 
+	JOIN categorias c ON l.fk_categoria = c.id_categoria
+	JOIN ambientes a ON l.fk_ambiente = id_ambiente
+	JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+	WHERE (c.nombre_categoria = 'restaurante' or c.nombre_categoria ='restaurante-bar') AND l.precio = '2' 
+	order by clicks DESC;
+    
     
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
