@@ -552,3 +552,25 @@ body{
 .menu-desplegable button {
     margin: 1%;
 }
+
+
+.lugares-filtrados {
+    border: 2px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5vw 2vh;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.tarjeta-lugar {
+    width: 25%;
+    margin: 1%;
+    border-radius: 2vh;
+    box-shadow: 0 0.4vh 0.6vw rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border: 2px solid;
+}
