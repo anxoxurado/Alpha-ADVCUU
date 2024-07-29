@@ -19,7 +19,7 @@
       <div class="container-sm d-none d-sm-block rounded-4 navbar_custom">
         <nav class="navbar">
           <div class="container-fluid">
-            <a href="/appPage/app.html" class="navbar-brand big_logo">
+            <a href="#" class="navbar-brand big_logo">
               <img src="../Branding/Component 10.png" alt="app logo" />
             </a>
             <div class="d-lg-block d-none">
@@ -40,9 +40,11 @@
               </ul>
             </div>
 
-            <button class="btn btn-info text-white shadow-lg" type="button" id="ir-app" onclick="window.location.href='http://localhost:3000/lugares'">
-              Comenzar a buscar
-            </button>
+            <a href="/appPage/app.html">
+              <button class="btn btn-info text-white shadow-lg" type="button">
+                Comenzar a buscar
+              </button>
+            </a>
           </div>
         </nav>
       </div>
@@ -176,7 +178,7 @@
         </div>
         <div class="row">
           <div class="col-sm-9">
-            <h3 style="font-weight: 700">
+            <h3>
               recomendaciones <span style="color: #fa9939">locales</span>.
             </h3>
           </div>
@@ -218,10 +220,10 @@
         </div>
       </div>
     </div>
-    <div class="features container-fluid">
+    <div class="features container-fluid d-none d-sm-block">
       <div class="container ind_feature mt-3">
         <div class="row feature_Pitch justify-content-center mt-5">
-          <h4 class="col-7 text-center mb-5">
+          <h4 class="col-8 text-center mb-5">
             Un directorio que te muestra lo mejor de la ciudad.
           </h4>
           <div class="row justify-content-center">
@@ -233,17 +235,21 @@
       </div>
     </div>
 
+    <div class="container text-center my-5 d-block d-sm-none">
+      <div class="col-12">
+        <h3 class="">Un directorio que te muestra lo mejor de la ciudad.</h3>
+        <p class="subtitle">
+          Tu solo confía, elige uno de los destinos y anímate a conocer.
+        </p>
+      </div>
+    </div>
     <div class="container text-center my-5">
       <div class="col-sm-12">
-        <h3 class="title"> Un directorio que te muestra lo mejor de la ciudad.</h3>
-      <p class="subtitle">Tu solo confía, elige uno de los destinos y anímate a conocer.</p>
-    </div>
-    </div>
-    <div class="container text-center my-5">
-      <div class="col-sm-12">
-        <h3 class="title2" style="font: black"> Top Cafeterías</h3>
-      <p class="subtitle"></p>
-    </div>
+        <h3 class="title2" style="color: rgb(98, 98, 98); font-weight: 550">
+          Top Cafeterías
+        </h3>
+        <p class="subtitle"></p>
+      </div>
     </div>
     <div class="cards">
         <div class="card-slide">
@@ -268,44 +274,52 @@
       </div>
     </div>
 
-
-    <div class="container text-center my-5">
-      <h3 class="title"> Ajusta tu plan a tu antojo. </h3>
-    <p class="subtitle"> Porque cada plan es diferente.</p>
+    <div class="container text-center mb-3 mt-5">
+      <h3 class="title">Ajusta tu plan a tu antojo.</h3>
+      <p class="subtitle">Porque cada plan es diferente.</p>
     </div>
 
     <div class="menu-img">
-      <img src="Imagenes\menu-filtros.png" id="menu-img">
-   </div>
+      <a href="/appPage/app.html">
+        <pre
+          class="language-css"
+          tabindex="0"
+        ><img src="/prototipo/elementos/Navbarelements.png" alt="">
+ 
+      </pre>
+      </a>
+    </div>
 
-   <footer class="footer">
-    <div class="footer-content">
+    <footer class="footer">
+      <div class="footer-content">
         <div class="footer-logo">
-            <img src="/Branding/Group 40.png" alt="Logo CUU">
+          <img src="/Branding/Group 40.png" alt="Logo CUU" />
         </div>
         <div class="footer-sections">
-            <div class="footer-section">
-                <h4>¿Quienes somos?</h4>
-                <ul>
-                    <li><a href="#">Misión</a></li>
-                    <li><a href="#">Visión</a></li>
-                    <li><a href="#">Roadmap</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contáctanos</h4>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Enviar correo</a></li>
-                </ul>
-            </div>
+          <div class="footer-section">
+            <h4>¿Quienes somos?</h4>
+            <ul>
+              <li><a href="#">Misión</a></li>
+              <li><a href="#">Visión</a></li>
+              <li><a href="#">Roadmap</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contáctanos</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">X</a></li>
+              <li><a href="#">Enviar correo</a></li>
+            </ul>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="/prototipo/main.js"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   </body>
   <script>
     var typed = new Typed(".auto-type", {

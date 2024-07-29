@@ -245,13 +245,13 @@ body {
 
 .feature_Pitch h4 {
   color: #ff7527;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 3.5vw;
 }
 
 .feature_Pitch p {
   color: #606060;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 2vw;
 }
 
@@ -281,7 +281,7 @@ body {
 
 .subtitle {
   color: #686868;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 2vw;
 }
 
@@ -325,7 +325,7 @@ body {
 
 .card-slide {
   display: inline-block;
-  animation: 18s slide infinite linear;
+  animation: 40s slide infinite linear;
 }
 
 .card-slide img {
@@ -430,7 +430,7 @@ body {
 
 .subtitle {
   color: #686868;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 2vw;
 }
 
@@ -474,7 +474,7 @@ body {
 
 .card-slide {
   display: inline-block;
-  animation: 18s slide infinite linear;
+  animation: 50s slide infinite linear;
 }
 
 .card-slide img {
@@ -563,4 +563,76 @@ body {
 
 .footer-section ul li a:hover {
   text-decoration: underline;
+}
+
+.d-sm-none h3 {
+  font-size: 3.5vw;
+}
+
+pre {
+  margin: 2rem;
+  color: white;
+  background: linear-gradient(rgb(172, 254, 255), rgb(255, 229, 202));
+  padding: 0rem;
+  border-radius: 1rem;
+  max-height: 50vh;
+  max-width: 60vw;
+  position: relative;
+  object-fit: cover;
+
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+  overflow: hidden;
+}
+
+pre > img {
+  width: 100%;
+}
+
+pre::before,
+pre::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+/* shadow */
+pre::before {
+  inset: 0.75rem;
+  border-radius: inherit;
+  background: white;
+  z-index: -1;
+  transform: translateZ(-50px);
+  filter: blur(15px);
+  opacity: 0.5;
+}
+
+/* gradient thingy */
+pre::after {
+  z-index: -2;
+  inset: -1rem;
+  background: linear-gradient(-45deg, rgb(255, 164, 80), rgb(71, 188, 255));
+  transform: translateZ(-50px);
+}
+
+.selector {
+  color: var(--selector);
+}
+
+.property {
+  color: var(--property);
+}
+
+.punctuation {
+  color: var(--punctuation);
+}
+
+.property + .punctuation {
+  color: var(--property);
+}
+
+.pre-container {
+  position: relative;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }

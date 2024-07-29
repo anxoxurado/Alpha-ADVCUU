@@ -1,10 +1,5 @@
-/* ------------------------------------------------------------------------
-                        SE PUEDE CORRER TODO DE UNA
---------------------------------------------------------------------------*/
-
-
-
--- drop database VACUUDB;
+-- Active: 1721428964438@@127.0.0.1@3306@VACUUDB
+drop database if exists VACUUDB;
 create database VACUUDB;
 use VACUUDB;
 
