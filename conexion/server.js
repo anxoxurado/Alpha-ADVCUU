@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '..')));
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: 'JURA050808HCHRDNA5',
     database: 'VACUUDB'
 });
 
