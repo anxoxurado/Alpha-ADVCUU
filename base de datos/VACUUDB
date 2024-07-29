@@ -290,7 +290,6 @@ FROM lugares l
     WHERE c.nombre_categoria = 'culturales' order by clicks 
     DESC LIMIT 10;
     
-    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
     
 -- CONSULTA DE LUGARES CON FILTRO DE CATEGORIA Y PRECIO
 
@@ -301,6 +300,17 @@ FROM lugares l
 	JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
 	WHERE (c.nombre_categoria = 'restaurante' or c.nombre_categoria ='restaurante-bar') AND l.precio = '2' 
 	order by clicks DESC;
+
+-- MOSTRAR LUGARES SIMILARES Y QUE TAMBIEN MUESTRE DE LA CATEGORIA RESTAURANTE-BAR
+    SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
+        FROM lugares l
+        JOIN categorias c ON l.fk_categoria = c.id_categoria
+        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+        WHERE (l.fk_categoria = (select fk_categoria from lugares where nombre_lugar = 'Konga Burger Centro')or c.nombre_categoria = 'restaurante-bar') and l.nombre_lugar != 'Konga Burger Centro'
+        and (l.fk_ambiente = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = 'Konga Burger Centro')
+        OR l.fk_ambiente2 = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = 'Konga Burger Centro'))
+        order by clicks DESC LIMIT 10;
     
     
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';

@@ -355,7 +355,7 @@ body{
 }
 
 .g-orange{
-    background: linear-gradient(0deg,#FFB967, #ffb86700 );
+    background: linear-gradient(0deg,#FFB967, #67fff000 );
 
 }
 
@@ -363,6 +363,19 @@ body{
     background: linear-gradient(0deg,#67fff0, #67fff000 );
 
 }
+
+.g-orange2{
+    background: linear-gradient(0deg,#c8803d, #67fff000 );
+}
+
+.g-red{
+    background: linear-gradient(0deg,#8d1e1a, #67fff000 );
+}
+
+.g-purple{
+    background: linear-gradient(0deg,#737dcd, #67fff000 );
+}
+
 .local-description span{
     color: rgb(255, 249, 235);
     

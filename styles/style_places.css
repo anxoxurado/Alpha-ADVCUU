@@ -6,7 +6,7 @@ body {
 .contenedor {
     width: 100%;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     margin: -10px;
     padding-bottom: 1em;
 }
@@ -14,39 +14,39 @@ body {
 
 .imagen img {
     width: 100.9%;
-    height: 30vw; 
+    height: 30vw;
     margin: -10px;
-    
+
 }
 
-.contenedor_info{
+.contenedor_info {
     width: 55%;
     margin-left: 2em;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 }
 
 
-.caracteristicas{
+.caracteristicas {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.caracteristicas .caract{
+.caracteristicas .caract {
     font-size: 5.8vw;
     color: aliceblue;
     margin: 10px;
 }
 
-.ruta{
+.ruta {
     margin: 0%;
     margin-top: 3em;
     font-size: 2vw;
     font-style: oblique;
 }
 
-.titulo{
+.titulo {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -58,23 +58,23 @@ body {
     font-weight: 800;
 }
 
-.direccion{
+.direccion {
     font-size: 2.5vw;
     display: flex;
 }
 
-.direccion img{
+.direccion img {
     width: 3vw;
-    
+
 }
 
-.buton_ir{
+.buton_ir {
     width: 70%;
     height: 50px;
     border-radius: 20px;
 }
 
-.lugares_similares{
+.lugares_similares {
     width: 100%;
     height: 200px;
     border: 2px solid;
@@ -83,7 +83,7 @@ body {
     align-items: center;
 }
 
-.lugares{
+.lugares {
     width: 30%;
     border: 2px solid;
     height: 100px;
@@ -91,41 +91,41 @@ body {
 }
 
 
-.breadcrumbs{
+.breadcrumbs {
     padding: 10px;
     font-family: Inter, sans-serif;
     margin-bottom: -2em;
     margin-top: 2em;
 }
 
-.breadcrumbs__item{
+.breadcrumbs__item {
     display: inline-block;
-    
+
 }
 
-.breadcrumbs__item:not(:last-of-type)::after{
+.breadcrumbs__item:not(:last-of-type)::after {
     content: '/';
     margin: 0 5px;
-    
+
 }
 
-.breadcrumbs__link{
+.breadcrumbs__link {
     text-decoration: none;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     font-size: 1.4vw;
 }
 
-.breadcrumbs__link:hover{
+.breadcrumbs__link:hover {
     text-decoration: underline;
 
 }
 
-.breadcrumbs__link--active{
+.breadcrumbs__link--active {
     color: orange;
-    
+
 }
 
-.feed-section1{
+.feed-section1 {
     display: flex;
     justify-content: left;
 }
@@ -154,7 +154,7 @@ body {
     margin-left: 3vw;
 }
 
-.button:hover { 
+.button:hover {
     opacity: 0.8;
 }
 
@@ -175,9 +175,11 @@ body {
 #menu {
     background: linear-gradient(to right, #43e97b, #38f9d7);
 }
+
 .gradiente {
     width: 100%;
 }
+
 .degradado-container {
     position: absolute;
     top: 0;
@@ -185,7 +187,8 @@ body {
     width: 100%;
     height: 100%;
 }
-.degradado-container h1{
+
+.degradado-container h1 {
     max-width: 50%;
 }
 
@@ -193,7 +196,8 @@ body {
     width: auto;
     object-fit: cover;
     object-position: bottom;
-} 
+}
+
 .imagen-container {
     position: relative;
     width: 100.9%;
@@ -201,12 +205,14 @@ body {
     overflow: hidden;
     margin-left: -10px;
     margin-top: -10px;
-}  
+}
+
 .imagen-principal {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .texto-superior-derecha {
     position: absolute;
     top: 20px;
@@ -220,6 +226,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
+
 .imagenbar {
     position: absolute;
     top: 20px;
@@ -232,64 +239,92 @@ body {
     font-weight: bold;
     height: 7vw;
 }
+
 .footer {
     background-color: #FFA500;
     color: white;
     padding: 20px;
-  }
-  
-  .footer-content {
+}
+
+.footer-content {
     display: flex;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .footer-logo {
+}
+
+.footer-logo {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 6vw;
-  }
-  
-  .footer-logo img {
+}
+
+.footer-logo img {
     max-height: 100%;
     width: auto;
     object-fit: contain;
-  }
-  
-  .footer-sections {
+}
+
+.footer-sections {
     flex: 2;
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .footer-section {
+}
+
+.footer-section {
     margin-left: 20px;
     font-size: 0.8em;
-  }
-  
-  .footer-section h4 {
+}
+
+.footer-section h4 {
     margin-bottom: 8px;
     font-size: 0.9em;
-  }
-  
-  .footer-section ul {
+}
+
+.footer-section ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .footer-section ul li {
+}
+
+.footer-section ul li {
     margin-bottom: 4px;
-  }
-  
-  .footer-section ul li a {
+}
+
+.footer-section ul li a {
     color: white;
     text-decoration: none;
-  }
-  
-  .footer-section ul li a:hover {
+}
+
+.footer-section ul li a:hover {
     text-decoration: underline;
-  }
+}
+
+
+/* Estilos para cuando aun no cargan los datos*/
+#content {
+    display: none;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#loading {
+    font-size: 4vw;
+}
+
+#imagen-logo {
+    width: 20vw;
+    height: auto;
+}
+
+.fade-in {
+    display: block;
+    opacity: 1;
+}

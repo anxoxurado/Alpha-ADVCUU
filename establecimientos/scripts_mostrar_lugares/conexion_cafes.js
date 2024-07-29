@@ -76,6 +76,13 @@ function mostrarLugar(nombreLugar) {
             btnMaps.addEventListener('click', () => {
                 window.open(`${lugar.link_mapsGoogle}`);
             });
+            
+            // Ocultar el loader y mostrar el contenido
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 200);
+            
 
         })
         .catch(error => {
@@ -121,6 +128,7 @@ function mostrarLugaresSimilares(nombreLugar) {
                         //es por si el nombre lleva caracteres raros
                         const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar);
                         window.location.href = `http://localhost:3000/lugares/cafes?nombre=${nombreLugarCodificado}`;
+                        incrementarClicks(lugar.id_lugar);
                     });
                     container.appendChild(divIndividual);
                 } else {
@@ -145,6 +153,7 @@ function mostrarLugaresSimilares(nombreLugar) {
                         //es por si el nombre lleva caracteres raros
                         const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar);
                         window.location.href = `http://localhost:3000/lugares/cafes?nombre=${nombreLugarCodificado}`;
+                        incrementarClicks(lugar.id_lugar);
                     });
                 }
             });
@@ -154,4 +163,19 @@ function mostrarLugaresSimilares(nombreLugar) {
         .catch(error => {
             console.error('Error fetching data: ', error);
         })
+}
+
+
+// Funcion para incrementar los clicks de los lugares
+function incrementarClicks(lugarId) {
+    fetch('/incrementar-clicks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ lugarId: lugarId })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Clicks incrementados:', data))
+    .catch(error => console.error('Error:', error));
 }
