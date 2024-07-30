@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+
+* {
+  font-family: Inter, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+}
+
+.left_half {
+  height: 100vh;
+  min-width: 25%;
+
+  background-color: aqua;
+}
+
+.imagen_cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.filtro_decoration {
+  color: #ffa73c;
+}
+
+.boton_ind {
+  display: flex;
+  background-color: #fff;
+
+  border: none;
+  border-radius: 25px;
+  padding: 1vh 2vw;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: #000 0px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.boton_ind > p {
+  color: black;
+}
+
+.boton_ind img {
+  margin-right: 10px;
+}
+
+/* nano */
+
+.left_half-nano .boton_ind {
+  display: flex;
+  background-color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 1vh 2vw;
+  font-size: 1pt;
+  cursor: grab;
+  box-shadow: #0000008f 0px 0px 23px;
+  margin-bottom: 10px;
+}
+
+.left_half-nano .boton_ind p {
+  font-size: 10pt;
+}
+
+.col-12 p {
+  display: block;
+}
+
+.boton_ind {
+  justify-content: left;
+}
+
+.botones_categoria {
+  justify-content: center;
+}
+
+.enlistar_por p {
+  color: black;
+}
+
+.enlistar_por span {
+  color: black;
+}
+
+/* Clase "card-item" */
+.card-list .card-item {
+  width: 28vw;
+  aspect-ratio: 3 / 4;
+  max-height: 150vh;
+  max-width: auto;
+  margin: 1%;
+}
+
+.card-item {
+  position: relative;
+}
+
+.card-item:hover .gradient-card {
+  cursor: pointer;
+  height: 100%;
+  top: 0%;
+  transition: 0.5s ease-in-out;
+}
+
+.card-item:hover .card-info {
+  position: absolute;
+  cursor: pointer;
+  bottom: 40%;
+  left: 0;
+  padding: 10%;
+  transition: 0.5s ease-in-out;
+}
+
+/* Clase "gradient-card" */
+.gradient-card {
+  width: 100%;
+  height: 45%;
+  position: absolute;
+  top: 55%;
+  border-radius: 2vh;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.31);
+  transition: 0.5s ease-in-out;
+}
+
+/* Clase "g-orange" */
+.g-orange {
+  background: linear-gradient(0deg, #ffb967, #67fff000);
+}
+
+/* Clase "local-image" */
+.card-item .local-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2vh;
+}
+
+/* Clase "card-info" */
+.card-item .card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10%;
+  transition: 0.5s ease-in-out;
+}
+
+/* Clase "local-name" */
+.card-info .local-name {
+  font-size: 1.8vw;
+  padding: 0.5vw 2vw 0.5vw 2vw;
+  background-color: whitesmoke;
+  border-radius: 2vh;
+}
+
+/* Clase "local-description" */
+.card-info .local-description {
+  font-size: 1.8vw;
+}
+
+.local-description span {
+  color: rgb(255, 249, 235);
+}

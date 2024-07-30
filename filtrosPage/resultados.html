@@ -1,0 +1,166 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultados de Busqueda</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles_resultados.css" />
+  </head>
+  <body>
+    <div class="container-fluid d-flex position-relative contenedor_general">
+      <div class="row position-relative fila_general">
+        <div class="col-md-4 col-12 m-0 position-relative d-md-block d-inline p-0 left_half">
+          <div class="container-fluid">
+            <div class="row position-absolute align-content-center" id="texto_filtro">
+              <div class="col-6 col-md-12">
+                <div class="ms-4 mt-5 position-relative z-2">
+                  <p class="fw-bolder fs-1 fs-md-3">Buscamos</p>
+                  <p
+                    class="fs-1 fs-md-3 fw-bolder filtro_decoration"
+                    id="categoriaFilter"
+                  >
+                    Bares
+                  </p>
+                  <p class="fs-1 fs-md-3 fw-bold">para</p>
+                  <p
+                    class="fs-1 fs-md-3 fw-bolder filtro_decoration"
+                    id="ambienteFilter"
+                  >
+                    Amigos
+                  </p>
+                </div>
+              </div>
+              <div class="col-6 col-md-10 mt-md-5 z-2 position-relative">
+                <div
+                  class="text-center justify-content-center botones_categoria mt-5 mt-md-3 p-4"
+                >
+                  <div class="boton_ind mb-3" id="cafeButton">
+                    <img
+                      src="/elementos/Component 4cafe.svg"
+                      alt="Icono de Cafetería"
+                      class="img-fluid"
+                    />
+                    <p class="fs-6 fs-md-4">Cafeterias</p>
+                  </div>
+                  <div class="boton_ind mb-3" id="barButton">
+                    <img
+                      src="/elementos/Component 3bar.svg"
+                      alt="Icono de Bar"
+                      class="img-fluid"
+                    />
+                    <p class="fs-6 fs-md-4">Bares</p>
+                  </div>
+                  <div class="boton_ind mb-3" id="restaurantButton">
+                    <img
+                      src="/elementos/restaurantes.svg"
+                      alt="Icono de restaurantes"
+                      class="img-fluid"
+                    />
+                    <p class="fs-6 fs-md-4">Restaurantes</p>
+                  </div>
+                  <div class="boton_ind mb-3" id="culturalButton">
+                    <img
+                      src="/elementos/restaurantes.svg"
+                      alt="Icono de culturales"
+                      class="img-fluid"
+                    />
+                    <p class="fs-6 fs-md-4">Culturales</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bgImages">
+            <img
+            src="/elementos/GradientOrange.png"
+            alt=""
+            class="position-absolute object-fit-cover w-100 h-100 z-1 m-0 d-none d-md-block"
+            style="transform: rotate(180deg)"
+          />
+          <img
+            src="/elementos/GradientOrange.png"
+            alt=""
+            class="position-absolute object-fit-cover w-100 z-1 m-0 d-md-none"
+            style="transform: rotate(180deg); max-height: 24vh"
+          />
+          <img
+            src="/Imagenes/nev5.jpg"
+            alt=""
+            class="imagen_cover z-0 d-none d-md-block w-100 h-100"
+          />
+          <img
+            src="/Imagenes/nev5.jpg"
+            alt=""
+            class="imagen_cover z-0 d-md-none w-100"
+            style="max-height: 30vh"
+          />
+          </div>
+          
+        </div>
+        
+        
+        
+      
+
+        <div
+          class="col-12 col-sm-8 d-flex p-0"
+          id="right_half"
+          style="background-color: red; border-width: 1px"
+        >
+          <div class="container-fluid enlistar_por">
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex justify-content-between">
+                  <p class="fs-4 fw-bold">
+                    Enlistar por: <span class="fw-bolder">Relevancia</span>
+                    <span>Orden alfabético</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-sm-4">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
