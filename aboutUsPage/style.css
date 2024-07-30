@@ -26,9 +26,9 @@ body {
 }
 
 #main-content {
-    display: none;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .title {
@@ -57,13 +57,14 @@ body {
 }
 
 .container div {
-    animation: scroll 7s ease-in-out;
-    animation-delay: 2s;
+    animation: scroll 3s ease-in-out;
+    animation-delay: 1s;
 }
 
 .textoSlider {
     transition: .5s;
     color: black;
+    margin-bottom: 5vw;
 }
 
 .textoSlider a {
@@ -80,30 +81,13 @@ body {
     100% { transform: translateY(-100%); }
 }
 
-#layer2 {
-    margin-bottom: 20px;
-}
 
 body.loaded #preloader {
     display: none;
 }
 
 body.loaded #main-content {
-    display: block;
-}
-
-.headerText{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    color: white;
-    font-weight:500;
-    font-size: 4.5vw;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: Inter, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
+    display: flex;
 }
 
 .gradiente {
@@ -111,60 +95,272 @@ body.loaded #main-content {
 }
 
 .degradado-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    bottom: 15vw;
     width: 100%;
     height: 100%;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    text-align: center;
 }
 
 .degradado-container h1 {
     max-width: 50%;
 }
 
-.degradado {
-    width: auto;
-    object-fit: cover;
-    object-position: bottom;
-}
-
 .imagen-container {
     position: relative;
-    width: 100.9%;
-    height: 30vw;
-    overflow: hidden;
-    margin-left: -10px;
-    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
 }
 
 .imagen-principal {
     width: 100%;
-    height: 100%;
+    height: 40vw;
     object-fit: cover;
-}
-
-.texto-superior-derecha {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-align: right;
-    color: white;
-    padding: 10px;
-    z-index: 2;
-    font-size: 4vw;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
+   
 }
 
 .titulo {
+    display: flex;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 5.5vw;
+    font-size: 4vw;
     margin: 0;
     color: white;
     z-index: 2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 800;
 }
+
+.subtitle {
+    position: relative;
+    padding: 1vw 5vw;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0.5, 0.5);
+    margin-top: -2% ;
+    font-size: 2.5vw;
+    color: #ff7527;
+    max-width: 40%;
+    
+}
+
+.text-content {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 95%;
+}
+
+.text-content img {
+    width: 14vw;
+    height: auto;
+    margin: 5%;
+    
+}
+
+#text-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1vw;
+    font-size: 1.3vw;
+    flex-wrap: wrap;
+    text-align: justify;
+    max-width: 90%;
+}
+
+
+.row-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.row-item {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.row.full-width .row-item {
+    width: 100%;
+}
+
+.row:not(.full-width) .row-item {
+    flex-basis: 48%;
+}
+
+.subtitle {
+    color: #FFCA1A;
+    margin-bottom: 10px;
+}
+
+.subtitle-mission {
+    color: #FF6B35;
+    margin-bottom: 10px;
+}
+
+.subtitle-vision {
+    color: #6BE9E9;
+    margin-bottom: 10px;
+}
+
+
+
+.text-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.text-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .row:not(.full-width) {
+        flex-direction: column;
+    }
+    
+    .row:not(.full-width) .row-item {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.card-client {
+    background: #2cb5a0;
+    width: 20vw;
+    height: 25vw;
+    padding: 5.5vw 3.5vw;
+    border: 4px solid #7cdacc;
+    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    margin: 2%;
+  }
+  
+  .card-client:hover {
+    transform: translateY(-1vw);
+  }
+  
+  .user-picture {
+    overflow: hidden;
+    object-fit: cover;
+    width: 5rem;
+    height: 5rem;
+    border: 4px solid #7cdacc;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .user-picture svg {
+    width: 2.5rem;
+    fill: currentColor;
+  }
+  
+  .name-client {
+    margin: 0;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .name-client span {
+    display: block;
+    font-weight: 200;
+    font-size: 16px;
+  }
+
+  .team {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    background-color: #ffa500;
+    color: white;
+    padding: 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 6vw;
+  }
+  
+  .footer-logo img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .footer-sections {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-section {
+    margin-left: 5%;
+    font-size: 1.2vw;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10%;
+    font-size: 1.4vw;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 4px;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .d-sm-none h3 {
+    font-size: 3.5vw;
+  }
