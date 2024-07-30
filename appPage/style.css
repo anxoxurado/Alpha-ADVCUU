@@ -58,9 +58,9 @@ body{
     display: block;
 }
 .header_custom_buttons {
-    width: 22vw;
+    width: 15vw;
     margin: 2vw;
-    height: 5vh;
+    height: 6vh;
     background-color: whitesmoke;
     border-radius: 50px;
     align-items: center;
@@ -69,6 +69,7 @@ body{
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
+    font-weight: 500;
 }
 .header_custom_buttons:hover {
     background-color: #e0e0e0;
