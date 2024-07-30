@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 function mostrarLugar(nombreLugar) {
 
     const nombreCodificado = encodeURIComponent(nombreLugar);
 
     //Cuando sea otra lugar que no sea cafe, se debe cambiar la url conforme a la categoria
-    fetch(`http://localhost:3000/api/lugares/cafes?nombre=${nombreCodificado}`)
+    fetch(`/api/lugares/cafes?nombre=${nombreCodificado}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la solicitud');
@@ -49,7 +50,12 @@ function mostrarLugar(nombreLugar) {
             const caracteristica3 = document.getElementById('caract-3');
             caracteristica3.textContent = lugar.caracteristica_3;
 
+            //mostrar primera imagen
+            const imagen1 = document.getElementById('primeraImagen');
+            imagen1.setAttribute('src', `${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}`);
 
+            //mostrar imagenes extra
+            mostrarImagenesExtra(lugar.id_lugar);
 
             // linkear botones
             const ambiente1 = document.getElementById('ambiente1');
@@ -76,14 +82,12 @@ function mostrarLugar(nombreLugar) {
             btnMaps.addEventListener('click', () => {
                 window.open(`${lugar.link_mapsGoogle}`);
             });
-            
+
             // Ocultar el loader y mostrar el contenido
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             }, 200);
-            
-
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -95,7 +99,7 @@ function mostrarLugar(nombreLugar) {
 function mostrarLugaresSimilares(nombreLugar) {
     const nombreCodificado = encodeURIComponent(nombreLugar);
 
-    fetch(`http://localhost:3000/lugares/similares?nombre=${nombreCodificado}`)
+    fetch(`/lugares/similares?nombre=${nombreCodificado}`)
 
         .then(response => {
             if (!response.ok) {
@@ -116,7 +120,7 @@ function mostrarLugaresSimilares(nombreLugar) {
                     divIndividual.classList.add('card-item');
 
                     divIndividual.innerHTML = `
-                    <div class="gradient-card g-orange"></div>
+                    <div class="gradient-card g-blue"></div>
                     <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="">
                     <div class="card-info">
                         <h2 class="local-name">${lugar.nombre_lugar}</h2>
@@ -152,7 +156,7 @@ function mostrarLugaresSimilares(nombreLugar) {
                     divIndividual.addEventListener('click', () => {
                         //es por si el nombre lleva caracteres raros
                         const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar);
-                        window.location.href = `http://localhost:3000/lugares/cafes?nombre=${nombreLugarCodificado}`;
+                        window.location.href = `/lugares/cafes?nombre=${nombreLugarCodificado}`;
                         incrementarClicks(lugar.id_lugar);
                     });
                 }
@@ -165,6 +169,31 @@ function mostrarLugaresSimilares(nombreLugar) {
         })
 }
 
+// Esta funcion hace que se muestran las imagenes extra de un lugar
+function mostrarImagenesExtra(idLugar) {
+    fetch(`/lugares/imagenes?id_lugar=${idLugar}`)
+
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud, no se encontraron imagenes');
+            }
+            return response.json();
+        })
+
+        .then(data => {
+            const divContenedor = document.getElementById('contenedor-imagenes');
+            data.forEach((lugar) => {
+                const divImagen = document.createElement('div');
+                divImagen.classList.add('card-item');
+
+                divImagen.innerHTML = `
+                <img src="${lugar.ruta_imagen}/${lugar.nombre_imagen}" class="local-image" alt="">
+            `;
+                divContenedor.appendChild(divImagen);
+            });
+        });
+}
+
 
 // Funcion para incrementar los clicks de los lugares
 function incrementarClicks(lugarId) {
@@ -175,7 +204,7 @@ function incrementarClicks(lugarId) {
         },
         body: JSON.stringify({ lugarId: lugarId })
     })
-    .then(response => response.json())
-    .then(data => console.log('Clicks incrementados:', data))
-    .catch(error => console.error('Error:', error));
+        .then(response => response.json())
+        .then(data => console.log('Clicks incrementados:', data))
+        .catch(error => console.error('Error:', error));
 }

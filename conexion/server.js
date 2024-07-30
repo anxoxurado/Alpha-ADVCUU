@@ -299,6 +299,25 @@ app.get("/api/lugares/cultural", (req, res) => {
   });
 });
 
+//Este get muestra las imagenes extra de un lugar por id
+app.get("/lugares/imagenes", (req, res) => {
+  const id_lugar = req.query.id_lugar;
+  const sql = `SELECT * FROM imagenes_lugares WHERE fk_lugar = ${id_lugar};`;
+  db.query(sql, (err, results) => {
+    if (err) {
+      return res
+        .status(500)
+        .json({ error: "Error en la consulta de la base de datos" });
+    }
+    if (results.length === 0) {
+      return res
+        .status(404)
+        .json({ error: "No se encontró ningún lugar con ese nombre" });
+    }
+    res.json(results);
+  });
+});
+
 // Este get es para lugares similares que no sean restaurantes
 app.get("/lugares/similares", (req, res) => {
   const nombreLugar = req.query.nombre;

@@ -33,7 +33,7 @@
                 <a href="#" class="nav-link px-2 text-white categorias">Categorías</a>
               </li>
               <li><a href="#" class="nav-link px-2 text-white PRFs">PRFs</a></li>
-              <ul>
+              <ul> 
                 <li><button id="en">EN</button></li>
                 <li><button id="es">ES</button></li>
               </ul>
@@ -43,7 +43,7 @@
             </ul>
           </div>
 
-          <a href="/appPage/app.html">
+          <a href="/lugares">
             <button class="btn btn-info text-white shadow-lg comenzar_a_buscar" type="button">
               Comenzar a buscar
             </button>
@@ -316,84 +316,9 @@
   <script src="/prototipo/main.js"></script>
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="/sliderWords.js"></script> <!--Script para cambiar las palabras del slider (tambien trae codigo para cambiar idioma)-->
+  <script src="/translation/traducir.js"></script> <!--Script para traducir la pagina-->
 </body>
-<script>
-  var typed = new Typed(".auto-type", {
-    strings: [
-      "cafés",
-      "negocios locales",
-      "bares",
-      "restaurantes",
-      "puestos",
-      "restaurantes",
-      "centros culturales",
-      "lugares",
-    ],
-    typeSpeed: 90,
-    backSpeed: 50,
-    looped: true,
-    loopCount: Infinity,
-    showCursor: false,
-    fadeOut: false,
-    smartBackspace: true,
-    backspace: (curString, curStrPos) => {
-      return {
-        hideWhenDone: true,
-        hideWhenDoneDelay: 0,
-      };
-    },
-  });
 
-  var typed = new Typed(".auto-type_small", {
-    strings: [
-      "cafés",
-      "bares",
-      "restaurantes",
-      "puestos",
-      "restaurantes",
-      "centros culturales",
-      "lugares",
-    ],
-    typeSpeed: 90,
-    backSpeed: 50,
-    looped: true,
-    loopCount: Infinity,
-    showCursor: false,
-    fadeOut: false,
-    smartBackspace: true,
-    backspace: (curString, curStrPos) => {
-      return {
-        hideWhenDone: true,
-        hideWhenDoneDelay: 0,
-      };
-    },
-  });
-
-  var typed = new Typed(".auto-type_mid", {
-    strings: [
-      "cafés",
-      "bares",
-      "restaurantes",
-      "puestos",
-      "restaurantes",
-      "centros culturales",
-      "lugares",
-    ],
-    typeSpeed: 90,
-    backSpeed: 50,
-    looped: true,
-    loopCount: Infinity,
-    showCursor: false,
-    fadeOut: false,
-    smartBackspace: true,
-    backspace: (curString, curStrPos) => {
-      return {
-        hideWhenDone: true,
-        hideWhenDoneDelay: 0,
-      };
-    },
-  });
-</script>
-<script src="/translation/traducir.js"></script>
 
 </html>

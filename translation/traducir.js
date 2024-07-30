@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var idiomaGuardado = localStorage.getItem('idioma');    // esta variable guarda el idioma que se selecciono en la pagina
 
+
     //Con esta funcion se cambia el idioma a ingles
     if (btnIngles) {
         btnIngles.addEventListener('click', () => {
             traducir('en');
             localStorage.setItem('idioma', 'en');
+            recargarPagina();
         });
     } else {
         console.error('El elemento con ID "en" no se encontró');
@@ -25,14 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         btnEspañol.addEventListener('click', () => {
             traducir('es');
             localStorage.setItem('idioma', 'es');
+            recargarPagina();
         });
     } else {
         console.error('El elemento con ID "en" no se encontró');
     }
 
-    if (idiomaGuardado) {
-        traducir(idiomaGuardado);
-    }
+    
 
 
 
@@ -131,3 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+function recargarPagina() {
+    this.location.reload();
+}
