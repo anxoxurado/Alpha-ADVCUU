@@ -23,6 +23,10 @@ function mostrarLugar(nombreLugar) {
 
             const lugar = data[0];
 
+            //Cambiar title en la pagina
+            const title = document.getElementById('title');
+            title.textContent ='Café | ' + lugar.nombre_lugar;
+
             const imagenPrincipal = document.getElementById('imagen-principal');
             imagenPrincipal.setAttribute('src', `${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}`);
 

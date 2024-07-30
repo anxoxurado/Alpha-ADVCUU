@@ -22,6 +22,15 @@ function mostrarLugar(nombreLugar) {
 
             const lugar = data[0];
 
+            //Cambiar title en la pagina
+            if (lugar.nombre_categoria == 'Restaurante-bar') {
+                const title = document.getElementById('title');
+                title.textContent = 'Restaurante-Bar | ' + lugar.nombre_lugar;
+            } else {
+                const title = document.getElementById('title');
+                title.textContent = 'Restaurante | ' + lugar.nombre_lugar;
+            }
+
             const imagenPrincipal = document.getElementById('imagen-principal');
             imagenPrincipal.setAttribute('src', `${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}`);
 
@@ -55,7 +64,7 @@ function mostrarLugar(nombreLugar) {
 
             //mostrar imagenes extra
             mostrarImagenesExtra(lugar.id_lugar);
-            
+
             // linkear botones
             const ambiente1 = document.getElementById('ambiente1');
             ambiente1.textContent = lugar.ambiente;
