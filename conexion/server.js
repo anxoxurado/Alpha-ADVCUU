@@ -3,6 +3,8 @@ import mysql from "mysql";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import fs from 'fs';
+
 
 const app = express();
 const port = 3000;
@@ -531,6 +533,26 @@ app.post("/incrementar-clicks", (req, res) => {
     res.json({ message: "Clicks incrementados correctamente" });
   });
 });
+
+
+app.get("/traducir", (req, res) => {
+  const jsonFilePath = path.join(__dirname, '..', 'translation/indexTrans.json');
+  fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error(err);
+          res.status(500).json({ error: 'Error reading the file' });
+          return;
+      }
+      try {
+          const jsonData = JSON.parse(data);
+          res.json(jsonData);
+      } catch (parseErr) {
+          console.error(parseErr);
+          res.status(500).json({ error: 'Error parsing JSON' });
+      }
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
