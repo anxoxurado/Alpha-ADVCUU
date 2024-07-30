@@ -3,27 +3,20 @@
 
 * {
   font-family: Inter, sans-serif;
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background-color: #ffffff;
+  background-color: #d38842;
 }
 
 .left_half {
   height: 100vh;
   min-width: 25%;
 
-  background-color: aqua;
-}
-
-.imagen_cover {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
+  background-color: rgba(0, 255, 255, 0);
 }
 
 .filtro_decoration {
@@ -33,13 +26,13 @@ body {
 .boton_ind {
   display: flex;
   background-color: #fff;
-
+  justify-content: center;
   border: none;
   border-radius: 25px;
   padding: 1vh 2vw;
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: #000 0px 0px 0px;
+  box-shadow: #000000a0 0px 0px 19px;
   margin-bottom: 10px;
 }
 
@@ -90,12 +83,18 @@ body {
 }
 
 /* Clase "card-item" */
-.card-list .card-item {
-  width: 28vw;
-  aspect-ratio: 3 / 4;
-  max-height: 150vh;
-  max-width: auto;
-  margin: 1%;
+.row .card-item {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 2vh;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.31);
+  transition: 0.5s ease-in-out;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .card-item {
@@ -133,6 +132,15 @@ body {
 .g-orange {
   background: linear-gradient(0deg, #ffb967, #67fff000);
 }
+.g-purple {
+  background: linear-gradient(0deg, rgb(115, 125, 205), rgba(103, 255, 240, 0));
+}
+.g-red {
+  background: linear-gradient(0deg, rgb(141, 30, 26), rgba(103, 255, 240, 0));
+}
+.g-blue {
+  background: linear-gradient(0deg, rgb(103, 255, 240), rgba(103, 255, 240, 0));
+}
 
 /* Clase "local-image" */
 .card-item .local-image {
@@ -142,6 +150,9 @@ body {
   border-radius: 2vh;
 }
 
+.card-item {
+  justify-content: center;
+}
 /* Clase "card-info" */
 .card-item .card-info {
   position: absolute;
@@ -153,10 +164,11 @@ body {
 
 /* Clase "local-name" */
 .card-info .local-name {
-  font-size: 1.8vw;
+  font-size: 1.5vw;
   padding: 0.5vw 2vw 0.5vw 2vw;
   background-color: whitesmoke;
   border-radius: 2vh;
+  color: black;
 }
 
 /* Clase "local-description" */
@@ -166,4 +178,84 @@ body {
 
 .local-description span {
   color: rgb(255, 249, 235);
+}
+
+#texto_filtro p {
+  font-size: calc(3.8vw - 5px);
+}
+
+.button-83 {
+  width: 100%;
+  min-width: 150px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #ffdeb6, #ffa83e);
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  transition: background-position 0.5s ease-out;
+  border: 0 solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #482307;
+  column-gap: 1rem;
+  cursor: pointer;
+  display: flex;
+  font-family: inter, system-ui, -apple-system, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 20px;
+  outline: 2px solid transparent;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-transform: none;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: -6px 8px 10px rgba(81, 41, 10, 0.1),
+    0px 2px 2px rgba(81, 41, 10, 0.2);
+}
+
+.button-83:active {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81, 41, 10, 0.15),
+    0px 1px 1px rgba(81, 41, 10, 0.15);
+  transform: translateY(0.125rem);
+}
+
+.button-83:focus {
+  box-shadow: rgba(72, 35, 7, 0.46) 0 0 0 4px,
+    -6px 8px 10px rgba(81, 41, 10, 0.1), 0px 2px 2px rgba(81, 41, 10, 0.2);
+}
+
+.button-83:hover {
+  animation: gradientAnimation 2s infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.button-83 p {
+  color: #000;
+}
+.imagen_cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.volverPrinc {
+  color: #4f4f4f;
 }
