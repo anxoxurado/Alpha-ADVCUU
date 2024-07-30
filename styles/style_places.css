@@ -47,15 +47,7 @@ body {
 }
 
 .titulo {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 5.5vw;
-    margin: 0;
-    color: white;
-    z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 800;
+    
 }
 
 .direccion {
