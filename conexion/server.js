@@ -534,6 +534,11 @@ app.post("/lugares-filtrados", (req, res) => {
   });
 });
 
+// Ir a pagina donde se muestran los lugares filtrados
+app.get("/lugares/resultado-filtro", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "filtrosPage/resultados.html"));
+});
+
 // POST PARA AÑADIR CLICKS A LOS LUGARES AL SER PULSADOS
 app.post("/incrementar-clicks", (req, res) => {
   const { lugarId } = req.body;
@@ -557,21 +562,81 @@ app.post("/incrementar-clicks", (req, res) => {
 app.get("/traducir", (req, res) => {
   const jsonFilePath = path.join(__dirname, '..', 'translation/indexTrans.json');
   fs.readFile(jsonFilePath, 'utf8', (err, data) => {
-      if (err) {
-          console.error(err);
-          res.status(500).json({ error: 'Error reading the file' });
-          return;
-      }
-      try {
-          const jsonData = JSON.parse(data);
-          res.json(jsonData);
-      } catch (parseErr) {
-          console.error(parseErr);
-          res.status(500).json({ error: 'Error parsing JSON' });
-      }
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Error reading the file' });
+      return;
+    }
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseErr) {
+      console.error(parseErr);
+      res.status(500).json({ error: 'Error parsing JSON' });
+    }
   });
 });
 
+
+// ver todas las cafeterias existentes
+app.get("/lugares/todo-cafeterias", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "categorias/todo_cafeterias.html"));
+});
+
+// ver todos los restaurnates existentes
+app.get("/lugares/todo-restaurantes", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "categorias/todo_restaurantes.html"));
+});
+
+// ver todos los bares existentes
+app.get("/lugares/todo-bares", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "categorias/todo_bares.html"));
+});
+
+// ver todos los bares existentes
+app.get("/lugares/todo-cultural", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "categorias/todo_cultural.html"));
+});
+
+app.get("/lugares/todo", (req, res) => {
+  const categoria = req.query.categoria;
+  var sql = "";
+  if (categoria == 'restaurante') {
+      sql = `
+      SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+        from lugares l 
+        JOIN categorias c ON l.fk_categoria = c.id_categoria
+        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+        WHERE c.nombre_categoria = '${categoria}' or c.nombre_categoria = 'restaurante-bar'
+        order by l.clicks DESC;
+      `;
+  } else{
+    sql = `
+      SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+        from lugares l 
+        JOIN categorias c ON l.fk_categoria = c.id_categoria
+        JOIN ambientes a ON l.fk_ambiente = id_ambiente
+        JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+        WHERE c.nombre_categoria = '${categoria}'
+        order by l.clicks DESC;
+      `;
+  }
+  db.query(sql, (err, results) => {
+    if (err) {
+      return res
+        .status(500)
+        .json({ error: "Error en la consulta de la base de datos" });
+    }
+    if (results.length === 0) {
+      return res
+        .status(404)
+        .json({ error: "No se encontró ningún lugar con ese nombre" });
+    }
+    res.json(results);
+  });
+
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
