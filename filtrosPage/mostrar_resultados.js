@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 
-    fetch('http://localhost:3000/lugares-filtrados', {
+    fetch('/lugares-filtrados', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nombreCodificado= encodeURIComponent(lugar.nombre_lugar);
                 if (lugar.nombre_categoria === 'Cafe') {
                 html1 += `
-                <div class="col-md-4 col-sm-4" onclick="window.location.href='http://localhost:3000/lugares/cafes?nombre=${nombreCodificado}';">
+                <div class="col-md-4 col-sm-4" onclick="window.location.href=/lugares/cafes?nombre=${nombreCodificado}';">
                     <div class="card-item">
                         <div class="gradient-card g-orange"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${nombreCodificado}" />
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 `;
                 html2 += `
-                <div class="col-12" onclick="window.location.href='http://localhost:3000/lugares/cafes?nombre=${nombreCodificado}';">
+                <div class="col-12" onclick="window.location.href='/lugares/cafes?nombre=${nombreCodificado}';">
                 <div class="card-item">
                     <div class="gradient-card g-orange"></div>
                     <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 } else if (lugar.nombre_categoria === 'Restaurante') {
                     html1 += `
-                    <div class="col-md-4 col-sm-4" onclick="window.location.href='http://localhost:3000/lugares/restaurantes?nombre=${nombreCodificado}';">
+                    <div class="col-md-4 col-sm-4" onclick="window.location.href='/lugares/restaurantes?nombre=${nombreCodificado}';">
                         <div class="card-item">
                             <div class="gradient-card g-orange"></div>
                             <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     `;
                     html2 += `
-                    <div class="col-12" onclick="window.location.href='http://localhost:3000/lugares/restaurantes?nombre=${nombreCodificado}';">
+                    <div class="col-12" onclick="window.location.href='/lugares/restaurantes?nombre=${nombreCodificado}';">
                     <div class="card-item">
                         <div class="gradient-card g-orange"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                 } else if (lugar.nombre_categoria === 'Bar') {
                     html1 += `
-                    <div class="col-md-4 col-sm-4" onclick="window.location.href='http://localhost:3000/lugares/bares?nombre=${nombreCodificado}';">
+                    <div class="col-md-4 col-sm-4" onclick="window.location.href='/lugares/bares?nombre=${nombreCodificado}';">
                         <div class="card-item">
                             <div class="gradient-card g-orange"></div>
                             <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     `;
                     html2 += `
-                    <div class="col-12" onclick="window.location.href='http://localhost:3000/lugares/bares?nombre=${nombreCodificado}';">
+                    <div class="col-12" onclick="window.location.href='/lugares/bares?nombre=${nombreCodificado}';">
                     <div class="card-item">
                         <div class="gradient-card g-orange"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                 } else if (lugar.nombre_categoria === 'Cultural') {
                     html1 += `
-                    <div class="col-md-4 col-sm-4" onclick="window.location.href='http://localhost:3000/lugares/cultural?nombre=${nombreCodificado}';">
+                    <div class="col-md-4 col-sm-4" onclick="window.location.href='/lugares/cultural?nombre=${nombreCodificado}';">
                         <div class="card-item">
                             <div class="gradient-card g-orange"></div>
                             <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     `;
                     html2 += `
-                    <div class="col-12" onclick="window.location.href='http://localhost:3000/lugares/cultural?nombre=${nombreCodificado}';">
+                    <div class="col-12" onclick="window.location.href='/lugares/cultural?nombre=${nombreCodificado}';">
                     <div class="card-item">
                         <div class="gradient-card g-orange"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
@@ -143,20 +143,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const irCafeterias = document.getElementById('irCafeterias');
 irCafeterias.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-cafeterias';
+    window.location.href = '/lugares/todo-cafeterias';
 });
 
 const irBares = document.getElementById('irBares');
 irBares.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-bares';
+    window.location.href = '/lugares/todo-bares';
 });
 
 const irRestaurantes = document.getElementById('irRestaurantes');
 irRestaurantes.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-restaurantes';
+    window.location.href = '/lugares/todo-restaurantes';
 });
 
 const irCultural = document.getElementById('irCultural');
 irCultural.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-cultural';
+    window.location.href = '/lugares/todo-cultural';
 });

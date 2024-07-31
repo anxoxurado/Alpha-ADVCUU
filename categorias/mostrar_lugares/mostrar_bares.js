@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function mostrarCafeterias(){
-    fetch('http://localhost:3000/lugares/todo?categoria=bar')
+    fetch('/lugares/todo?categoria=bar')
 
         .then(response => response.json())
 
@@ -82,17 +82,17 @@ function incrementarClicks(lugarId) {
 
 const irCafeterias = document.getElementById('irCafeterias');
 irCafeterias.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-cafeterias';
+    window.location.href = '/lugares/todo-cafeterias';
 });
 
 const irRestaurantes = document.getElementById('irRestaurantes');
 irRestaurantes.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-restaurantes';
+    window.location.href = '/lugares/todo-restaurantes';
 });
 
 const irCultural = document.getElementById('irCultural');
 irCultural.addEventListener('click', () => {
-    window.location.href = 'http://localhost:3000/lugares/todo-cultural';
+    window.location.href = '/lugares/todo-cultural';
 });
 
 

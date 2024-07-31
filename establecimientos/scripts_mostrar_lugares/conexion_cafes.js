@@ -135,7 +135,7 @@ function mostrarLugaresSimilares(nombreLugar) {
                     divIndividual.addEventListener('click', () => {
                         //es por si el nombre lleva caracteres raros
                         const nombreLugarCodificado = encodeURIComponent(lugar.nombre_lugar);
-                        window.location.href = `http://localhost:3000/lugares/cafes?nombre=${nombreLugarCodificado}`;
+                        window.location.href = `/lugares/cafes?nombre=${nombreLugarCodificado}`;
                         incrementarClicks(lugar.id_lugar);
                     });
                     container.appendChild(divIndividual);
