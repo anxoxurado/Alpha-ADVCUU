@@ -363,6 +363,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .navbar-nav {
@@ -425,3 +429,26 @@ body {
     overflow-y: auto;
 }
 
+#languageSelect {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+  }
+  
+  #languageSelect:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  #languageSelect option {
+    background-color: rgba(203, 145, 83, 0.9);
+    color: white;
+  }
