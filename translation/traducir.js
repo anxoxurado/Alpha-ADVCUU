@@ -52,9 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const PRFs = document.querySelector('.PRFs');
                 PRFs.textContent = idioma.PRFs;
 
-                const idiom = document.querySelector('.idiom');
-                idiom.textContent = idioma.idiom;
-
                 const sobre_nosotros = document.querySelector('.sobre_nosotros');
                 sobre_nosotros.textContent = idioma.sobre_nosotros;
 
