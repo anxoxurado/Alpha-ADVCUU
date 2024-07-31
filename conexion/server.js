@@ -1,5 +1,5 @@
 import express from "express";
-import mysql from "mysql";
+import mysql from "mysql2";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
