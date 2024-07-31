@@ -641,12 +641,56 @@ pre::after {
   list-style: none;
   display: none;
   position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: rgba(103, 103, 103, 0.347);
+  backdrop-filter: blur(5px);
+  border-radius: 0 0 15px 15px;
+  padding: 5px;
+  min-width: 100%;
 }
 
 .nav_inicio li ul button {
   background: none;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
 }
 
 .nav_inicio li:hover > ul {
   display: block;
+}
+.nav_inicio li ul button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nav_inicio li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav_inicio li .idiom {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+.nav_inicio .nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav_inicio .nav > li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav_inicio .nav > li > a,
+.nav_inicio .nav > li > span {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
