@@ -636,3 +636,17 @@ pre::after {
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
+
+.nav_inicio li ul {
+  list-style: none;
+  display: none;
+  position: absolute;
+}
+
+.nav_inicio li ul button {
+  background: none;
+}
+
+.nav_inicio li:hover > ul {
+  display: block;
+}
