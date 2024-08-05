@@ -1,5 +1,5 @@
 import express from "express";
-import mysql from "mysql2";
+import mysql from "mysql2/promise";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -28,23 +28,20 @@ app.use(express.static(path.join(__dirname, "..")));
 
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
-const db = mysql.createConnection({
-  host:process.env.DB_HOST || "localhost",
+const pool = mysql.createPool({
+  host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
-  password:process.env.DB_PASSWORD || "root",
-  database:process.env.DB_NAME || "VACUUDB",
+  password: process.env.DB_PASSWORD || "root",
+  database: process.env.DB_NAME || "VACUUDB",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error("Error connecting to the database:", err);
-    return;
-  }
-  if(process.env.DB_NAME && process.env.DB_USER && process.env.DB_PASSWORD && process.env.DB_HOST){
-    console.log("Connected to the MYSQL database with env variables");
-  }
-  console.log("Connected to the MYSQL database");
-});
+console.log("MySQL pool created");
+if (process.env.DB_NAME && process.env.DB_USER && process.env.DB_PASSWORD && process.env.DB_HOST) {
+  console.log("Using environment variables for database connection");
+}
 
 // ruta por default
 app.get("/", (req, res) => {
@@ -56,7 +53,7 @@ app.get("/lugares", (req, res) => {
 });
 
 // SE USA PARA MOSTRAR MEJORES 10 CAFES
-app.get("/lugares/TopCafes", (req, res) => {
+app.get("/lugares/TopCafes", async (req, res) => {
   const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -67,24 +64,20 @@ app.get("/lugares/TopCafes", (req, res) => {
     order by clicks DESC LIMIT 10 ;
     `;
 
-  db.query(SQLLugares, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "error en la consulta de la base de datos" });
-    }
-
+  try {
+    const [results] = await pool.query(SQLLugares);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // SE USA PARA MOSTRAR MEJORES 10 RESTAURANTES
-app.get("/lugares/TopRestaurantes", (req, res) => {
+app.get("/lugares/TopRestaurantes", async (req, res) => {
   const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -95,24 +88,20 @@ app.get("/lugares/TopRestaurantes", (req, res) => {
     order by clicks DESC LIMIT 10 ;
     `;
 
-  db.query(SQLLugares, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "error en la consulta de la base de datos" });
-    }
-
+  try {
+    const [results] = await pool.query(SQLLugares);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // SE USA PARA MOSTRAR MEJORES 10  BARES
-app.get("/lugares/TopBares", (req, res) => {
+app.get("/lugares/TopBares", async (req, res) => {
   const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -123,24 +112,20 @@ app.get("/lugares/TopBares", (req, res) => {
     order by clicks DESC LIMIT 10 ;
     `;
 
-  db.query(SQLLugares, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "error en la consulta de la base de datos" });
-    }
-
+  try {
+    const [results] = await pool.query(SQLLugares);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // SE USA PARA MOSTRAR MEJORES 10 LUGARES CULTURALES
-app.get("/lugares/TopCulturales", (req, res) => {
+app.get("/lugares/TopCulturales", async (req, res) => {
   const SQLLugares = `
     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
     FROM lugares l 
@@ -151,20 +136,16 @@ app.get("/lugares/TopCulturales", (req, res) => {
     DESC LIMIT 10; ;
     `;
 
-  db.query(SQLLugares, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "error en la consulta de la base de datos" });
-    }
-
+  try {
+    const [results] = await pool.query(SQLLugares);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Ruta para mostrar la pagina cafes
@@ -173,7 +154,7 @@ app.get("/lugares/cafes", (req, res) => {
 });
 
 // ruta para mostrar un cafe por su nombre
-app.get("/api/lugares/cafes", (req, res) => {
+app.get("/api/lugares/cafes", async (req, res) => {
   const nombreLugar = req.query.nombre;
 
   if (!nombreLugar) {
@@ -186,19 +167,17 @@ app.get("/api/lugares/cafes", (req, res) => {
         JOIN ambientes a ON l.fk_ambiente = id_ambiente
         JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
         WHERE l.nombre_lugar = ?;`;
-  db.query(sql, [nombreLugar], (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+
+  try {
+    const [results] = await pool.query(sql, [nombreLugar]);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Ruta para mostrar la pagina restaurantes
@@ -209,7 +188,7 @@ app.get("/lugares/restaurantes", (req, res) => {
 });
 
 // ruta para mostrar restaurantes por su nombre
-app.get("/api/lugares/restaurantes", (req, res) => {
+app.get("/api/lugares/restaurantes", async (req, res) => {
   const nombreLugar = req.query.nombre;
 
   if (!nombreLugar) {
@@ -222,19 +201,16 @@ app.get("/api/lugares/restaurantes", (req, res) => {
         JOIN ambientes a ON l.fk_ambiente = id_ambiente
         JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
         WHERE l.nombre_lugar = ?;`;
-  db.query(sql, [nombreLugar], (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql, [nombreLugar]);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Ruta para mostrar la pagina bares
@@ -243,7 +219,7 @@ app.get("/lugares/bares", (req, res) => {
 });
 
 // ruta para mostrar bares por su nombre
-app.get("/api/lugares/bares", (req, res) => {
+app.get("/api/lugares/bares", async (req, res) => {
   const nombreLugar = req.query.nombre;
 
   if (!nombreLugar) {
@@ -256,19 +232,16 @@ app.get("/api/lugares/bares", (req, res) => {
         JOIN ambientes a ON l.fk_ambiente = id_ambiente
         JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
         WHERE l.nombre_lugar = ?;`;
-  db.query(sql, [nombreLugar], (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql, [nombreLugar]);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Ruta para mostrar la pagina culturales
@@ -277,7 +250,7 @@ app.get("/lugares/cultural", (req, res) => {
 });
 
 // ruta para mostrar bares por su nombre
-app.get("/api/lugares/cultural", (req, res) => {
+app.get("/api/lugares/cultural", async (req, res) => {
   const nombreLugar = req.query.nombre;
 
   if (!nombreLugar) {
@@ -290,42 +263,36 @@ app.get("/api/lugares/cultural", (req, res) => {
         JOIN ambientes a ON l.fk_ambiente = id_ambiente
         JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
         WHERE l.nombre_lugar = ?;`;
-  db.query(sql, [nombreLugar], (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql, [nombreLugar]);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 //Este get muestra las imagenes extra de un lugar por id
-app.get("/lugares/imagenes", (req, res) => {
+app.get("/lugares/imagenes", async (req, res) => {
   const id_lugar = req.query.id_lugar;
   const sql = `SELECT * FROM imagenes_lugares WHERE fk_lugar = ${id_lugar};`;
-  db.query(sql, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Este get es para lugares similares que no sean restaurantes
-app.get("/lugares/similares", (req, res) => {
+app.get("/lugares/similares", async (req, res) => {
   const nombreLugar = req.query.nombre;
   const sql = `SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
         FROM lugares l
@@ -336,23 +303,20 @@ app.get("/lugares/similares", (req, res) => {
         and (l.fk_ambiente = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}')
         OR l.fk_ambiente2 = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}'))
         order by clicks DESC LIMIT 10;`;
-  db.query(sql, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Este get es para lugares similares que sean restaurantes y bares
-app.get("/lugares/similares-restaurantes-bar", (req, res) => {
+app.get("/lugares/similares-restaurantes-bar", async(req, res) => {
   const nombreLugar = req.query.nombre;
   const sql = `SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal, a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2 
         FROM lugares l
@@ -363,31 +327,28 @@ app.get("/lugares/similares-restaurantes-bar", (req, res) => {
         and (l.fk_ambiente = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}')
         OR l.fk_ambiente2 = (SELECT fk_ambiente FROM lugares WHERE nombre_lugar = '${nombreLugar}'))
         order by clicks DESC LIMIT 10;`;
-  db.query(sql, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // POST PARA FILTRAR LUGARES
-app.post("/lugares-filtrados", (req, res) => {
+app.post("/lugares-filtrados", async (req, res) => {
   const { categoria, ambiente, precio } = req.body;
   const categoriaLugar = categoria;
   const ambienteLugar = ambiente;
   const precioLugar = precio;
   var sql = "";
 
-  if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") || (ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja") || (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
-    if ((ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja") && (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
+  if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") || (ambienteLugar != "Chill" && ambienteLugar != "Familiar" && ambienteLugar != "Amigos" && ambienteLugar != "Pareja") || (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
+    if ((ambienteLugar != "Chill" && ambienteLugar != "Familiar" && ambienteLugar != "Amigos" && ambienteLugar != "Pareja") && (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
       if (categoriaLugar == "Restaurante") {
         sql = `
               SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
@@ -421,7 +382,7 @@ app.post("/lugares-filtrados", (req, res) => {
                 order by clicks DESC;
                 `;
       } else {
-        if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") && (ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja")) {
+        if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") && (ambienteLugar != "Chill" && ambienteLugar != "Familiar" && ambienteLugar != "Amigos" && ambienteLugar != "Pareja")) {
           sql = `
                     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                     FROM lugares l 
@@ -444,7 +405,7 @@ app.post("/lugares-filtrados", (req, res) => {
                         order by clicks DESC;
                         `;
           } else {
-            if ((ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja")) {
+            if ((ambienteLugar != "Chill" && ambienteLugar != "Familiar" && ambienteLugar != "Amigos" && ambienteLugar != "Pareja")) {
               if (categoriaLugar == "Restaurante") {
                 sql = `
                                 SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
@@ -520,31 +481,25 @@ app.post("/lugares-filtrados", (req, res) => {
             `;
     }
   }
-  db.query(sql, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    } else {
-      if (results.length === 0) {
-        return res
-          .status(404)
-          .json({ error: "No se encontró ningún lugar con esos filtros" });
-          
-      } else {
-        res.json(results);
-      }
+  try {
+    const [results] = await pool.query(sql);
+    if (results.length === 0) {
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
-  });
+    res.json(results);
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 // Ir a pagina donde se muestran los lugares filtrados
-app.get("/lugares/resultado-filtro", (req, res) => {
+app.get("/lugares/resultado-filtro", async (req, res) => {
   res.sendFile(path.join(__dirname, "..", "filtrosPage/resultados.html"));
 });
 
 // POST PARA AÑADIR CLICKS A LOS LUGARES AL SER PULSADOS
-app.post("/incrementar-clicks", (req, res) => {
+app.post("/incrementar-clicks", async(req, res) => {
   const { lugarId } = req.body;
 
   if (!lugarId) {
@@ -553,13 +508,16 @@ app.post("/incrementar-clicks", (req, res) => {
 
   const sql = "UPDATE lugares SET clicks = clicks + 1 WHERE id_lugar = ?";
 
-  db.query(sql, [lugarId], (err, result) => {
-    if (err) {
-      console.error("Error al incrementar clicks:", err);
-      return res.status(500).json({ error: "Error en la base de datos" });
+  try {
+    const [results] = await pool.query(sql, [lugarId]);
+    if (results.length === 0) {
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
-    res.json({ message: "Clicks incrementados correctamente" });
-  });
+    res.json(results);
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 });
 
 
@@ -602,11 +560,11 @@ app.get("/lugares/todo-cultural", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "categorias/todo_cultural.html"));
 });
 
-app.get("/lugares/todo", (req, res) => {
+app.get("/lugares/todo", async (req, res) => {
   const categoria = req.query.categoria;
   var sql = "";
   if (categoria == 'restaurante') {
-      sql = `
+    sql = `
       SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
         from lugares l 
         JOIN categorias c ON l.fk_categoria = c.id_categoria
@@ -615,7 +573,7 @@ app.get("/lugares/todo", (req, res) => {
         WHERE c.nombre_categoria = '${categoria}' or c.nombre_categoria = 'restaurante-bar'
         order by l.clicks DESC;
       `;
-  } else{
+  } else {
     sql = `
       SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
         from lugares l 
@@ -626,19 +584,16 @@ app.get("/lugares/todo", (req, res) => {
         order by l.clicks DESC;
       `;
   }
-  db.query(sql, (err, results) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ error: "Error en la consulta de la base de datos" });
-    }
+  try {
+    const [results] = await pool.query(sql);
     if (results.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No se encontró ningún lugar con ese nombre" });
+      return res.status(404).json({ error: "No se encontró ningún lugar con ese nombre" });
     }
     res.json(results);
-  });
+  } catch (err) {
+    console.error("Error en la consulta de la base de datos:", err);
+    res.status(500).json({ error: "Error en la consulta de la base de datos" });
+  }
 
 });
 

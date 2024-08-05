@@ -92,7 +92,7 @@ function mostrarLugar(nombreLugar) {
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             }, 200);
-        })
+            })
         .catch(error => {
             console.error('Error fetching data:', error);
             // Aquí puedes agregar código para mostrar un mensaje de error al usuario

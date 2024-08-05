@@ -386,3 +386,29 @@ body {
   border-radius: 2vh;
   color: black;
 }
+
+/* Estilos para cuando aun no cargan los datos*/
+#content {
+  display: none;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#loading {
+  font-size: 4vw;
+}
+
+#imagen-logo {
+  width: 20vw;
+  height: auto;
+}
+
+.fade-in {
+  display: block;
+  opacity: 1;
+}
