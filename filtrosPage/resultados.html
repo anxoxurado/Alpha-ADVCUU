@@ -10,136 +10,97 @@
 </head>
 
 <body>
-  <div class="container-fluid d-flex position-relative contenedor_general d-none d-md-block">
-    <div class="row position-relative fila_general justify-content-center">
-      <div class="col-4 m-0 position-relative d-block p-0 left_half">
-        <div class="container-fluid">
-          <div class="row position-absolute align-content-center" id="texto_filtro">
-            <div class="col-6 col-md-12">
-              <div class="ms-4 mt-5 position-relative z-2">
-                <p class="fw-bolder ">Resultados</p>
-                <p class=" fw-bolder filtro_decoration txtCategoria" id="categoriaFilter">
-                  de los
-                </p>
-                <p class=" fw-bold">filtros</p>
-                <p class=" fw-bolder filtro_decoration txtAmbiente" id="ambienteFilter">seleccionados</p>
+  <div id="loader">
+    <p id="loading">Cargando tus resultados...</p>
+    <img src="/elementos/logo.png" alt="" id="imagen-logo">
+  </div>
+  <div id="content">
+
+    <div class="container-fluid d-flex position-relative contenedor_general d-none d-md-block">
+      <div class="row position-relative fila_general justify-content-center">
+        <div class="col-4 m-0 position-relative d-block p-0 left_half">
+          <div class="container-fluid">
+            <div class="row position-absolute align-content-center" id="texto_filtro">
+              <div class="col-6 col-md-12">
+                <div class="ms-4 mt-5 position-relative z-2">
+                  <p class="fw-bolder ">Resultados</p>
+                  <p class=" fw-bolder filtro_decoration txtCategoria" id="categoriaFilter">
+                    de los
+                  </p>
+                  <p class=" fw-bold">filtros</p>
+                  <p class=" fw-bolder filtro_decoration txtAmbiente" id="ambienteFilter">seleccionados</p>
+                </div>
               </div>
-            </div>
-            <div class="col-6 col-md-10 mt-0 z-2 position-relative">
-              <div class="text-center justify-content-center botones_categoria mt-5 mt-md-3 p-4">
+              <div class="col-6 col-md-10 mt-0 z-2 position-relative">
+                <div class="text-center justify-content-center botones_categoria mt-5 mt-md-3 p-4">
 
-                <button class="button-83" role="button" id="irCafeterias">
-                  <img src="/elementos/Component 4cafe.svg" alt="Icono de Cafetería" class="img-fluid" />
-                  <p class="fs-6 fs-md-4">Cafeterias</p>
-                </button>
+                  <button class="button-83" role="button" id="irCafeterias">
+                    <img src="/elementos/Component 4cafe.svg" alt="Icono de Cafetería" class="img-fluid" />
+                    <p class="fs-6 fs-md-4">Cafeterias</p>
+                  </button>
 
-                <button class="button-83" role="button" id="irBares">
-                  <img src="/elementos/Component 3bar.svg" alt="Icono de Bar" class="img-fluid" />
-                  <p class="fs-6 fs-md-4">Bares</p>
-                </button>
+                  <button class="button-83" role="button" id="irBares">
+                    <img src="/elementos/Component 3bar.svg" alt="Icono de Bar" class="img-fluid" />
+                    <p class="fs-6 fs-md-4">Bares</p>
+                  </button>
 
-                <button class="button-83" role="button" id="irRestaurantes">
-                  <img src="/elementos/restaurantes.svg" alt="Icono de restaurantes" class="img-fluid" />
-                  <p class="fs-6 fs-md-4">Restaurantes</p>
-                </button>
-                <button class="button-83" role="button" id="irCultural">
-                  <img src="/elementos/culturales.svg" alt="Icono de culturales" class="img-fluid" />
-                  <p class="fs-6 fs-md-4">Culturales</p>
-                </button>
+                  <button class="button-83" role="button" id="irRestaurantes">
+                    <img src="/elementos/restaurantes.svg" alt="Icono de restaurantes" class="img-fluid" />
+                    <p class="fs-6 fs-md-4">Restaurantes</p>
+                  </button>
+                  <button class="button-83" role="button" id="irCultural">
+                    <img src="/elementos/culturales.svg" alt="Icono de culturales" class="img-fluid" />
+                    <p class="fs-6 fs-md-4">Culturales</p>
+                  </button>
 
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="bgImages">
-          <img src="/elementos/GradientOrange.png" alt=""
-            class="position-absolute object-fit-cover w-100 h-100 z-1 m-0 d-none d-md-block"
-            style="transform: rotate(180deg)" />
-          <img src="/elementos/GradientOrange.png" alt=""
-            class="position-absolute object-fit-cover w-100 h-100 z-1 m-0 d-none d-md-block" style="" />
+          <div class="bgImages">
+            <img src="/elementos/GradientOrange.png" alt=""
+              class="position-absolute object-fit-cover w-100 h-100 z-1 m-0 d-none d-md-block"
+              style="transform: rotate(180deg)" />
+            <img src="/elementos/GradientOrange.png" alt=""
+              class="position-absolute object-fit-cover w-100 h-100 z-1 m-0 d-none d-md-block" style="" />
 
-          <img src="/Imagenes/drone.jpeg" alt="" class="imagen_cover z-0 d-none d-md-block " />
+            <img src="/Imagenes/drone.jpeg" alt="" class="imagen_cover z-0 d-none d-md-block " />
 
-        </div>
-
-      </div>
-
-
-
-
-
-      <div class="col-12 col-sm-8 d-flex p-0" id="right_half"
-        style="background-color: rgb(255, 245, 226); border-width: 1px">
-        <div class="container-fluid enlistar_por p-4">
-          <div class="row">
-            <div class="col-12 mb-3">
-              <div class="d-flex justify-content-between">
-                <p class="fs-4 fw-medium">
-                  Enlistados por
-                  <a href="">
-                    <span class="fw-bolder">Relevancia</span>
-                  </a>
-                  
-                  <a href=""><span></span></a>
-
-                </p>
-              </div>
-            </div>
           </div>
-          <div class="row p-3" id="container1">
-            <div class="col-md-4">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
 
-            </div>
-            <div class="row volerAlMenu">
-              <div class="col-5">
+        </div>
 
+
+
+
+
+        <div class="col-12 col-sm-8 d-flex p-0" id="right_half"
+          style="background-color: rgb(255, 245, 226); border-width: 1px">
+          <div class="container-fluid enlistar_por p-4">
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="d-flex justify-content-between">
+                  <p class="fs-4 fw-medium">
+                    Enlistados por
+                    <a href="">
+                      <span class="fw-bolder">Relevancia</span>
+                    </a>
+
+                    <a href=""><span></span></a>
+
+                  </p>
+                </div>
               </div>
-              <div class="col-7 volverPrinc d-flex flex-column text-end">
+            </div>
+            <div class="row p-3" id="container1">
+
+              <div class="row volerAlMenu">
+                <div class="col-5">
+
+                </div>
+                <!--<div class="col-7 volverPrinc d-flex flex-column text-end">
                 <a href="/lugares" class="text-decoration-none">
                   <p>
                     Volver al menú principal
@@ -148,56 +109,56 @@
                     style="transform: rotate(33deg); margin-left: 10px;">
 
                 </a>
+              </div>-->
+
               </div>
 
             </div>
-
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
 
 
 
-  <!--Version Movil-->
+    <!--Version Movil-->
 
 
 
-  <div class="container-fluid position-absolute contenedor_sm d-block d-md-none">
-    <div class="row position-relative fila_superior">
-      <div class="col-12 graficos_sm">
+    <div class="container-fluid position-absolute contenedor_sm d-block d-md-none">
+      <div class="row position-relative fila_superior">
+        <div class="col-12 graficos_sm">
 
-        <div class="bgImages_small ">
-          <div class="gradient-picture_sm g-blue">
+          <div class="bgImages_small ">
+            <div class="gradient-picture_sm g-blue">
+
+            </div>
+
+            <img src="/Imagenes/drone.jpeg" alt="" class="imagen_cover_sm z-0 d-block " />
 
           </div>
 
-          <img src="/Imagenes/drone.jpeg" alt="" class="imagen_cover_sm z-0 d-block " />
+
+        </div>
+        <div class="col-12 d-block position-absolute ui_sm d-flex align-items-center  ">
+          <div>
+            <div class="d-block">
+              <p class="fw-bolder d-inline-block">Resultados</p>
+              <p class=" fw-bolder filtro_decoration d-inline-block" id="categoriaFilter"> de los </p>
+            </div>
+            <div class="d-block">
+              <p class=" fw-bold d-inline-block">filtros</p>
+              <p class=" fw-bolder filtro_decoration d-inline-block" id="ambienteFilter">seleccionados</p>
+
+            </div>
+          </div>
 
         </div>
 
 
-      </div>
-      <div class="col-12 d-block position-absolute ui_sm d-flex align-items-center  ">
-        <div>
-          <div class="d-block">
-            <p class="fw-bolder d-inline-block">Resultados</p>
-            <p class=" fw-bolder filtro_decoration d-inline-block" id="categoriaFilter"> de los </p>
-          </div>
-          <div class="d-block">
-            <p class=" fw-bold d-inline-block">filtros</p>
-            <p class=" fw-bolder filtro_decoration d-inline-block" id="ambienteFilter">seleccionados</p>
 
-          </div>
-        </div>
-
-      </div>
-
-
-
-      <!--
+        <!--
         Los botones me están jodiendo la pagina
         <div class="row d-flex justify-content-even align-items-center" id="fila_botones">
 
@@ -252,83 +213,84 @@
 
 
 
-      <div class="col-12 d-flex p-0 d-block" id="right_half"
-        style="background-color: rgb(255, 245, 226); border-width: 1px">
-        <div class="container-fluid enlistar_por p-4">
-          <div class="row">
-            <div class="col-12 mb-3">
-              <div class="d-flex justify-content-between">
-                <p class="fs-5 fw-medium">
-                  Enlistados por
-                  <a href=""><span class="fw-bolder">Relevancia</span></a>
-                  
-                  <a href=""><span></span></a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row p-3 d-flex justify-content-center row-cards-sm" id="container2">
-            <div class="col-12">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card-item">
-                <div class="gradient-card g-orange"></div>
-                <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
-                <div class="card-info">
-                  <h2 class="local-name">Kaldi Café</h2>
-                </div>
-              </div>
-            </div>
+        <div class="col-12 d-flex p-0 d-block" id="right_half"
+          style="background-color: rgb(255, 245, 226); border-width: 1px">
+          <div class="container-fluid enlistar_por p-4">
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="d-flex justify-content-between">
+                  <p class="fs-5 fw-medium">
+                    Enlistados por
+                    <a href=""><span class="fw-bolder">Relevancia</span></a>
 
-            <div class="row volerAlMenu">
-              <div class="col-5">
-
-              </div>
-              <div class="col-7 volverPrinc d-flex flex-column text-end">
-                <a href="/appPage/app.html" class="text-decoration-none">
-                  <p>
-                    Volver al menú principal
+                    <a href=""><span></span></a>
                   </p>
-                  <img src="/elementos/Bootstrap Triangle Fill.svg" alt=""
-                    style="transform: rotate(33deg); margin-left: 10px;">
+                </div>
+              </div>
+            </div>
+            <div class="row p-3 d-flex justify-content-center row-cards-sm" id="container2">
+              <div class="col-12">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card-item">
+                  <div class="gradient-card g-orange"></div>
+                  <img src="/Imagenes/nev1.jpg" class="local-image" alt="" />
+                  <div class="card-info">
+                    <h2 class="local-name">Kaldi Café</h2>
+                  </div>
+                </div>
+              </div>
 
-                </a>
+              <div class="row volerAlMenu">
+                <div class="col-5">
+
+                </div>
+                <div class="col-7 volverPrinc d-flex flex-column text-end">
+                  <a href="/appPage/app.html" class="text-decoration-none">
+                    <p>
+                      Volver al menú principal
+                    </p>
+                    <img src="/elementos/Bootstrap Triangle Fill.svg" alt=""
+                      style="transform: rotate(33deg); margin-left: 10px;">
+
+                  </a>
+                </div>
+
               </div>
 
             </div>
-
           </div>
-        </div>
-      </div>-->
+        </div>-->
 
+      </div>
     </div>
   </div>
-  <script src="/filtrosPage/mostrar_resultados.js"></script>
+    <script src="/filtrosPage/mostrar_resultados.js"></script>
 </body>
 
 </html>

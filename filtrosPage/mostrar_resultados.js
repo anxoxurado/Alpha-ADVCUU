@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
             container1.innerHTML = html1;
             container2.innerHTML = html2;
             
+            // Ocultar el loader y mostrar el contenido
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 200);
         }
     })
     .catch(error => {
