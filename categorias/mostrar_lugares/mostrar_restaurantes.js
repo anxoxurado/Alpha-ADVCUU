@@ -22,7 +22,7 @@ function mostrarCafeterias(){
 
                 divIndividual1.innerHTML = `
                     <div class="card-item">
-                        <div class="gradient-card g-orange"></div>
+                        <div class="gradient-card g-orange2"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
                         <div class="card-info">
                             <h2 class="local-name">${lugar.nombre_lugar}</h2>
@@ -38,7 +38,7 @@ function mostrarCafeterias(){
 
                 divIndividual2.innerHTML = `
                     <div class="card-item">
-                        <div class="gradient-card g-orange"></div>
+                        <div class="gradient-card g-orange2"></div>
                         <img src="${lugar.ruta_imgPrincipal}/${lugar.nombre_imgPrincipal}" class="local-image" alt="${lugar.nombre_lugar}" />
                         <div class="card-info">
                         <h2 class="local-name">${lugar.nombre_lugar}</h2>
