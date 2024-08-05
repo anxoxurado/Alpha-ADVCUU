@@ -96,7 +96,7 @@
       </div>
     </div>
 
-    <div class="container-fluid text-center text-white mt-5 p-5 mainCallout mainCallout_Small d-sm-none d-block">
+    <div class="container-fluid text-center text-white mt-5 p-5 mainCallout mainCallout_Small d-sm-none d-block" id="botonResponsive">
       <div class="row">
         <div class="col-12">
           <h1 class="txt_comercial">El único sitio con los mejores</h1>
@@ -316,6 +316,14 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const botonResponsive = document.getElementById("botonResponsive");
+
+    botonResponsive.addEventListener("click", () => {
+      console.log("click");
+    });
+  </script>
 
   <script src="/prototipo/main.js"></script>
 
