@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fs from 'fs';
+import dotenv from 'dotenv';
 
 
 const app = express();
@@ -25,6 +26,8 @@ const __dirname = dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "..")));
 
+dotenv.config({ path: path.join(__dirname, '..', '.env') });
+
 const db = mysql.createConnection({
   host:process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
@@ -36,6 +39,9 @@ db.connect((err) => {
   if (err) {
     console.error("Error connecting to the database:", err);
     return;
+  }
+  if(process.env.DB_NAME && process.env.DB_USER && process.env.DB_PASSWORD && process.env.DB_HOST){
+    console.log("Connected to the MYSQL database with env variables");
   }
   console.log("Connected to the MYSQL database");
 });
@@ -380,17 +386,17 @@ app.post("/lugares-filtrados", (req, res) => {
   const precioLugar = precio;
   var sql = "";
 
-  if (!categoriaLugar || !ambienteLugar || !precioLugar) {
-    if (!ambienteLugar && !precioLugar) {
-      if (categoriaLugar == "restaurante" || categoriaLugar == "bar") {
+  if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") || (ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja") || (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
+    if ((ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja") && (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
+      if (categoriaLugar == "Restaurante") {
         sql = `
-                SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
-                FROM lugares l 
-                JOIN categorias c ON l.fk_categoria = c.id_categoria
-                JOIN ambientes a ON l.fk_ambiente = id_ambiente
-                JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
-                WHERE c.nombre_categoria = '${categoriaLugar} or c.nombre_categoria = 'restaurante-bar'
-                order by clicks DESC;
+              SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
+              from lugares l 
+              JOIN categorias c ON l.fk_categoria = c.id_categoria
+              JOIN ambientes a ON l.fk_ambiente = id_ambiente
+              JOIN imagen_principal i ON i.fk_lugar = l.id_lugar
+              WHERE c.nombre_categoria = '${categoriaLugar}' or c.nombre_categoria = 'restaurante-bar'
+              order by l.clicks DESC;
                 `;
       } else {
         sql = `
@@ -404,7 +410,7 @@ app.post("/lugares-filtrados", (req, res) => {
                 `;
       }
     } else {
-      if (!categoriaLugar && !precioLugar) {
+      if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") && (precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
         sql = `
                 SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                 FROM lugares l 
@@ -415,7 +421,7 @@ app.post("/lugares-filtrados", (req, res) => {
                 order by clicks DESC;
                 `;
       } else {
-        if (!categoriaLugar && !ambienteLugar) {
+        if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural") && (ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja")) {
           sql = `
                     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                     FROM lugares l 
@@ -426,7 +432,7 @@ app.post("/lugares-filtrados", (req, res) => {
                     order by clicks DESC;
                     `;
         } else {
-          if (!categoriaLugar) {
+          if ((categoriaLugar != "Cafe" && categoriaLugar != "Restaurante" && categoriaLugar != "Bar" && categoriaLugar != "Cultural")) {
             sql = `
                         SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                         FROM lugares l 
@@ -438,8 +444,8 @@ app.post("/lugares-filtrados", (req, res) => {
                         order by clicks DESC;
                         `;
           } else {
-            if (!ambienteLugar) {
-              if (categoriaLugar == "restaurante" || categoriaLugar == "bar") {
+            if ((ambienteLugar !="Chill" && ambienteLugar !="Familiar" && ambienteLugar !="Amigos" && ambienteLugar !="Pareja")) {
+              if (categoriaLugar == "Restaurante") {
                 sql = `
                                 SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                                 FROM lugares l 
@@ -461,11 +467,8 @@ app.post("/lugares-filtrados", (req, res) => {
                                 `;
               }
             } else {
-              if (!precioLugar) {
-                if (
-                  categoriaLugar == "restaurante" ||
-                  categoriaLugar == "bar"
-                ) {
+              if ((precioLugar != "1" && precioLugar != "2" && precioLugar != "3" && precioLugar != "4")) {
+                if (categoriaLugar == "Restaurante") {
                   sql = `
                                     SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
                                     FROM lugares l 
@@ -493,7 +496,7 @@ app.post("/lugares-filtrados", (req, res) => {
       }
     }
   } else {
-    if (categoriaLugar == "restaurante" || categoriaLugar == "bar") {
+    if (categoriaLugar == "Restaurante") {
       sql = `
             SELECT l.*, c.nombre_categoria, i.nombre_imgPrincipal, i.ruta_imgPrincipal,  a.ambiente, (select ambiente from ambientes where id_ambiente  = l.fk_ambiente2) as ambiente2
             FROM lugares l 
@@ -527,6 +530,7 @@ app.post("/lugares-filtrados", (req, res) => {
         return res
           .status(404)
           .json({ error: "No se encontró ningún lugar con esos filtros" });
+          
       } else {
         res.json(results);
       }
@@ -636,6 +640,16 @@ app.get("/lugares/todo", (req, res) => {
     res.json(results);
   });
 
+});
+
+// ver todos los bares existentes
+app.get("/nosotros", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "aboutUsPage/aboutUs.html"));
+});
+
+//RUTA MISION
+app.get("/mision", (req, res) => {
+  res.redirect('/aboutUsPage/aboutUs.html#mision');
 });
 
 app.listen(port, () => {

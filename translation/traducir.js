@@ -18,10 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('El elemento con ID "en" no se encontró');
     }
 
-    if (idiomaGuardado) {
-        traducir(idiomaGuardado);
-    }
-
     //Con esta funcion se cambia el idioma a español
     if (btnEspañol) {
         btnEspañol.addEventListener('click', () => {
@@ -33,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('El elemento con ID "en" no se encontró');
     }
 
-    
+    if (idiomaGuardado) {
+        traducir(idiomaGuardado);
+    }
 
 
 

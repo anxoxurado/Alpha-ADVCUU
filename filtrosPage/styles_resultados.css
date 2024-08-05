@@ -133,6 +133,9 @@ body {
 .g-orange {
   background: linear-gradient(0deg, #ef9c66, #67fff000);
 }
+.g-orange2{
+  background: linear-gradient(0deg,#c8803d, #67fff000 );
+}
 .g-purple {
   background: linear-gradient(0deg, rgb(115, 125, 205), rgba(103, 255, 240, 0));
 }
@@ -140,7 +143,7 @@ body {
   background: linear-gradient(0deg, rgb(141, 30, 26), rgba(103, 255, 240, 0));
 }
 .g-blue {
-  background: linear-gradient(0deg, #78aba8, rgba(103, 255, 240, 0));
+  background: linear-gradient(0deg,#67fff0, #67fff000 );
 }
 
 /* Clase "local-image" */
