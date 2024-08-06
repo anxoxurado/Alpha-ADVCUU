@@ -607,6 +607,14 @@ app.get("/mision", (req, res) => {
   res.redirect('/aboutUsPage/aboutUs.html#mision');
 });
 
+app.get("/funciones", (req, res) => {
+  res.redirect('/index.html#funciones');
+});
+
+app.get("/preguntas-frecuentes", (req, res) => {
+  res.redirect('/Paginasextra/PF.html');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
