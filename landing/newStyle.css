@@ -11,6 +11,9 @@
 body {
   background-color: #ffffff;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 .navbar_custom {
   background: rgba(103, 103, 103, 0.347);
 
@@ -250,6 +253,11 @@ body {
   font-size: 3.5vw;
 }
 
+.feature_Pitch h3 {
+  color: #ff7527;
+  font-weight: 800;
+  font-size: 3.5vw;
+}
 .feature_Pitch p {
   color: #606060;
   font-weight: 200;
@@ -356,7 +364,7 @@ body {
 }
 
 .footer {
-  background-color: #ffa500;
+  background-color: #79feed;
   color: white;
   padding: 20px;
 }
@@ -505,7 +513,7 @@ body {
 }
 
 .footer {
-  background-color: #ffa500;
+  background-color: #055151;
   color: white;
   padding: 20px;
 }
@@ -639,8 +647,52 @@ pre::after {
 }
 
 .comenzar_a_buscar {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.comenzar_a_buscar:hover {
+  background-color: #97fff5; /* Cambia este color por el que prefieras */
+  color: #000; /* Cambia este color por el que prefieras */
+  border-color: #97fff5;
 }
 
 #botonResponsive {
   z-index: 1000;
+}
+
+footer img {
+  width: 60%;
+  filter: grayscale(100%);
+}
+
+footer .paginas > h5 a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  margin: 15px;
+  font-size: 1vw;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 200;
+}
+
+footer .paginas > h5 a:hover {
+  color: #00d9ff;
+}
+
+.horizontal_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  float: right;
+  fill: white;
+}
+
+.horizontal_list img {
+  fill: white;
+  filter: brightness(0) invert(1);
+}
+
+.horizontal_list li {
+  margin: 0 10px;
 }
