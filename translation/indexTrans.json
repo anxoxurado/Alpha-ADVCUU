@@ -16,7 +16,7 @@
         "top_cafeterias": "Top Coffe Shops",
         "ajusta_tu_plan": "Tailor your plan as you wish.",
         "cada_plan_diferente": "Because each opportunity is different.",
-        "quienes_somos": "Who are we?",
+        "quienes_somos": "An unique site with the best local experiences in Chihuahua.",
         "mision": "Mission",
         "vision": "Vision",
         "roadmap": "Roadmap",
@@ -24,7 +24,8 @@
         "instagram": "Instagram",
         "facebook": "Facebook",
         "x": "X",
-        "enviar_correo": "Send us email"
+        "enviar_correo": "Send us email",
+        "idiom":"Language"
     },
 
     "es":{
@@ -52,6 +53,7 @@
         "instagram": "Instagram",
         "facebook": "Facebook",
         "x": "X",
-        "enviar_correo": "Envianos un correo"
+        "enviar_correo": "Envianos un correo",
+        "idiom": "Idioma"
     }
 }

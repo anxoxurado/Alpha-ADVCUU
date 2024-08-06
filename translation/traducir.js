@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const PRFs = document.querySelector('.PRFs');
                 PRFs.textContent = idioma.PRFs;
 
+                const idiom = document.querySelector('.lenguaje');
+                idiom.textContent = idioma.idiom;
+
                 const sobre_nosotros = document.querySelector('.sobre_nosotros');
                 sobre_nosotros.textContent = idioma.sobre_nosotros;
 
@@ -92,29 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 const quienes_somos = document.querySelector('.quienes_somos');
                 quienes_somos.textContent = idioma.quienes_somos;
 
-                const mision = document.querySelector('.mision');
-                mision.textContent = idioma.mision;
+                //const mision = document.querySelector('.mision');
+                //mision.textContent = idioma.mision;
 
-                const vision = document.querySelector('.vision');
-                vision.textContent = idioma.vision;
+               // const vision = document.querySelector('.vision');
+                //vision.textContent = idioma.vision;
 
-                const roadmap = document.querySelector('.roadmap');
-                roadmap.textContent = idioma.roadmap;
+                //const roadmap = document.querySelector('.roadmap');
+                //roadmap.textContent = idioma.roadmap;
 
-                const contactanos = document.querySelector('.contactanos');
-                contactanos.textContent = idioma.contactanos;
+                //const contactanos = document.querySelector('.contactanos');
+                //contactanos.textContent = idioma.contactanos;
 
-                const instagram = document.querySelector('.instagram');
-                instagram.textContent = idioma.instagram;
+                //const instagram = document.querySelector('.instagram');
+                //instagram.textContent = idioma.instagram;
 
-                const facebook = document.querySelector('.facebook');
-                facebook.textContent = idioma.facebook;
+                //const facebook = document.querySelector('.facebook');
+                //facebook.textContent = idioma.facebook;
 
-                const x = document.querySelector('.x');
-                x.textContent = idioma.x;
+                //const x = document.querySelector('.x');
+                //x.textContent = idioma.x;
 
-                const enviar_correo = document.querySelector('.enviar_correo');
-                enviar_correo.textContent = idioma.enviar_correo;
+                //const enviar_correo = document.querySelector('.enviar_correo');
+                //enviar_correo.textContent = idioma.enviar_correo;
+
+
+                //const lenguaje = document.querySelector('.lenguaje');
+                //lenguaje.textContent = idioma.lenguaje;
 
                 const navbarElements = document.getElementById('navbarElements');
 
