@@ -143,8 +143,9 @@ body{
 .slide-button {
     position: relative;
     z-index: 2;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 30px;
+    width: 30px;
+  
     color: white;
     outline: none;
     background-color: #e67200;
