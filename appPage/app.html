@@ -30,9 +30,9 @@
                 <div class="row justify-content-center">
                     <div class="col">
                         <a href="/lugares/todo-cafeterias" class="header_custom_button_link">
-                            <div class="header_custom_buttons shadow-lg">
-                                <img src="/elementos/Component 4cafe.svg" alt="Icono de Cafetería">
-                                Cafeterias 
+                            <div class="header_custom_buttons shadow-lg text-center">
+                                <img src="/elementos/Component 4cafe.svg" alt="Icono de Cafetería" class="m-0">
+                                <p class="d-none d-md-block">Cafeterias </p>
                             </div>
                         </a>
                     </div>
@@ -40,8 +40,9 @@
                     <div class="col">
                         <a href="/lugares/todo-restaurantes" class="header_custom_button_link">
                             <div class="header_custom_buttons shadow-lg">
-                                <img src="/elementos/restaurantes.svg" alt="">
-                                Restaurantes
+                                <img class="m-0" src="/elementos/restaurantes.svg" alt="">
+                                
+                                <p class="d-none d-md-block">Restaurantes</p>
                             </div>
                         </a>
                     </div>
@@ -49,8 +50,8 @@
                     <div class="col">
                         <a href="/lugares/todo-bares" class="header_custom_button_link">
                             <div class="header_custom_buttons shadow-lg">
-                                <img src="/elementos/Component 3bar.svg" alt="">
-                                Bares
+                                <img class="m-0 m-sm-2" src="/elementos/Component 3bar.svg" alt="">
+                                <p class="d-none d-md-block">Bares</p>
                             </div>
                         </a>
                     </div>
@@ -59,7 +60,7 @@
                         <a href="/lugares/todo-cultural" class="header_custom_button_link">
                             <div class="header_custom_buttons shadow-lg">
                                 <img src="/elementos/culturales.svg" alt="">
-                                Culturales
+                                <p class="d-none d-md-block">Culturales</p>
                             </div>
                         </a>
                     </div>
@@ -68,22 +69,27 @@
         </div>
     </div>
 
-    <div class="container-md" id="feedContent">
+    <div class="container-sm" id="feedContent">
         <div class="row">
-            <div class="menu-container">
-                <div class="pestania-filtros">
-                    <div class="col-lg-8">
+            <div class="menu-container container-sm">
+                <div class="pestania-filtros d-flex ">
+                    <div class="col-4">
                         <img src="/Branding/Logo BlacklogoblackCurs.png" class="logoAtFeed" alt="">
                     </div>
-                    <div class="col-lg-4 align-content-center" style="font-size: 2vw;">
+                    <div class="col-4" style="font-size: 2vw;">
                         <a href="#" class="customLink"><span class="fw-bold" style="margin-right:1vw;"
                                 id="filtro-trigger">Elige un plan</span><img
                                 src="/elementos/Bootstrap Triangle Fill.svg" class="rotTriangle" alt=""></a>
                     </div>
                 </div>
-                <div class="menu-desplegable" id="menu-filtros">
+                <div class="menu-desplegable text-center" id="menu-filtros">
                     <form id="filtro-lugares">
-                        <div class="seccion">
+                        <div class="d-block text-end">
+                            <button class="btn btn-info text-white" type="submit">
+                                Buscar
+                            </button>
+                        </div>
+                        <div class="seccion row">
                             <h5>Categorías</h5>
 
                             <label><input type="radio" name="categoria" value="Cafe">Cafeterías</label>
@@ -92,7 +98,7 @@
                             <label><input type="radio" name="categoria" value="Cultural">Culturales</label>
                         </div>
 
-                        <div class="seccion">
+                        <div class="seccion row">
                             <h5>Ambiente</h5>
                             <label><input type="radio" name="ambiente" value="Chill">Chill</label>
                             <label><input type="radio" name="ambiente" value="Familiar">Familiar</label>
@@ -101,7 +107,7 @@
 
                         </div>
 
-                        <div class="seccion">
+                        <div class="seccion row">
                             <h5>Precio</h5>
 
                             <label><input type="radio" name="precio" value="1">$</label>
@@ -109,13 +115,9 @@
                             <label><input type="radio" name="precio" value="3">$$$</label>
                             <label><input type="radio" name="precio" value="4">$$$$+</label>
                         </div>
-                        <div class="row">
-                            <div class="d-block text-end">
-                                <button class="btn btn-info text-white" type="submit">
-                                    Buscar
-                                </button>
-                            </div>
-                        </div>
+                        
+                            
+
                     </form>
                     
                 </div>
@@ -166,7 +168,7 @@
         </div>
 
 
-        <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="next-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path
                     d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
@@ -181,7 +183,7 @@
 
     <h1 class="m-4">Top Restaurantes</h1>
     <div class="feed-section">
-        <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="prev-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
             </svg></button>
@@ -205,7 +207,7 @@
         </div>
 
 
-        <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="next-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path
                     d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
@@ -221,7 +223,7 @@
 
     <h1 class="m-4">Top Bares</h1>
     <div class="feed-section">
-        <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="prev-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
             </svg></button>
@@ -247,7 +249,7 @@
             </div>
 
         </div>
-        <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="next-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path
                     d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
@@ -261,7 +263,7 @@
 
     <h1 class="m-4">Top Culturales</h1>
     <div class="feed-section">
-        <button id="prev-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="prev-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
             </svg></button>
@@ -284,7 +286,7 @@
             </div>
 
         </div>
-        <button id="next-slide" class="slide-button material-symbols-rounded"><svg xmlns="http://www.w3.org/2000/svg"
+        <button id="next-slide" class="slide-button material-symbols-rounded d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg"
                 height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                 <path
                     d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
