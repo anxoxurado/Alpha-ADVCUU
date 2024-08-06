@@ -400,7 +400,7 @@ body{
 }
 
 .menu-container {
-    max-width: 2500px;
+    max-width: 90vw;
     background: linear-gradient(to bottom, #e6f2ff 0%, #ffe6e6 100%);
     border-radius: 2vh;
     overflow: hidden;
