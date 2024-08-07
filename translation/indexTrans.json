@@ -25,7 +25,13 @@
         "facebook": "Facebook",
         "x": "X",
         "enviar_correo": "Send us email",
-        "idiom":"Language"
+        "idiom":"Language",
+        "cafeterias": "Coffe Shops",
+        "restaurantes": "Restaurants",
+        "bares": "Bars",
+        "culturales": "Cultural",
+        "paginas": "Pages"
+
     },
 
     "es":{
@@ -54,6 +60,11 @@
         "facebook": "Facebook",
         "x": "X",
         "enviar_correo": "Envianos un correo",
-        "idiom": "Idioma"
+        "idiom": "Idioma",
+        "cafeterias": "Cafeterias",
+        "restaurantes": "Restaurantes",
+        "bares": "Bares",
+        "culturales": "Culturales",
+        "paginas": "Páginas"
     }
 }
