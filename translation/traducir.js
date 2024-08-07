@@ -50,11 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const PRFs = document.querySelector('.PRFs');
                 PRFs.textContent = idioma.PRFs;
 
+                const PRFs2 = document.querySelector('.PRFs2');
+                PRFs2.textContent = idioma.PRFs;
+
                 const idiom = document.querySelector('.lenguaje');
                 idiom.textContent = idioma.idiom;
 
                 const sobre_nosotros = document.querySelector('.sobre_nosotros');
                 sobre_nosotros.textContent = idioma.sobre_nosotros;
+
+                const sobre_nosotros2 = document.querySelector('.sobre_nosotros2');
+                sobre_nosotros2.textContent = idioma.sobre_nosotros;
 
                 const comenzar_a_buscar = document.querySelector('.comenzar_a_buscar');
                 comenzar_a_buscar.textContent = idioma.comenzar_a_buscar;
@@ -104,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 //const roadmap = document.querySelector('.roadmap');
                 //roadmap.textContent = idioma.roadmap;
 
-                //const contactanos = document.querySelector('.contactanos');
-                //contactanos.textContent = idioma.contactanos;
+                const contactanos = document.querySelector('.contactanos');
+                contactanos.textContent = idioma.contactanos;
 
                 //const instagram = document.querySelector('.instagram');
                 //instagram.textContent = idioma.instagram;
@@ -123,6 +129,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 //const lenguaje = document.querySelector('.lenguaje');
                 //lenguaje.textContent = idioma.lenguaje;
 
+                const comenzar_a_buscar2 = document.querySelector('.comenzar_a_buscar2');
+                comenzar_a_buscar2.textContent = idioma.comenzar_a_buscar;
+
+                const cafeterias = document.querySelector('.cafeterias');
+                cafeterias.textContent = idioma.cafeterias;
+
+                const restaurantes = document.querySelector('.restaurantes');
+                restaurantes.textContent = idioma.restaurantes;
+
+                const bares = document.querySelector('.bares');
+                bares.textContent = idioma.bares;
+
+                const culturales = document.querySelector('.culturales');
+                culturales.textContent = idioma.culturales;
+
+                const paginas = document.querySelector('.paginas2');
+                paginas.textContent = idioma.paginas;
+
                 const navbarElements = document.getElementById('navbarElements');
 
                 if (lenguaje == 'en') {
@@ -132,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (lenguaje == 'es') {
                     navbarElements.setAttribute('src', '/prototipo/elementos/Navbarelements.png');
                 }
-
+                
             });
     }
 
